@@ -32,7 +32,7 @@ namespace Hotel
             labelCalendarDate6.Text = date.AddDays(5).ToShortDateString();
             labelCalendarDate7.Text = date.AddDays(6).ToShortDateString();
 
-            var bookings = BookingRepo.GetBookingsByDate(date);
+            var bookings = BookingRepo.GetBookingsByDate(dates);
 
             int row = 0;
             int column = 0;

@@ -15,10 +15,12 @@ namespace Hotel.Repository
             _db = new DataHandler();
         }
 
-        public static void CreateInvoice(Invoice invoice)
+        public static int CreateInvoice(Invoice invoice)
         {
             _db.Invoices.Add(invoice);
             _db.SaveChanges();
+
+            return invoice.InvoiceID;
         }
 
         public static List<Invoice> GetAllInvoices()

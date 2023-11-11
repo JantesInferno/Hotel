@@ -26,6 +26,12 @@ namespace Hotel.Repository
             return _db.Customers.ToList();
         }
 
+        public static List<string> GetAllCustomersAutoComplete()
+        {
+            List<string> customers = _db.Customers.Select(x => x.Name).ToList();
+            return customers;
+        }
+
         public static Customer GetCustomerById(int id)
         {
             return _db.Customers.Find(id);

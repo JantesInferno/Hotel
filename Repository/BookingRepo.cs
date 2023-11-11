@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +16,16 @@ namespace Hotel.Repository
             _db = new DataHandler();
         }
 
-        public static void CreateBooking(Booking booking)
+        public static void CreateBooking(Booking booking, Room room)
         {
+            int rate = (int)room.RoomType.DailyRate;
+            Invoice invoice = new Invoice();
+            invoice.TotalCost = (decimal)(booking.EndDate - booking.StartDate).TotalDays * rate + (booking.ExtraBeds * 200);
+            invoice.DueDate = booking.EndDate.AddDays(10);
+            int invoiceID = InvoiceRepo.CreateInvoice(invoice);
+
+            booking.InvoiceID = invoiceID;
+
             _db.Bookings.Add(booking);
             _db.SaveChanges();
         }
@@ -28,12 +37,21 @@ namespace Hotel.Repository
 
         public static List<Booking> GetBookingsByCustomerID(int customerID)
         {
-            return _db.Bookings.Include("Customer").Include("Room").Include("Invoice").Where(x => x.CustomerID == customerID).ToList();
+            return _db.Bookings.Include("Customer").Include("Rooms").Include("Invoice").Where(x => x.CustomerID == customerID).ToList();
         }
 
-        public static List<Booking> GetBookingsByDate(DateTime date) 
-        { 
-            return _db.Bookings.Include("Customer").Include("Room").Include("Invoice").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
+        public static List<Booking> GetBookingsByDate(DateTime[] dates) 
+        {
+            List<Booking> list = new List<Booking>();
+            
+            foreach (DateTime date in dates)
+            {
+                Booking booking = _db.Bookings.Include("Customer").Include("Room").Include("Invoice").SingleOrDefault(x => x.StartDate <= date && x.EndDate >= date);
+                if (booking != null && !list.Contains(booking))
+                    list.Add(booking);
+            }
+
+            return list;
         }
 
         public static List<Booking> GetBookingsByCustomerSearch(string searchTerm)

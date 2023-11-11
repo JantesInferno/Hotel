@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.IO;
@@ -22,18 +24,18 @@ namespace Hotel
     {
         static Timer _timer;
 
-        private string _currentCategory;
 
         public MainForm()
         {
             InitializeComponent();
             labelCurrentDateTime.Text = DateTime.Now.ToShortTimeString() + "  :  " + DateTime.Now.ToShortDateString();
 
-            _timer = new Timer(1000);
+            
+            _timer = new Timer(60000);
             _timer.Elapsed += UpdateMyLabel;
             _timer.Start();
-
             PopulateTableLayoutPanel();
+            
         }
 
         // EVENTS
@@ -63,12 +65,14 @@ namespace Hotel
 
         private void buttonCustomerCreate_Click(object sender, EventArgs e)
         {
-
+            CustomerRegistrationForm frm = new CustomerRegistrationForm();
+            frm.Show();
         }
 
         private void buttonBookingCreate_Click(object sender, EventArgs e)
         {
-
+            BookingRegistrationForm frm = new BookingRegistrationForm();
+            frm.Show();
         }
 
         private void monthCalendarSearch_DateSelected(object sender, DateRangeEventArgs e)
@@ -97,7 +101,7 @@ namespace Hotel
             labelCalendarDate6.Text = date.AddDays(5).ToShortDateString();
             labelCalendarDate7.Text = date.AddDays(6).ToShortDateString();
 
-            var bookings = BookingRepo.GetBookingsByDate(date);
+            var bookings = BookingRepo.GetBookingsByDate(dates);
 
             int row = 0;
             int column = 0;
@@ -113,7 +117,7 @@ namespace Hotel
 
                 tableLayoutPanelCalendar.Controls.Add(btn);
 
-                tableLayoutPanelCalendar.SetCellPosition(btn, new TableLayoutPanelCellPosition(row, column));
+                tableLayoutPanelCalendar.SetCellPosition(btn, new TableLayoutPanelCellPosition(column, row));
 
                 tableLayoutPanelCalendar.SetColumnSpan(btn, columnSpan);
             }
@@ -142,8 +146,8 @@ namespace Hotel
             int columnSpan = 0;
 
             for (int i = 0; i < dates.Length; i++)
-            {
-                if (booking.StartDate >= dates[i] && booking.EndDate <= dates[i])
+            {    //      x.StartDate <= date && x.EndDate >= date
+                if (booking.StartDate <= dates[i] && booking.EndDate >= dates[i])
                     columnSpan++;
             }
 

@@ -24,5 +24,14 @@ namespace Hotel.Repository
         {
             return _db.Rooms.Include("RoomType").SingleOrDefault(x => x.RoomID == id);
         }
+
+        public static bool CheckRoomAvailability(Room room, DateTime start, DateTime end)
+        {
+            bool b = _db.Bookings.Include("Rooms").Any(x => x.RoomID == room.RoomID && (x.StartDate <= end || start <= x.EndDate));
+            if (b == false)
+                return true;
+
+            return false;
+        }
     }
 }
