@@ -46,6 +46,7 @@ namespace Hotel
         {
             if (dueDatesCount > 0)
             {
+                labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {dueDatesCount} st";
                 labelTodaysDueDates.Visible = true;
                 linkLabelCancelBookings.Visible = true;
             }
@@ -54,9 +55,8 @@ namespace Hotel
                 labelTodaysDueDates.Visible = false;
                 linkLabelCancelBookings.Visible = false;
             }
-            tableLayoutPanelCalendar.Visible = false;
+
             PopulateTableLayoutPanel();
-            tableLayoutPanelCalendar.Visible = true;
         }
 
         private void labelManageInvoice_MouseEnter(object sender, EventArgs e)
@@ -110,15 +110,15 @@ namespace Hotel
 
         private void buttonSearchDate_Click(object sender, EventArgs e)
         {
-            tableLayoutPanelCalendar.Visible = false;
             PopulateTableLayoutPanel();
-            tableLayoutPanelCalendar.Visible = true;
         }
 
         // METODER
 
         private void PopulateTableLayoutPanel()
         {
+            tableLayoutPanelCalendar.Visible = false;
+
             tableLayoutPanelCalendar.Controls.Clear();
 
             DateTime date;
@@ -187,6 +187,8 @@ namespace Hotel
 
                 tableLayoutPanelCalendar.SetColumnSpan(buttonBooking, columnSpan);
             }
+
+            tableLayoutPanelCalendar.Visible = true;
         }
 
         private Button CreateBookingButton(Color color)

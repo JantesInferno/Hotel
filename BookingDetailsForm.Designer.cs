@@ -28,43 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSearchDate = new System.Windows.Forms.Button();
-            this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonSearchDate
+            // label1
             // 
-            this.buttonSearchDate.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.buttonSearchDate.FlatAppearance.BorderSize = 0;
-            this.buttonSearchDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearchDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchDate.ForeColor = System.Drawing.Color.White;
-            this.buttonSearchDate.Location = new System.Drawing.Point(526, 214);
-            this.buttonSearchDate.Name = "buttonSearchDate";
-            this.buttonSearchDate.Size = new System.Drawing.Size(48, 22);
-            this.buttonSearchDate.TabIndex = 35;
-            this.buttonSearchDate.Text = "Sök";
-            this.buttonSearchDate.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePickerSearch
-            // 
-            this.dateTimePickerSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSearch.Location = new System.Drawing.Point(327, 214);
-            this.dateTimePickerSearch.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerSearch.Name = "dateTimePickerSearch";
-            this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerSearch.TabIndex = 34;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(227, 214);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 20);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Välj datum";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(209, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(396, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Visa bokningsinformation där man kan ändra och/eller ta bort bokningen ";
             // 
             // BookingDetailsForm
             // 
@@ -72,9 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonSearchDate);
-            this.Controls.Add(this.dateTimePickerSearch);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label1);
             this.Name = "BookingDetailsForm";
             this.Text = "BookingDetailsForm";
             this.ResumeLayout(false);
@@ -84,8 +57,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonSearchDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label1;
     }
 }
