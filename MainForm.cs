@@ -29,14 +29,26 @@ namespace Hotel
         public MainForm()
         {
             InitializeComponent();
+
             labelCurrentDateTime.Text = DateTime.Now.ToShortTimeString() + "  :  " + DateTime.Now.ToShortDateString();
 
-            
+            dateTimePickerSearch.Value = DateTime.Now;
+
             _timer = new Timer(60000);
             _timer.Elapsed += UpdateMyLabel;
             _timer.Start();
-            PopulateTableLayoutPanel();
-            
+
+            // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag, och tar då bort bokningen
+            List<Booking> dues = BookingRepo.GetBookingsByDate(new DateTime[1] { DateTime.Now.Date });
+            foreach (Booking booking in dues)
+            {
+                if (booking.Invoice.DueDate.Date == DateTime.Now.Date)
+                {
+                    BookingRepo.DeleteBooking(booking);
+                }
+            }
+
+            PopulateTableLayoutPanel();   
         }
 
         // EVENTS
@@ -46,20 +58,30 @@ namespace Hotel
             labelCurrentDateTime.Text = DateTime.Now.ToShortTimeString() + "  :  " + DateTime.Now.ToShortDateString();
         }
 
+        private void labelManageInvoice_MouseEnter(object sender, EventArgs e)
+        {
+            panelInvoice.Visible = true;
+            panelCustomer.Visible = false;
+            panelBooking.Visible = false;
+        }
+
         private void labelManageCustomer_MouseEnter(object sender, EventArgs e)
         {
             panelCustomer.Visible = true;
+            panelInvoice.Visible = false;
             panelBooking.Visible = false;
         }
 
         private void labelManageBooking_MouseEnter(object sender, EventArgs e)
         {
             panelBooking.Visible = true;
+            panelInvoice.Visible = false;
             panelCustomer.Visible = false;
         }
 
         private void MainForm_MouseEnter(object sender, EventArgs e)
         {
+            panelInvoice.Visible = false;
             panelCustomer.Visible = false;
             panelBooking.Visible = false;
         }

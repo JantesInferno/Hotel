@@ -42,10 +42,12 @@
             this.comboBoxExtraBeds = new System.Windows.Forms.ComboBox();
             this.labelRoomException = new System.Windows.Forms.Label();
             this.labelCustomerException = new System.Windows.Forms.Label();
+            this.labelDateException = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxRooms
             // 
+            this.comboBoxRooms.BackColor = System.Drawing.Color.White;
             this.comboBoxRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRooms.FormattingEnabled = true;
             this.comboBoxRooms.Location = new System.Drawing.Point(102, 77);
@@ -154,6 +156,7 @@
             // 
             // comboBoxExtraBeds
             // 
+            this.comboBoxExtraBeds.BackColor = System.Drawing.Color.White;
             this.comboBoxExtraBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExtraBeds.FormattingEnabled = true;
             this.comboBoxExtraBeds.Location = new System.Drawing.Point(102, 242);
@@ -183,12 +186,24 @@
             this.labelCustomerException.Text = "placeholder";
             this.labelCustomerException.Visible = false;
             // 
+            // labelDateException
+            // 
+            this.labelDateException.AutoSize = true;
+            this.labelDateException.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelDateException.Location = new System.Drawing.Point(99, 224);
+            this.labelDateException.Name = "labelDateException";
+            this.labelDateException.Size = new System.Drawing.Size(62, 13);
+            this.labelDateException.TabIndex = 33;
+            this.labelDateException.Text = "placeholder";
+            this.labelDateException.Visible = false;
+            // 
             // BookingRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(374, 344);
+            this.Controls.Add(this.labelDateException);
             this.Controls.Add(this.labelCustomerException);
             this.Controls.Add(this.labelRoomException);
             this.Controls.Add(this.buttonCreateBooking);
@@ -226,5 +241,6 @@
         private System.Windows.Forms.ComboBox comboBoxExtraBeds;
         private System.Windows.Forms.Label labelRoomException;
         private System.Windows.Forms.Label labelCustomerException;
+        private System.Windows.Forms.Label labelDateException;
     }
 }

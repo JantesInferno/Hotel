@@ -33,6 +33,9 @@ namespace Hotel
             comboBoxExtraBeds.SelectedIndex = 0;
             _currentRoomSelected = RoomRepo.GetRoomByID((int)comboBoxRooms.SelectedValue);
 
+            dateTimePicker1.MinDate = DateTime.Today.Date.AddDays(14);
+            dateTimePicker2.MinDate = DateTime.Today.Date.AddDays(14);
+
             _data = new AutoCompleteStringCollection();
 
             _data.AddRange(CustomerRepo.GetAllCustomersAutoComplete().ToArray());
@@ -85,6 +88,15 @@ namespace Hotel
 
             DateTime start = dateTimePicker1.Value.Date;
             DateTime end = dateTimePicker2.Value.Date;
+
+            if (start > end)
+            {
+                labelDateException.Text = "Slutdatum kan inte vara före startdatum.";
+                labelDateException.Visible = true;
+                return;
+            }
+            else
+                labelDateException.Visible = false;
 
             if (!RoomRepo.CheckRoomAvailability(_currentRoomSelected, start, end))
             {

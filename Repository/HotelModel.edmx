@@ -50,7 +50,6 @@
           <Property Name="RoomTypeName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Size" Type="int" Nullable="false" />
           <Property Name="DailyRate" Type="money" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <Association Name="FK_Bookings_Customers">
           <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
@@ -202,7 +201,6 @@
           <Property Name="RoomTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Size" Type="Int32" Nullable="false" />
           <Property Name="DailyRate" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Rooms" Relationship="HotelModel.FK_Rooms_RoomTypes" FromRole="RoomType" ToRole="Room" />
         </EntityType>
         <Association Name="FK_Bookings_Customers">
@@ -253,7 +251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -303,7 +301,6 @@
           <EntitySetMapping Name="RoomTypes">
             <EntityTypeMapping TypeName="HotelModel.RoomType">
               <MappingFragment StoreEntitySet="RoomTypes">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DailyRate" ColumnName="DailyRate" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="RoomTypeName" ColumnName="RoomTypeName" />

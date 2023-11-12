@@ -24,7 +24,6 @@ namespace Hotel.Repository
         public string RoomTypeName { get; set; }
         public int Size { get; set; }
         public decimal DailyRate { get; set; }
-        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Room> Rooms { get; set; }

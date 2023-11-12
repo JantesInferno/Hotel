@@ -34,12 +34,13 @@
             this.labelManageBooking = new System.Windows.Forms.Label();
             this.labelCurrentDateTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCustomerUpdate = new System.Windows.Forms.Button();
+            this.labelManageInvoice = new System.Windows.Forms.Label();
+            this.buttonCustomerSearch = new System.Windows.Forms.Button();
             this.buttonCustomerCreate = new System.Windows.Forms.Button();
             this.panelCustomer = new System.Windows.Forms.Panel();
             this.panelBooking = new System.Windows.Forms.Panel();
             this.buttonBookingCreate = new System.Windows.Forms.Button();
-            this.buttonBookingUpdate = new System.Windows.Forms.Button();
+            this.buttonBookingSearch = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.labelCalendarDate7 = new System.Windows.Forms.Label();
             this.labelCalendarDate6 = new System.Windows.Forms.Label();
@@ -63,10 +64,14 @@
             this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.toolTipTest = new System.Windows.Forms.ToolTip(this.components);
+            this.panelInvoice = new System.Windows.Forms.Panel();
+            this.buttonRegisterPayment = new System.Windows.Forms.Button();
+            this.buttonCancelBooking = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelCustomer.SuspendLayout();
             this.panelBooking.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelInvoice.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -84,22 +89,22 @@
             // 
             this.labelManageCustomer.AutoSize = true;
             this.labelManageCustomer.ForeColor = System.Drawing.Color.White;
-            this.labelManageCustomer.Location = new System.Drawing.Point(760, 75);
+            this.labelManageCustomer.Location = new System.Drawing.Point(736, 74);
             this.labelManageCustomer.Name = "labelManageCustomer";
-            this.labelManageCustomer.Size = new System.Drawing.Size(86, 17);
+            this.labelManageCustomer.Size = new System.Drawing.Size(98, 17);
             this.labelManageCustomer.TabIndex = 12;
-            this.labelManageCustomer.Text = "Hantera kund";
+            this.labelManageCustomer.Text = "Hantera kunder";
             this.labelManageCustomer.MouseEnter += new System.EventHandler(this.labelManageCustomer_MouseEnter);
             // 
             // labelManageBooking
             // 
             this.labelManageBooking.AutoSize = true;
             this.labelManageBooking.ForeColor = System.Drawing.Color.White;
-            this.labelManageBooking.Location = new System.Drawing.Point(852, 75);
+            this.labelManageBooking.Location = new System.Drawing.Point(840, 74);
             this.labelManageBooking.Name = "labelManageBooking";
-            this.labelManageBooking.Size = new System.Drawing.Size(105, 17);
+            this.labelManageBooking.Size = new System.Drawing.Size(117, 17);
             this.labelManageBooking.TabIndex = 13;
-            this.labelManageBooking.Text = "Hantera bokning";
+            this.labelManageBooking.Text = "Hantera bokningar";
             this.labelManageBooking.MouseEnter += new System.EventHandler(this.labelManageBooking_MouseEnter);
             // 
             // labelCurrentDateTime
@@ -107,7 +112,7 @@
             this.labelCurrentDateTime.AutoSize = true;
             this.labelCurrentDateTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentDateTime.ForeColor = System.Drawing.Color.White;
-            this.labelCurrentDateTime.Location = new System.Drawing.Point(6, 71);
+            this.labelCurrentDateTime.Location = new System.Drawing.Point(3, 71);
             this.labelCurrentDateTime.Name = "labelCurrentDateTime";
             this.labelCurrentDateTime.Size = new System.Drawing.Size(57, 21);
             this.labelCurrentDateTime.TabIndex = 12;
@@ -116,42 +121,54 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel1.Controls.Add(this.labelManageInvoice);
             this.panel1.Controls.Add(this.labelCurrentDateTime);
             this.panel1.Controls.Add(this.labelManageBooking);
             this.panel1.Controls.Add(this.labelManageCustomer);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(960, 100);
             this.panel1.TabIndex = 11;
             // 
-            // buttonCustomerUpdate
+            // labelManageInvoice
             // 
-            this.buttonCustomerUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCustomerUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCustomerUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonCustomerUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonCustomerUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomerUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomerUpdate.Location = new System.Drawing.Point(0, 30);
-            this.buttonCustomerUpdate.Name = "buttonCustomerUpdate";
-            this.buttonCustomerUpdate.Size = new System.Drawing.Size(83, 23);
-            this.buttonCustomerUpdate.TabIndex = 14;
-            this.buttonCustomerUpdate.Text = "Sök kund";
-            this.buttonCustomerUpdate.UseVisualStyleBackColor = false;
+            this.labelManageInvoice.AutoSize = true;
+            this.labelManageInvoice.ForeColor = System.Drawing.Color.White;
+            this.labelManageInvoice.Location = new System.Drawing.Point(606, 75);
+            this.labelManageInvoice.Name = "labelManageInvoice";
+            this.labelManageInvoice.Size = new System.Drawing.Size(124, 17);
+            this.labelManageInvoice.TabIndex = 39;
+            this.labelManageInvoice.Text = "Hantera betalningar";
+            this.labelManageInvoice.MouseEnter += new System.EventHandler(this.labelManageInvoice_MouseEnter);
+            // 
+            // buttonCustomerSearch
+            // 
+            this.buttonCustomerSearch.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonCustomerSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCustomerSearch.FlatAppearance.BorderSize = 0;
+            this.buttonCustomerSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.buttonCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustomerSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonCustomerSearch.Location = new System.Drawing.Point(0, 24);
+            this.buttonCustomerSearch.Name = "buttonCustomerSearch";
+            this.buttonCustomerSearch.Size = new System.Drawing.Size(95, 23);
+            this.buttonCustomerSearch.TabIndex = 14;
+            this.buttonCustomerSearch.Text = "Sök kund";
+            this.buttonCustomerSearch.UseVisualStyleBackColor = false;
             // 
             // buttonCustomerCreate
             // 
-            this.buttonCustomerCreate.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCustomerCreate.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonCustomerCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCustomerCreate.FlatAppearance.BorderSize = 0;
-            this.buttonCustomerCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonCustomerCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buttonCustomerCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCustomerCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomerCreate.Location = new System.Drawing.Point(0, 1);
+            this.buttonCustomerCreate.Location = new System.Drawing.Point(0, 0);
             this.buttonCustomerCreate.Name = "buttonCustomerCreate";
-            this.buttonCustomerCreate.Size = new System.Drawing.Size(83, 23);
+            this.buttonCustomerCreate.Size = new System.Drawing.Size(95, 23);
             this.buttonCustomerCreate.TabIndex = 13;
             this.buttonCustomerCreate.Text = "Ny kund";
             this.buttonCustomerCreate.UseVisualStyleBackColor = false;
@@ -159,58 +176,58 @@
             // 
             // panelCustomer
             // 
-            this.panelCustomer.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panelCustomer.BackColor = System.Drawing.Color.LightSlateGray;
             this.panelCustomer.Controls.Add(this.buttonCustomerCreate);
-            this.panelCustomer.Controls.Add(this.buttonCustomerUpdate);
-            this.panelCustomer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCustomer.Location = new System.Drawing.Point(775, 111);
+            this.panelCustomer.Controls.Add(this.buttonCustomerSearch);
+            this.panelCustomer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCustomer.Location = new System.Drawing.Point(754, 112);
             this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(83, 53);
+            this.panelCustomer.Size = new System.Drawing.Size(95, 47);
             this.panelCustomer.TabIndex = 16;
             this.panelCustomer.Visible = false;
             // 
             // panelBooking
             // 
-            this.panelBooking.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panelBooking.BackColor = System.Drawing.Color.LightSlateGray;
             this.panelBooking.Controls.Add(this.buttonBookingCreate);
-            this.panelBooking.Controls.Add(this.buttonBookingUpdate);
-            this.panelBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBooking.Location = new System.Drawing.Point(867, 111);
+            this.panelBooking.Controls.Add(this.buttonBookingSearch);
+            this.panelBooking.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBooking.Location = new System.Drawing.Point(858, 112);
             this.panelBooking.Name = "panelBooking";
-            this.panelBooking.Size = new System.Drawing.Size(105, 53);
+            this.panelBooking.Size = new System.Drawing.Size(117, 47);
             this.panelBooking.TabIndex = 17;
             this.panelBooking.Visible = false;
             // 
             // buttonBookingCreate
             // 
-            this.buttonBookingCreate.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBookingCreate.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonBookingCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBookingCreate.FlatAppearance.BorderSize = 0;
-            this.buttonBookingCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonBookingCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buttonBookingCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookingCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingCreate.Location = new System.Drawing.Point(0, 1);
+            this.buttonBookingCreate.Location = new System.Drawing.Point(0, 0);
             this.buttonBookingCreate.Name = "buttonBookingCreate";
-            this.buttonBookingCreate.Size = new System.Drawing.Size(106, 23);
+            this.buttonBookingCreate.Size = new System.Drawing.Size(117, 23);
             this.buttonBookingCreate.TabIndex = 13;
             this.buttonBookingCreate.Text = "Ny bokning";
             this.buttonBookingCreate.UseVisualStyleBackColor = false;
             this.buttonBookingCreate.Click += new System.EventHandler(this.buttonBookingCreate_Click);
             // 
-            // buttonBookingUpdate
+            // buttonBookingSearch
             // 
-            this.buttonBookingUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBookingUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBookingUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonBookingUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonBookingUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBookingUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingUpdate.Location = new System.Drawing.Point(0, 30);
-            this.buttonBookingUpdate.Name = "buttonBookingUpdate";
-            this.buttonBookingUpdate.Size = new System.Drawing.Size(106, 23);
-            this.buttonBookingUpdate.TabIndex = 14;
-            this.buttonBookingUpdate.Text = "Sök bokning";
-            this.buttonBookingUpdate.UseVisualStyleBackColor = false;
+            this.buttonBookingSearch.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonBookingSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBookingSearch.FlatAppearance.BorderSize = 0;
+            this.buttonBookingSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.buttonBookingSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBookingSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonBookingSearch.Location = new System.Drawing.Point(0, 24);
+            this.buttonBookingSearch.Name = "buttonBookingSearch";
+            this.buttonBookingSearch.Size = new System.Drawing.Size(117, 23);
+            this.buttonBookingSearch.TabIndex = 14;
+            this.buttonBookingSearch.Text = "Sök bokning";
+            this.buttonBookingSearch.UseVisualStyleBackColor = false;
             // 
             // label16
             // 
@@ -436,6 +453,7 @@
             // 
             this.buttonSearchDate.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.buttonSearchDate.FlatAppearance.BorderSize = 0;
+            this.buttonSearchDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.buttonSearchDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearchDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearchDate.ForeColor = System.Drawing.Color.White;
@@ -455,6 +473,7 @@
             this.dateTimePickerSearch.Name = "dateTimePickerSearch";
             this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerSearch.TabIndex = 37;
+            this.dateTimePickerSearch.Value = new System.DateTime(2023, 11, 12, 0, 0, 0, 0);
             // 
             // label12
             // 
@@ -466,16 +485,61 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "Välj datum";
             // 
+            // panelInvoice
+            // 
+            this.panelInvoice.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panelInvoice.Controls.Add(this.buttonRegisterPayment);
+            this.panelInvoice.Controls.Add(this.buttonCancelBooking);
+            this.panelInvoice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelInvoice.Location = new System.Drawing.Point(624, 112);
+            this.panelInvoice.Name = "panelInvoice";
+            this.panelInvoice.Size = new System.Drawing.Size(121, 47);
+            this.panelInvoice.TabIndex = 39;
+            this.panelInvoice.Visible = false;
+            // 
+            // buttonRegisterPayment
+            // 
+            this.buttonRegisterPayment.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonRegisterPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegisterPayment.FlatAppearance.BorderSize = 0;
+            this.buttonRegisterPayment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.buttonRegisterPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegisterPayment.ForeColor = System.Drawing.Color.White;
+            this.buttonRegisterPayment.Location = new System.Drawing.Point(0, 0);
+            this.buttonRegisterPayment.Name = "buttonRegisterPayment";
+            this.buttonRegisterPayment.Size = new System.Drawing.Size(121, 23);
+            this.buttonRegisterPayment.TabIndex = 13;
+            this.buttonRegisterPayment.Text = "Registrera betalning";
+            this.buttonRegisterPayment.UseVisualStyleBackColor = false;
+            // 
+            // buttonCancelBooking
+            // 
+            this.buttonCancelBooking.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancelBooking.FlatAppearance.BorderSize = 0;
+            this.buttonCancelBooking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.buttonCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelBooking.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelBooking.Location = new System.Drawing.Point(0, 24);
+            this.buttonCancelBooking.Name = "buttonCancelBooking";
+            this.buttonCancelBooking.Size = new System.Drawing.Size(121, 23);
+            this.buttonCancelBooking.TabIndex = 14;
+            this.buttonCancelBooking.Text = "Annullera bokning";
+            this.buttonCancelBooking.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 854);
+            this.Controls.Add(this.panelInvoice);
             this.Controls.Add(this.buttonSearchDate);
             this.Controls.Add(this.dateTimePickerSearch);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.panelCustomer);
+            this.Controls.Add(this.panelBooking);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.labelCalendarDate7);
             this.Controls.Add(this.labelCalendarDate6);
@@ -486,11 +550,9 @@
             this.Controls.Add(this.labelCalendarDate1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tableLayoutPanelCalendar);
-            this.Controls.Add(this.panelBooking);
-            this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Receptionen";
             this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -498,6 +560,7 @@
             this.panelBooking.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelInvoice.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,12 +572,12 @@
         private System.Windows.Forms.Label labelManageBooking;
         private System.Windows.Forms.Label labelCurrentDateTime;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonCustomerUpdate;
+        private System.Windows.Forms.Button buttonCustomerSearch;
         private System.Windows.Forms.Button buttonCustomerCreate;
         private System.Windows.Forms.Panel panelCustomer;
         private System.Windows.Forms.Panel panelBooking;
         private System.Windows.Forms.Button buttonBookingCreate;
-        private System.Windows.Forms.Button buttonBookingUpdate;
+        private System.Windows.Forms.Button buttonBookingSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelCalendarDate7;
         private System.Windows.Forms.Label labelCalendarDate6;
@@ -538,5 +601,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolTip toolTipTest;
+        private System.Windows.Forms.Label labelManageInvoice;
+        private System.Windows.Forms.Panel panelInvoice;
+        private System.Windows.Forms.Button buttonRegisterPayment;
+        private System.Windows.Forms.Button buttonCancelBooking;
     }
 }
