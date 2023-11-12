@@ -182,7 +182,6 @@ namespace Hotel
                 columnSpan = BookingToCalendarColumnSpan(booking, dates);
 
                 tableLayoutPanelCalendar.Controls.Add(buttonBooking);
-
                 tableLayoutPanelCalendar.SetCellPosition(buttonBooking, new TableLayoutPanelCellPosition(column, row));
 
                 tableLayoutPanelCalendar.SetColumnSpan(buttonBooking, columnSpan);
