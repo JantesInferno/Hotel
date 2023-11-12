@@ -67,6 +67,8 @@
             this.panelInvoice = new System.Windows.Forms.Panel();
             this.buttonRegisterPayment = new System.Windows.Forms.Button();
             this.buttonCancelBooking = new System.Windows.Forms.Button();
+            this.labelTodaysDueDates = new System.Windows.Forms.Label();
+            this.linkLabelCancelBookings = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panelCustomer.SuspendLayout();
             this.panelBooking.SuspendLayout();
@@ -157,6 +159,7 @@
             this.buttonCustomerSearch.TabIndex = 14;
             this.buttonCustomerSearch.Text = "Sök kund";
             this.buttonCustomerSearch.UseVisualStyleBackColor = false;
+            this.buttonCustomerSearch.Click += new System.EventHandler(this.buttonCustomerSearch_Click);
             // 
             // buttonCustomerCreate
             // 
@@ -228,6 +231,7 @@
             this.buttonBookingSearch.TabIndex = 14;
             this.buttonBookingSearch.Text = "Sök bokning";
             this.buttonBookingSearch.UseVisualStyleBackColor = false;
+            this.buttonBookingSearch.Click += new System.EventHandler(this.buttonBookingSearch_Click);
             // 
             // label16
             // 
@@ -511,6 +515,7 @@
             this.buttonRegisterPayment.TabIndex = 13;
             this.buttonRegisterPayment.Text = "Registrera betalning";
             this.buttonRegisterPayment.UseVisualStyleBackColor = false;
+            this.buttonRegisterPayment.Click += new System.EventHandler(this.buttonRegisterPayment_Click);
             // 
             // buttonCancelBooking
             // 
@@ -526,6 +531,34 @@
             this.buttonCancelBooking.TabIndex = 14;
             this.buttonCancelBooking.Text = "Annullera bokning";
             this.buttonCancelBooking.UseVisualStyleBackColor = false;
+            this.buttonCancelBooking.Click += new System.EventHandler(this.buttonCancelBooking_Click);
+            // 
+            // labelTodaysDueDates
+            // 
+            this.labelTodaysDueDates.AutoSize = true;
+            this.labelTodaysDueDates.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTodaysDueDates.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelTodaysDueDates.Location = new System.Drawing.Point(15, 121);
+            this.labelTodaysDueDates.Name = "labelTodaysDueDates";
+            this.labelTodaysDueDates.Size = new System.Drawing.Size(296, 15);
+            this.labelTodaysDueDates.TabIndex = 40;
+            this.labelTodaysDueDates.Text = "Bokingar vars faktura förfaller idag: {dueDatesCount} st";
+            this.labelTodaysDueDates.Visible = false;
+            // 
+            // linkLabelCancelBookings
+            // 
+            this.linkLabelCancelBookings.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
+            this.linkLabelCancelBookings.AutoSize = true;
+            this.linkLabelCancelBookings.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelCancelBookings.Location = new System.Drawing.Point(317, 122);
+            this.linkLabelCancelBookings.Name = "linkLabelCancelBookings";
+            this.linkLabelCancelBookings.Size = new System.Drawing.Size(101, 13);
+            this.linkLabelCancelBookings.TabIndex = 41;
+            this.linkLabelCancelBookings.TabStop = true;
+            this.linkLabelCancelBookings.Text = "Annullera bokningar";
+            this.linkLabelCancelBookings.Visible = false;
+            this.linkLabelCancelBookings.VisitedLinkColor = System.Drawing.Color.DarkRed;
+            this.linkLabelCancelBookings.Click += new System.EventHandler(this.linkLabelCancelBookings_Click);
             // 
             // MainForm
             // 
@@ -533,6 +566,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 854);
+            this.Controls.Add(this.linkLabelCancelBookings);
+            this.Controls.Add(this.labelTodaysDueDates);
             this.Controls.Add(this.panelInvoice);
             this.Controls.Add(this.buttonSearchDate);
             this.Controls.Add(this.dateTimePickerSearch);
@@ -553,6 +588,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Receptionen";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -605,5 +641,7 @@
         private System.Windows.Forms.Panel panelInvoice;
         private System.Windows.Forms.Button buttonRegisterPayment;
         private System.Windows.Forms.Button buttonCancelBooking;
+        private System.Windows.Forms.Label labelTodaysDueDates;
+        private System.Windows.Forms.LinkLabel linkLabelCancelBookings;
     }
 }

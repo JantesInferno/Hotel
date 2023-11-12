@@ -1,21 +1,9 @@
 ﻿using Hotel.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Diagnostics.Tracing;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Timers.Timer;
 
@@ -25,6 +13,9 @@ namespace Hotel
     {
         static Timer _timer;
 
+        static List<Booking> dueDates;
+
+        static int dueDatesCount;
 
         public MainForm()
         {
@@ -35,27 +26,36 @@ namespace Hotel
             dateTimePickerSearch.Value = DateTime.Now;
 
             _timer = new Timer(60000);
-            _timer.Elapsed += UpdateMyLabel;
+            _timer.Elapsed += UpdateClock;
             _timer.Start();
 
-            // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag, och tar då bort bokningen
-            List<Booking> dues = BookingRepo.GetBookingsByDate(new DateTime[1] { DateTime.Now.Date });
-            foreach (Booking booking in dues)
-            {
-                if (booking.Invoice.DueDate.Date == DateTime.Now.Date)
-                {
-                    BookingRepo.DeleteBooking(booking);
-                }
-            }
-
-            PopulateTableLayoutPanel();   
+            // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag
+            dueDates = BookingRepo.CheckDueDates();
+            dueDatesCount = dueDates.Count;
+            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {dueDatesCount} st";
         }
 
         // EVENTS
 
-        public void UpdateMyLabel(object sender, ElapsedEventArgs e)
+        public void UpdateClock(object sender, ElapsedEventArgs e)
         {
             labelCurrentDateTime.Text = DateTime.Now.ToShortTimeString() + "  :  " + DateTime.Now.ToShortDateString();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            if (dueDatesCount > 0)
+            {
+                labelTodaysDueDates.Visible = true;
+                linkLabelCancelBookings.Visible = true;
+            }
+            else
+            {
+                labelTodaysDueDates.Visible = false;
+                linkLabelCancelBookings.Visible = false;
+            }
+
+            PopulateTableLayoutPanel();
         }
 
         private void labelManageInvoice_MouseEnter(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace Hotel
 
         private void buttonBookingCreate_Click(object sender, EventArgs e)
         {
+            labelTodaysDueDates.Visible = false;
             BookingRegistrationForm frm = new BookingRegistrationForm();
             frm.Show();
         }
@@ -248,6 +249,31 @@ namespace Hotel
             }
 
             return row;
+        }
+
+        private void linkLabelCancelBookings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRegisterPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancelBooking_Click(object sender, EventArgs e)
+        {
+            // Annullera bokning
+        }
+
+        private void buttonCustomerSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBookingSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

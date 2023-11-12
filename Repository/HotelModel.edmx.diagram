@@ -6,8 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="48e9d1d9d1564cd9a1cd62051de61c2a" Name="Diagram1">
         <EntityTypeShape EntityType="HotelModel.Booking" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="HotelModel.Customer" Width="1.5" PointX="3" PointY="7.5" />
-        <EntityTypeShape EntityType="HotelModel.Invoice" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="HotelModel.Customer" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="HotelModel.Invoice" Width="1.5" PointX="3" PointY="8.25" />
         <EntityTypeShape EntityType="HotelModel.Room" Width="1.5" PointX="3" PointY="1.5" />
         <EntityTypeShape EntityType="HotelModel.RoomType" Width="1.5" PointX="0.75" PointY="1.5" />
         <AssociationConnector Association="HotelModel.FK_Bookings_Customers" />

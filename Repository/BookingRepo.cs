@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hotel.Repository
 {
@@ -28,6 +25,25 @@ namespace Hotel.Repository
 
             _db.Bookings.Add(booking);
             _db.SaveChanges();
+        }
+
+        public static List<Booking> CheckDueDates()
+        {
+            List<Booking> bookings = BookingRepo.GetBookingsByDate(new DateTime[1] { DateTime.Now.Date });
+            List<Booking> dues = new List<Booking>();   
+            
+            foreach (Booking booking in bookings)
+            {
+                if (booking.Invoice.DueDate != null)
+                {
+                    if (booking.Invoice.DueDate == DateTime.Now.Date)
+                    {
+                        dues.Add(booking);
+                    }
+                }
+            }
+
+            return dues;
         }
 
         public static List<Booking> GetAllBookings() 

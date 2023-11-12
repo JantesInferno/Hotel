@@ -32,7 +32,7 @@
             <PropertyRef Name="InvoiceID" />
           </Key>
           <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DueDate" Type="datetime" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" />
           <Property Name="TotalCost" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="Rooms">
@@ -180,7 +180,7 @@
             <PropertyRef Name="InvoiceID" />
           </Key>
           <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
           <Property Name="TotalCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <NavigationProperty Name="Bookings" Relationship="HotelModel.FK_Bookings_Invoices" FromRole="Invoice" ToRole="Booking" />
         </EntityType>

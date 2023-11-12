@@ -21,7 +21,7 @@ namespace Hotel.Repository
         }
     
         public int InvoiceID { get; set; }
-        public System.DateTime DueDate { get; set; }
+        public Nullable<System.DateTime> DueDate { get; set; }
         public decimal TotalCost { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
