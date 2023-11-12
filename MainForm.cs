@@ -54,8 +54,9 @@ namespace Hotel
                 labelTodaysDueDates.Visible = false;
                 linkLabelCancelBookings.Visible = false;
             }
-
+            tableLayoutPanelCalendar.Visible = false;
             PopulateTableLayoutPanel();
+            tableLayoutPanelCalendar.Visible = true;
         }
 
         private void labelManageInvoice_MouseEnter(object sender, EventArgs e)
@@ -109,7 +110,9 @@ namespace Hotel
 
         private void buttonSearchDate_Click(object sender, EventArgs e)
         {
+            tableLayoutPanelCalendar.Visible = false;
             PopulateTableLayoutPanel();
+            tableLayoutPanelCalendar.Visible = true;
         }
 
         // METODER

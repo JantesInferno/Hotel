@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Hotel.Repository
 {
@@ -17,7 +20,7 @@ namespace Hotel.Repository
         {
             int rate = (int)room.RoomType.DailyRate;
             Invoice invoice = new Invoice();
-            invoice.TotalCost = (decimal)(booking.EndDate - booking.StartDate).TotalDays * rate + (booking.ExtraBeds * 200);
+            invoice.TotalCost = (decimal)(booking.EndDate.AddDays(1) - booking.StartDate).TotalDays * rate + (booking.ExtraBeds * 200);
             invoice.DueDate = booking.EndDate.AddDays(10);
             int invoiceID = InvoiceRepo.CreateInvoice(invoice);
 
@@ -62,9 +65,12 @@ namespace Hotel.Repository
             
             foreach (DateTime date in dates)
             {
-                Booking booking = _db.Bookings.Include("Customer").Include("Room").Include("Invoice").SingleOrDefault(x => x.StartDate <= date && x.EndDate >= date);
-                if (booking != null && !list.Contains(booking))
-                    list.Add(booking);
+                List<Booking> bookings = _db.Bookings.Include("Customer").Include("Room").Include("Invoice").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
+                foreach (Booking booking in bookings)
+                {
+                    if (booking != null && !list.Contains(booking))
+                        list.Add(booking);
+                }
             }
 
             return list;

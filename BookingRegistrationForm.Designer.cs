@@ -50,7 +50,7 @@
             this.comboBoxRooms.BackColor = System.Drawing.Color.White;
             this.comboBoxRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRooms.FormattingEnabled = true;
-            this.comboBoxRooms.Location = new System.Drawing.Point(102, 77);
+            this.comboBoxRooms.Location = new System.Drawing.Point(133, 77);
             this.comboBoxRooms.Name = "comboBoxRooms";
             this.comboBoxRooms.Size = new System.Drawing.Size(200, 21);
             this.comboBoxRooms.TabIndex = 2;
@@ -61,7 +61,7 @@
             // 
             this.textBoxCustomerSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBoxCustomerSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxCustomerSearch.Location = new System.Drawing.Point(102, 119);
+            this.textBoxCustomerSearch.Location = new System.Drawing.Point(133, 119);
             this.textBoxCustomerSearch.Name = "textBoxCustomerSearch";
             this.textBoxCustomerSearch.Size = new System.Drawing.Size(200, 20);
             this.textBoxCustomerSearch.TabIndex = 3;
@@ -99,13 +99,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(33, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Startdatum";
+            this.label4.Text = "Startdatum (fr. o.m.)";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 160);
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 160);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -114,7 +114,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(102, 201);
+            this.dateTimePicker2.Location = new System.Drawing.Point(133, 201);
             this.dateTimePicker2.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
@@ -125,9 +125,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(33, 205);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Slutdatum";
+            this.label5.Text = "Slutdatum (t.o.m.)";
             // 
             // buttonCreateBooking
             // 
@@ -137,7 +137,7 @@
             this.buttonCreateBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateBooking.ForeColor = System.Drawing.Color.White;
-            this.buttonCreateBooking.Location = new System.Drawing.Point(102, 284);
+            this.buttonCreateBooking.Location = new System.Drawing.Point(133, 285);
             this.buttonCreateBooking.Name = "buttonCreateBooking";
             this.buttonCreateBooking.Size = new System.Drawing.Size(200, 23);
             this.buttonCreateBooking.TabIndex = 14;
@@ -159,7 +159,7 @@
             this.comboBoxExtraBeds.BackColor = System.Drawing.Color.White;
             this.comboBoxExtraBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExtraBeds.FormattingEnabled = true;
-            this.comboBoxExtraBeds.Location = new System.Drawing.Point(102, 242);
+            this.comboBoxExtraBeds.Location = new System.Drawing.Point(133, 242);
             this.comboBoxExtraBeds.Name = "comboBoxExtraBeds";
             this.comboBoxExtraBeds.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtraBeds.TabIndex = 13;
@@ -168,7 +168,7 @@
             // 
             this.labelRoomException.AutoSize = true;
             this.labelRoomException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelRoomException.Location = new System.Drawing.Point(99, 101);
+            this.labelRoomException.Location = new System.Drawing.Point(130, 101);
             this.labelRoomException.Name = "labelRoomException";
             this.labelRoomException.Size = new System.Drawing.Size(62, 13);
             this.labelRoomException.TabIndex = 31;
@@ -179,7 +179,7 @@
             // 
             this.labelCustomerException.AutoSize = true;
             this.labelCustomerException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelCustomerException.Location = new System.Drawing.Point(99, 142);
+            this.labelCustomerException.Location = new System.Drawing.Point(130, 142);
             this.labelCustomerException.Name = "labelCustomerException";
             this.labelCustomerException.Size = new System.Drawing.Size(62, 13);
             this.labelCustomerException.TabIndex = 32;
@@ -190,7 +190,7 @@
             // 
             this.labelDateException.AutoSize = true;
             this.labelDateException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelDateException.Location = new System.Drawing.Point(99, 224);
+            this.labelDateException.Location = new System.Drawing.Point(130, 224);
             this.labelDateException.Name = "labelDateException";
             this.labelDateException.Size = new System.Drawing.Size(62, 13);
             this.labelDateException.TabIndex = 33;
