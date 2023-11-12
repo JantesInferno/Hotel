@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Timers.Timer;
 
@@ -75,7 +76,15 @@ namespace Hotel
             frm.Show();
         }
 
-        private void monthCalendarSearch_DateSelected(object sender, DateRangeEventArgs e)
+        protected void buttonBooking_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            BookingDetailsForm bookingDetailsForm = new BookingDetailsForm((Booking)button.Tag);
+            bookingDetailsForm.Show();
+            // identify which button was clicked and perform necessary actions
+        }
+
+        private void buttonSearchDate_Click(object sender, EventArgs e)
         {
             PopulateTableLayoutPanel();
         }
@@ -84,12 +93,14 @@ namespace Hotel
 
         private void PopulateTableLayoutPanel()
         {
+            tableLayoutPanelCalendar.Controls.Clear();
+
             DateTime date;
 
-            if (monthCalendarSearch.SelectionRange.Start == null)
+            if (dateTimePickerSearch.Value.Date == null)
                 date = DateTime.Now;
             else
-                date = monthCalendarSearch.SelectionRange.Start;
+                date = dateTimePickerSearch.Value.Date;
 
             DateTime[] dates = { date, date.AddDays(1), date.AddDays(2), date.AddDays(3), date.AddDays(4), date.AddDays(5), date.AddDays(6) };
 
@@ -109,23 +120,52 @@ namespace Hotel
 
             foreach (var booking in bookings)
             {
-                Button btn = CreateBookingButton();
+                Button buttonBooking;
+                if (booking.EndDate.Date.Equals(DateTime.Now.Date))
+                    buttonBooking = CreateBookingButton(Color.Red);
+                else if (booking.EndDate.Date < DateTime.Now.Date)
+                    buttonBooking = CreateBookingButton(Color.Gray);
+                else if (booking.StartDate.Date > DateTime.Now.Date)
+                    buttonBooking = CreateBookingButton(Color.Blue);
+                else
+                    buttonBooking = CreateBookingButton(Color.Green);
+
+                string extraBeds = booking.ExtraBeds > 0 ? $"Extrasängar: {booking.ExtraBeds.ToString()}st á 200:-\n" : "";
+
+                toolTipTest.SetToolTip(buttonBooking, 
+                    $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
+                    $"{extraBeds}" +
+                    $"Kundnamn: {booking.Customer.Name}\n" +
+                    $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
+                    $"Check-out: {booking.EndDate.ToShortDateString()}\n" +
+                    $"Att betala: {(int)booking.Invoice.TotalCost}:-\n" +
+                    $"Faktura refnr: {booking.InvoiceID}\n" +
+                    $"Förfallodatum: {booking.Invoice.DueDate}");
+
+                buttonBooking.Tag = booking;
+                buttonBooking.Text = booking.Customer.Name;
+                buttonBooking.ForeColor = Color.White;
+                buttonBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                buttonBooking.Click += new EventHandler(buttonBooking_Click);
+
+                
 
                 row = RoomIDToRow(booking.RoomID);
                 column = BookingStartToCalendarDate(booking.StartDate, dates);
                 columnSpan = BookingToCalendarColumnSpan(booking, dates);
 
-                tableLayoutPanelCalendar.Controls.Add(btn);
+                tableLayoutPanelCalendar.Controls.Add(buttonBooking);
 
-                tableLayoutPanelCalendar.SetCellPosition(btn, new TableLayoutPanelCellPosition(column, row));
+                tableLayoutPanelCalendar.SetCellPosition(buttonBooking, new TableLayoutPanelCellPosition(column, row));
 
-                tableLayoutPanelCalendar.SetColumnSpan(btn, columnSpan);
+                tableLayoutPanelCalendar.SetColumnSpan(buttonBooking, columnSpan);
             }
         }
 
-        private Button CreateBookingButton()
+        private Button CreateBookingButton(Color color)
         {
-            return new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 0 }, Margin = new Padding(0), BackColor = Color.Red, Dock = DockStyle.Fill };
+            return new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 0 }, Margin = new Padding(0), BackColor = color, Dock = DockStyle.Fill };
         }
 
         private int BookingStartToCalendarDate(DateTime bookingDate, DateTime[] dates)
@@ -146,7 +186,7 @@ namespace Hotel
             int columnSpan = 0;
 
             for (int i = 0; i < dates.Length; i++)
-            {    //      x.StartDate <= date && x.EndDate >= date
+            {
                 if (booking.StartDate <= dates[i] && booking.EndDate >= dates[i])
                     columnSpan++;
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.labelManageCustomer = new System.Windows.Forms.Label();
             this.labelManageBooking = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.panelBooking = new System.Windows.Forms.Panel();
             this.buttonBookingCreate = new System.Windows.Forms.Button();
             this.buttonBookingUpdate = new System.Windows.Forms.Button();
-            this.monthCalendarSearch = new System.Windows.Forms.MonthCalendar();
             this.label16 = new System.Windows.Forms.Label();
             this.labelCalendarDate7 = new System.Windows.Forms.Label();
             this.labelCalendarDate6 = new System.Windows.Forms.Label();
@@ -59,7 +59,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanelCalendar = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.buttonSearchDate = new System.Windows.Forms.Button();
+            this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.toolTipTest = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panelCustomer.SuspendLayout();
             this.panelBooking.SuspendLayout();
@@ -209,19 +212,11 @@
             this.buttonBookingUpdate.Text = "Sök bokning";
             this.buttonBookingUpdate.UseVisualStyleBackColor = false;
             // 
-            // monthCalendarSearch
-            // 
-            this.monthCalendarSearch.Location = new System.Drawing.Point(745, 283);
-            this.monthCalendarSearch.MaxSelectionCount = 1;
-            this.monthCalendarSearch.Name = "monthCalendarSearch";
-            this.monthCalendarSearch.TabIndex = 28;
-            this.monthCalendarSearch.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarSearch_DateSelected);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(14, 262);
+            this.label16.Location = new System.Drawing.Point(20, 262);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(55, 17);
             this.label16.TabIndex = 27;
@@ -231,7 +226,7 @@
             // 
             this.labelCalendarDate7.AutoSize = true;
             this.labelCalendarDate7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate7.Location = new System.Drawing.Point(623, 263);
+            this.labelCalendarDate7.Location = new System.Drawing.Point(839, 262);
             this.labelCalendarDate7.Name = "labelCalendarDate7";
             this.labelCalendarDate7.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate7.TabIndex = 26;
@@ -241,7 +236,7 @@
             // 
             this.labelCalendarDate6.AutoSize = true;
             this.labelCalendarDate6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate6.Location = new System.Drawing.Point(537, 263);
+            this.labelCalendarDate6.Location = new System.Drawing.Point(718, 262);
             this.labelCalendarDate6.Name = "labelCalendarDate6";
             this.labelCalendarDate6.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate6.TabIndex = 25;
@@ -251,7 +246,7 @@
             // 
             this.labelCalendarDate5.AutoSize = true;
             this.labelCalendarDate5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate5.Location = new System.Drawing.Point(451, 263);
+            this.labelCalendarDate5.Location = new System.Drawing.Point(596, 262);
             this.labelCalendarDate5.Name = "labelCalendarDate5";
             this.labelCalendarDate5.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate5.TabIndex = 24;
@@ -261,7 +256,7 @@
             // 
             this.labelCalendarDate4.AutoSize = true;
             this.labelCalendarDate4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate4.Location = new System.Drawing.Point(364, 263);
+            this.labelCalendarDate4.Location = new System.Drawing.Point(474, 262);
             this.labelCalendarDate4.Name = "labelCalendarDate4";
             this.labelCalendarDate4.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate4.TabIndex = 23;
@@ -271,7 +266,7 @@
             // 
             this.labelCalendarDate3.AutoSize = true;
             this.labelCalendarDate3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate3.Location = new System.Drawing.Point(279, 263);
+            this.labelCalendarDate3.Location = new System.Drawing.Point(352, 262);
             this.labelCalendarDate3.Name = "labelCalendarDate3";
             this.labelCalendarDate3.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate3.TabIndex = 22;
@@ -281,7 +276,7 @@
             // 
             this.labelCalendarDate2.AutoSize = true;
             this.labelCalendarDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate2.Location = new System.Drawing.Point(192, 263);
+            this.labelCalendarDate2.Location = new System.Drawing.Point(230, 262);
             this.labelCalendarDate2.Name = "labelCalendarDate2";
             this.labelCalendarDate2.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate2.TabIndex = 21;
@@ -291,7 +286,7 @@
             // 
             this.labelCalendarDate1.AutoSize = true;
             this.labelCalendarDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendarDate1.Location = new System.Drawing.Point(107, 262);
+            this.labelCalendarDate1.Location = new System.Drawing.Point(109, 262);
             this.labelCalendarDate1.Name = "labelCalendarDate1";
             this.labelCalendarDate1.Size = new System.Drawing.Size(40, 17);
             this.labelCalendarDate1.TabIndex = 20;
@@ -404,7 +399,7 @@
             // tableLayoutPanelCalendar
             // 
             this.tableLayoutPanelCalendar.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanelCalendar.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelCalendar.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanelCalendar.ColumnCount = 7;
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
@@ -424,28 +419,52 @@
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalendar.Size = new System.Drawing.Size(604, 559);
+            this.tableLayoutPanelCalendar.Size = new System.Drawing.Size(861, 559);
             this.tableLayoutPanelCalendar.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 209);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 171);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(189, 25);
+            this.label10.Size = new System.Drawing.Size(208, 30);
             this.label10.TabIndex = 29;
             this.label10.Text = "Översikt bokningar ";
             // 
-            // label11
+            // buttonSearchDate
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(741, 260);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 20);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Välj datum";
+            this.buttonSearchDate.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.buttonSearchDate.FlatAppearance.BorderSize = 0;
+            this.buttonSearchDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchDate.ForeColor = System.Drawing.Color.White;
+            this.buttonSearchDate.Location = new System.Drawing.Point(317, 218);
+            this.buttonSearchDate.Name = "buttonSearchDate";
+            this.buttonSearchDate.Size = new System.Drawing.Size(48, 22);
+            this.buttonSearchDate.TabIndex = 38;
+            this.buttonSearchDate.Text = "Sök";
+            this.buttonSearchDate.UseVisualStyleBackColor = false;
+            this.buttonSearchDate.Click += new System.EventHandler(this.buttonSearchDate_Click);
+            // 
+            // dateTimePickerSearch
+            // 
+            this.dateTimePickerSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSearch.Location = new System.Drawing.Point(118, 218);
+            this.dateTimePickerSearch.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerSearch.Name = "dateTimePickerSearch";
+            this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerSearch.TabIndex = 37;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(18, 218);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 20);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Välj datum";
             // 
             // MainForm
             // 
@@ -453,9 +472,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 854);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.buttonSearchDate);
+            this.Controls.Add(this.dateTimePickerSearch);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.monthCalendarSearch);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.labelCalendarDate7);
             this.Controls.Add(this.labelCalendarDate6);
@@ -495,7 +515,6 @@
         private System.Windows.Forms.Panel panelBooking;
         private System.Windows.Forms.Button buttonBookingCreate;
         private System.Windows.Forms.Button buttonBookingUpdate;
-        private System.Windows.Forms.MonthCalendar monthCalendarSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelCalendarDate7;
         private System.Windows.Forms.Label labelCalendarDate6;
@@ -515,6 +534,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCalendar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonSearchDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolTip toolTipTest;
     }
 }
