@@ -275,10 +275,10 @@
             // 
             this.dateTimePickerSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePickerSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSearch.Location = new System.Drawing.Point(498, 196);
+            this.dateTimePickerSearch.Location = new System.Drawing.Point(459, 189);
             this.dateTimePickerSearch.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerSearch.Name = "dateTimePickerSearch";
-            this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePickerSearch.Size = new System.Drawing.Size(259, 27);
             this.dateTimePickerSearch.TabIndex = 37;
             this.dateTimePickerSearch.Value = new System.DateTime(2023, 11, 12, 0, 0, 0, 0);
             this.dateTimePickerSearch.ValueChanged += new System.EventHandler(this.dateTimePickerSearch_ValueChanged);
@@ -287,7 +287,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(392, 201);
+            this.label12.Location = new System.Drawing.Point(369, 191);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 20);
             this.label12.TabIndex = 36;
@@ -563,15 +563,14 @@
             // 
             this.buttonNextDate.BackColor = System.Drawing.Color.White;
             this.buttonNextDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNextDate.FlatAppearance.BorderSize = 2;
             this.buttonNextDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonNextDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.buttonNextDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNextDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNextDate.ForeColor = System.Drawing.Color.Black;
-            this.buttonNextDate.Location = new System.Drawing.Point(947, 195);
+            this.buttonNextDate.Location = new System.Drawing.Point(947, 189);
             this.buttonNextDate.Name = "buttonNextDate";
-            this.buttonNextDate.Size = new System.Drawing.Size(28, 28);
+            this.buttonNextDate.Size = new System.Drawing.Size(28, 27);
             this.buttonNextDate.TabIndex = 55;
             this.buttonNextDate.Text = ">";
             this.buttonNextDate.UseVisualStyleBackColor = false;
@@ -586,9 +585,9 @@
             this.buttonPreviousDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.buttonPreviousDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPreviousDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPreviousDate.Location = new System.Drawing.Point(117, 195);
+            this.buttonPreviousDate.Location = new System.Drawing.Point(117, 189);
             this.buttonPreviousDate.Name = "buttonPreviousDate";
-            this.buttonPreviousDate.Size = new System.Drawing.Size(28, 28);
+            this.buttonPreviousDate.Size = new System.Drawing.Size(28, 27);
             this.buttonPreviousDate.TabIndex = 56;
             this.buttonPreviousDate.Text = "<";
             this.buttonPreviousDate.UseVisualStyleBackColor = false;
@@ -598,7 +597,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(905, 203);
+            this.label19.Location = new System.Drawing.Point(904, 196);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 57;
@@ -608,7 +607,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(151, 203);
+            this.label21.Location = new System.Drawing.Point(151, 196);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(69, 13);
             this.label21.TabIndex = 58;
