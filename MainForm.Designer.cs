@@ -332,7 +332,7 @@
             this.buttonNavPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNavPayments.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNavPayments.ForeColor = System.Drawing.Color.White;
-            this.buttonNavPayments.Location = new System.Drawing.Point(879, -1);
+            this.buttonNavPayments.Location = new System.Drawing.Point(880, -1);
             this.buttonNavPayments.Name = "buttonNavPayments";
             this.buttonNavPayments.Size = new System.Drawing.Size(81, 38);
             this.buttonNavPayments.TabIndex = 46;
@@ -348,7 +348,7 @@
             this.buttonNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNavCustomers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNavCustomers.ForeColor = System.Drawing.Color.White;
-            this.buttonNavCustomers.Location = new System.Drawing.Point(799, -1);
+            this.buttonNavCustomers.Location = new System.Drawing.Point(800, -1);
             this.buttonNavCustomers.Name = "buttonNavCustomers";
             this.buttonNavCustomers.Size = new System.Drawing.Size(81, 38);
             this.buttonNavCustomers.TabIndex = 44;
@@ -364,7 +364,7 @@
             this.buttonNavBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNavBookings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNavBookings.ForeColor = System.Drawing.Color.White;
-            this.buttonNavBookings.Location = new System.Drawing.Point(719, -1);
+            this.buttonNavBookings.Location = new System.Drawing.Point(720, -1);
             this.buttonNavBookings.Name = "buttonNavBookings";
             this.buttonNavBookings.Size = new System.Drawing.Size(81, 38);
             this.buttonNavBookings.TabIndex = 45;
@@ -553,6 +553,7 @@
             // 
             // buttonNextDate
             // 
+            this.buttonNextDate.BackColor = System.Drawing.Color.White;
             this.buttonNextDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNextDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNextDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -561,11 +562,12 @@
             this.buttonNextDate.Size = new System.Drawing.Size(28, 23);
             this.buttonNextDate.TabIndex = 55;
             this.buttonNextDate.Text = ">";
-            this.buttonNextDate.UseVisualStyleBackColor = true;
+            this.buttonNextDate.UseVisualStyleBackColor = false;
             this.buttonNextDate.Click += new System.EventHandler(this.buttonNextDate_Click);
             // 
             // buttonPreviousDate
             // 
+            this.buttonPreviousDate.BackColor = System.Drawing.Color.White;
             this.buttonPreviousDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPreviousDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPreviousDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -574,7 +576,7 @@
             this.buttonPreviousDate.Size = new System.Drawing.Size(28, 23);
             this.buttonPreviousDate.TabIndex = 56;
             this.buttonPreviousDate.Text = "<";
-            this.buttonPreviousDate.UseVisualStyleBackColor = true;
+            this.buttonPreviousDate.UseVisualStyleBackColor = false;
             this.buttonPreviousDate.Click += new System.EventHandler(this.buttonPreviousDate_Click);
             // 
             // label19
@@ -721,7 +723,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 854);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
