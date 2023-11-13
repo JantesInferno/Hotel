@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace Hotel.Repository
 {
@@ -14,8 +16,19 @@ namespace Hotel.Repository
 
         public static void CreateCustomer(Customer customer)
         {
-            _db.Customers.Add(customer);
-            _db.SaveChanges();
+            try
+            {
+                _db.Customers.Add(customer);
+                _db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                // Unique constraint violation
+                if (ex.Number == 2627)
+                {
+                    throw ex;
+                }
+            }
         }
 
         public static List<Customer> GetAllCustomers()

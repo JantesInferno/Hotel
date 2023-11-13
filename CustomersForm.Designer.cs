@@ -29,19 +29,27 @@
         private void InitializeComponent()
         {
             this.buttonCreateCustomer = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCustomerSearch = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelMessage = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelNameException = new System.Windows.Forms.Label();
             this.labelEmailException = new System.Windows.Forms.Label();
             this.labelPhoneException = new System.Windows.Forms.Label();
             this.labelAddressException = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelSearchMessage = new System.Windows.Forms.Label();
+            this.textBoxCustomerSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.listBoxCustomers = new System.Windows.Forms.ListBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCreateCustomer
@@ -52,7 +60,7 @@
             this.buttonCreateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateCustomer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateCustomer.ForeColor = System.Drawing.Color.White;
-            this.buttonCreateCustomer.Location = new System.Drawing.Point(102, 242);
+            this.buttonCreateCustomer.Location = new System.Drawing.Point(74, 242);
             this.buttonCreateCustomer.Name = "buttonCreateCustomer";
             this.buttonCreateCustomer.Size = new System.Drawing.Size(200, 23);
             this.buttonCreateCustomer.TabIndex = 26;
@@ -60,162 +68,247 @@
             this.buttonCreateCustomer.UseVisualStyleBackColor = false;
             this.buttonCreateCustomer.Click += new System.EventHandler(this.buttonCreateCustomer_Click);
             // 
-            // label6
+            // labelAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Adress";
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(5, 203);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(39, 13);
+            this.labelAddress.TabIndex = 24;
+            this.labelAddress.Text = "Adress";
             // 
-            // label5
+            // labelPhone
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 163);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Telefon";
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Location = new System.Drawing.Point(5, 163);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(43, 13);
+            this.labelPhone.TabIndex = 22;
+            this.labelPhone.Text = "Telefon";
             // 
-            // label4
+            // labelEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Email";
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(5, 122);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(32, 13);
+            this.labelEmail.TabIndex = 20;
+            this.labelEmail.Text = "Email";
             // 
-            // label1
+            // labelMessage
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 25);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Ny kund";
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.Location = new System.Drawing.Point(3, 9);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(82, 25);
+            this.labelMessage.TabIndex = 19;
+            this.labelMessage.Text = "Ny kund";
             // 
-            // label3
+            // labelName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Namn";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(5, 80);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(35, 13);
+            this.labelName.TabIndex = 18;
+            this.labelName.Text = "Namn";
             // 
-            // textBoxCustomerSearch
+            // textBoxName
             // 
-            this.textBoxCustomerSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxCustomerSearch.Location = new System.Drawing.Point(102, 77);
-            this.textBoxCustomerSearch.Name = "textBoxCustomerSearch";
-            this.textBoxCustomerSearch.Size = new System.Drawing.Size(200, 20);
-            this.textBoxCustomerSearch.TabIndex = 16;
+            this.textBoxName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxName.Location = new System.Drawing.Point(74, 77);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(200, 20);
+            this.textBoxName.TabIndex = 16;
             // 
-            // textBox1
+            // textBoxPhone
             // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.Location = new System.Drawing.Point(102, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 27;
+            this.textBoxPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxPhone.Location = new System.Drawing.Point(74, 160);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(200, 20);
+            this.textBoxPhone.TabIndex = 27;
             // 
-            // textBox2
+            // textBoxEmail
             // 
-            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox2.Location = new System.Drawing.Point(102, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 28;
+            this.textBoxEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxEmail.Location = new System.Drawing.Point(74, 119);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(200, 20);
+            this.textBoxEmail.TabIndex = 28;
             // 
-            // textBox3
+            // textBoxAddress
             // 
-            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox3.Location = new System.Drawing.Point(102, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 29;
+            this.textBoxAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxAddress.Location = new System.Drawing.Point(74, 200);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(200, 20);
+            this.textBoxAddress.TabIndex = 29;
             // 
             // labelNameException
             // 
             this.labelNameException.AutoSize = true;
-            this.labelNameException.Location = new System.Drawing.Point(99, 100);
+            this.labelNameException.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelNameException.Location = new System.Drawing.Point(71, 100);
             this.labelNameException.Name = "labelNameException";
             this.labelNameException.Size = new System.Drawing.Size(62, 13);
             this.labelNameException.TabIndex = 30;
             this.labelNameException.Text = "placeholder";
+            this.labelNameException.Visible = false;
             // 
             // labelEmailException
             // 
             this.labelEmailException.AutoSize = true;
-            this.labelEmailException.Location = new System.Drawing.Point(99, 142);
+            this.labelEmailException.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelEmailException.Location = new System.Drawing.Point(71, 142);
             this.labelEmailException.Name = "labelEmailException";
             this.labelEmailException.Size = new System.Drawing.Size(62, 13);
             this.labelEmailException.TabIndex = 31;
             this.labelEmailException.Text = "placeholder";
+            this.labelEmailException.Visible = false;
             // 
             // labelPhoneException
             // 
             this.labelPhoneException.AutoSize = true;
-            this.labelPhoneException.Location = new System.Drawing.Point(99, 183);
+            this.labelPhoneException.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelPhoneException.Location = new System.Drawing.Point(71, 183);
             this.labelPhoneException.Name = "labelPhoneException";
             this.labelPhoneException.Size = new System.Drawing.Size(62, 13);
             this.labelPhoneException.TabIndex = 32;
             this.labelPhoneException.Text = "placeholder";
+            this.labelPhoneException.Visible = false;
             // 
             // labelAddressException
             // 
             this.labelAddressException.AutoSize = true;
-            this.labelAddressException.Location = new System.Drawing.Point(99, 223);
+            this.labelAddressException.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelAddressException.Location = new System.Drawing.Point(71, 223);
             this.labelAddressException.Name = "labelAddressException";
             this.labelAddressException.Size = new System.Drawing.Size(62, 13);
             this.labelAddressException.TabIndex = 33;
             this.labelAddressException.Text = "placeholder";
+            this.labelAddressException.Visible = false;
             // 
-            // CustomerRegistrationForm
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelMessage);
+            this.panel1.Controls.Add(this.labelAddressException);
+            this.panel1.Controls.Add(this.textBoxName);
+            this.panel1.Controls.Add(this.labelPhoneException);
+            this.panel1.Controls.Add(this.labelName);
+            this.panel1.Controls.Add(this.labelEmailException);
+            this.panel1.Controls.Add(this.labelEmail);
+            this.panel1.Controls.Add(this.labelNameException);
+            this.panel1.Controls.Add(this.labelPhone);
+            this.panel1.Controls.Add(this.textBoxAddress);
+            this.panel1.Controls.Add(this.labelAddress);
+            this.panel1.Controls.Add(this.textBoxEmail);
+            this.panel1.Controls.Add(this.buttonCreateCustomer);
+            this.panel1.Controls.Add(this.textBoxPhone);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(338, 297);
+            this.panel1.TabIndex = 34;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.listBoxCustomers);
+            this.panel2.Controls.Add(this.buttonSearch);
+            this.panel2.Controls.Add(this.labelSearchMessage);
+            this.panel2.Controls.Add(this.textBoxCustomerSearch);
+            this.panel2.Location = new System.Drawing.Point(356, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(465, 297);
+            this.panel2.TabIndex = 35;
+            // 
+            // labelSearchMessage
+            // 
+            this.labelSearchMessage.AutoSize = true;
+            this.labelSearchMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchMessage.Location = new System.Drawing.Point(3, 9);
+            this.labelSearchMessage.Name = "labelSearchMessage";
+            this.labelSearchMessage.Size = new System.Drawing.Size(133, 25);
+            this.labelSearchMessage.TabIndex = 19;
+            this.labelSearchMessage.Text = "Sök efter kund";
+            // 
+            // textBoxCustomerSearch
+            // 
+            this.textBoxCustomerSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxCustomerSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxCustomerSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCustomerSearch.Location = new System.Drawing.Point(74, 77);
+            this.textBoxCustomerSearch.Name = "textBoxCustomerSearch";
+            this.textBoxCustomerSearch.Size = new System.Drawing.Size(243, 23);
+            this.textBoxCustomerSearch.TabIndex = 16;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.Black;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(316, 77);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(44, 23);
+            this.buttonSearch.TabIndex = 27;
+            this.buttonSearch.Text = "Visa";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // listBoxCustomers
+            // 
+            this.listBoxCustomers.FormattingEnabled = true;
+            this.listBoxCustomers.Location = new System.Drawing.Point(74, 119);
+            this.listBoxCustomers.Name = "listBoxCustomers";
+            this.listBoxCustomers.Size = new System.Drawing.Size(286, 160);
+            this.listBoxCustomers.TabIndex = 28;
+            this.listBoxCustomers.Click += new System.EventHandler(this.listBoxCustomers_Click);
+            this.listBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.listBoxCustomers_SelectedIndexChanged);
+            // 
+            // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(374, 344);
-            this.Controls.Add(this.labelAddressException);
-            this.Controls.Add(this.labelPhoneException);
-            this.Controls.Add(this.labelEmailException);
-            this.Controls.Add(this.labelNameException);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.buttonCreateCustomer);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxCustomerSearch);
-            this.Name = "CustomerRegistrationForm";
+            this.ClientSize = new System.Drawing.Size(878, 344);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "CustomersForm";
             this.Text = "CustomerRegistrationForm";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonCreateCustomer;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCustomerSearch;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.Label labelPhone;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelMessage;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.Label labelNameException;
         private System.Windows.Forms.Label labelEmailException;
         private System.Windows.Forms.Label labelPhoneException;
         private System.Windows.Forms.Label labelAddressException;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label labelSearchMessage;
+        private System.Windows.Forms.TextBox textBoxCustomerSearch;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.ListBox listBoxCustomers;
     }
 }

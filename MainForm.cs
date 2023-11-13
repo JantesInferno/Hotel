@@ -237,12 +237,14 @@ namespace Hotel
 
         private void buttonNavPayments_Click(object sender, EventArgs e)
         {
-            // PaymentsForm
+            PaymentsForm frm = new PaymentsForm();
+            frm.Show();
         }
 
         private void linkLabelCancelBookings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // PaymentsForm
+            //PaymentsForm frm = new PaymentsForm();
+            //frm.Show(true);
         }
 
         private void buttonNextDate_Click(object sender, EventArgs e)

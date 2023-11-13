@@ -133,7 +133,7 @@
             this.labelCalendarDate7.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate7.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate7.Location = new System.Drawing.Point(877, 236);
+            this.labelCalendarDate7.Location = new System.Drawing.Point(877, 237);
             this.labelCalendarDate7.Name = "labelCalendarDate7";
             this.labelCalendarDate7.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate7.TabIndex = 26;
@@ -145,7 +145,7 @@
             this.labelCalendarDate6.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate6.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate6.Location = new System.Drawing.Point(755, 236);
+            this.labelCalendarDate6.Location = new System.Drawing.Point(755, 237);
             this.labelCalendarDate6.Name = "labelCalendarDate6";
             this.labelCalendarDate6.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate6.TabIndex = 25;
@@ -157,7 +157,7 @@
             this.labelCalendarDate5.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate5.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate5.Location = new System.Drawing.Point(633, 236);
+            this.labelCalendarDate5.Location = new System.Drawing.Point(633, 237);
             this.labelCalendarDate5.Name = "labelCalendarDate5";
             this.labelCalendarDate5.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate5.TabIndex = 24;
@@ -181,7 +181,7 @@
             this.labelCalendarDate3.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate3.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate3.Location = new System.Drawing.Point(389, 236);
+            this.labelCalendarDate3.Location = new System.Drawing.Point(389, 237);
             this.labelCalendarDate3.Name = "labelCalendarDate3";
             this.labelCalendarDate3.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate3.TabIndex = 22;
@@ -193,7 +193,7 @@
             this.labelCalendarDate2.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate2.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate2.Location = new System.Drawing.Point(267, 236);
+            this.labelCalendarDate2.Location = new System.Drawing.Point(267, 237);
             this.labelCalendarDate2.Name = "labelCalendarDate2";
             this.labelCalendarDate2.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate2.TabIndex = 21;
@@ -205,7 +205,7 @@
             this.labelCalendarDate1.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate1.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate1.Location = new System.Drawing.Point(145, 236);
+            this.labelCalendarDate1.Location = new System.Drawing.Point(145, 237);
             this.labelCalendarDate1.Name = "labelCalendarDate1";
             this.labelCalendarDate1.Size = new System.Drawing.Size(40, 17);
             this.labelCalendarDate1.TabIndex = 20;
@@ -333,7 +333,7 @@
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
@@ -476,6 +476,7 @@
             this.buttonNavBookings.TabIndex = 45;
             this.buttonNavBookings.Text = "Bokningar";
             this.buttonNavBookings.UseVisualStyleBackColor = true;
+            this.buttonNavBookings.Click += new System.EventHandler(this.buttonNavBookings_Click);
             // 
             // buttonDate1
             // 
