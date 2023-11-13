@@ -48,6 +48,7 @@
             this.textBoxCustomerSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.listBoxCustomers = new System.Windows.Forms.ListBox();
+            this.labelTest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -193,6 +194,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelTest);
             this.panel1.Controls.Add(this.labelMessage);
             this.panel1.Controls.Add(this.labelAddressException);
             this.panel1.Controls.Add(this.textBoxName);
@@ -270,6 +272,15 @@
             this.listBoxCustomers.Click += new System.EventHandler(this.listBoxCustomers_Click);
             this.listBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.listBoxCustomers_SelectedIndexChanged);
             // 
+            // labelTest
+            // 
+            this.labelTest.AutoSize = true;
+            this.labelTest.Location = new System.Drawing.Point(221, 29);
+            this.labelTest.Name = "labelTest";
+            this.labelTest.Size = new System.Drawing.Size(35, 13);
+            this.labelTest.TabIndex = 34;
+            this.labelTest.Text = "label1";
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,5 +321,6 @@
         private System.Windows.Forms.TextBox textBoxCustomerSearch;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBoxCustomers;
+        private System.Windows.Forms.Label labelTest;
     }
 }

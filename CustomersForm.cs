@@ -73,18 +73,25 @@ namespace Hotel
                 customer.Phone = textBoxEmail.Text;
                 customer.Address = textBoxAddress.Text;
 
-                try
+                if (listBoxCustomers.SelectedIndex >= 0)
                 {
-                    CustomerRepo.CreateCustomer(customer);
-
-                    MessageBox.Show("Kund: " + customer.Name + " finns redan registrerad");
-
-                    this.Close();
+                    CustomerRepo.UpdateCustomer(customer);
                 }
-                catch (Exception)
+                else
                 {
-                    labelNameException.Text = "Användarnamn upptaget";
-                    labelNameException.Visible = true;
+                    try
+                    {
+                        CustomerRepo.CreateCustomer(customer);
+
+                        MessageBox.Show("Kund: " + customer.Name + " finns redan registrerad");
+
+                        this.Close();
+                    }
+                    catch (Exception)
+                    {
+                        labelNameException.Text = "Användarnamn upptaget";
+                        labelNameException.Visible = true;
+                    }
                 }
             }
         }

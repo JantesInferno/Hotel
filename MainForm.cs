@@ -69,7 +69,6 @@ namespace Hotel
             Button button = sender as Button;
             BookingDetailsForm bookingDetailsForm = new BookingDetailsForm((Booking)button.Tag);
             bookingDetailsForm.Show();
-            // identify which button was clicked and perform necessary actions
         }
 
 
