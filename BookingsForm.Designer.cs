@@ -1,6 +1,6 @@
 ﻿namespace Hotel
 {
-    partial class BookingRegistrationForm
+    partial class BookingsForm
     {
         /// <summary>
         /// Required designer variable.

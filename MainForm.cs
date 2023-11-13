@@ -59,45 +59,9 @@ namespace Hotel
             PopulateTableLayoutPanel();
         }
 
-        private void labelManageInvoice_MouseEnter(object sender, EventArgs e)
+        private void dateTimePickerSearch_ValueChanged(object sender, EventArgs e)
         {
-            panelInvoice.Visible = true;
-            panelCustomer.Visible = false;
-            panelBooking.Visible = false;
-        }
-
-        private void labelManageCustomer_MouseEnter(object sender, EventArgs e)
-        {
-            panelCustomer.Visible = true;
-            panelInvoice.Visible = false;
-            panelBooking.Visible = false;
-        }
-
-        private void labelManageBooking_MouseEnter(object sender, EventArgs e)
-        {
-            panelBooking.Visible = true;
-            panelInvoice.Visible = false;
-            panelCustomer.Visible = false;
-        }
-
-        private void MainForm_MouseEnter(object sender, EventArgs e)
-        {
-            panelInvoice.Visible = false;
-            panelCustomer.Visible = false;
-            panelBooking.Visible = false;
-        }
-
-        private void buttonCustomerCreate_Click(object sender, EventArgs e)
-        {
-            CustomerRegistrationForm frm = new CustomerRegistrationForm();
-            frm.Show();
-        }
-
-        private void buttonBookingCreate_Click(object sender, EventArgs e)
-        {
-            labelTodaysDueDates.Visible = false;
-            BookingRegistrationForm frm = new BookingRegistrationForm();
-            frm.Show();
+            PopulateTableLayoutPanel();
         }
 
         protected void buttonBooking_Click(object sender, EventArgs e)
@@ -108,10 +72,6 @@ namespace Hotel
             // identify which button was clicked and perform necessary actions
         }
 
-        private void buttonSearchDate_Click(object sender, EventArgs e)
-        {
-            PopulateTableLayoutPanel();
-        }
 
         // METODER
 
@@ -144,13 +104,16 @@ namespace Hotel
             int column = 0;
             int columnSpan = 0;
 
+            string testOutput = "";
             foreach (var booking in bookings)
             {
+
                 Button buttonBooking;
+
                 if (booking.EndDate.Date.Equals(DateTime.Now.Date))
-                    buttonBooking = CreateBookingButton(Color.Red);
+                    buttonBooking = CreateBookingButton(Color.Yellow);
                 else if (booking.EndDate.Date < DateTime.Now.Date)
-                    buttonBooking = CreateBookingButton(Color.Gray);
+                    buttonBooking = CreateBookingButton(Color.Red);
                 else if (booking.StartDate.Date > DateTime.Now.Date)
                     buttonBooking = CreateBookingButton(Color.Blue);
                 else
@@ -175,8 +138,6 @@ namespace Hotel
 
                 buttonBooking.Click += new EventHandler(buttonBooking_Click);
 
-                
-
                 row = RoomIDToRow(booking.RoomID);
                 column = BookingStartToCalendarDate(booking.StartDate, dates);
                 columnSpan = BookingToCalendarColumnSpan(booking, dates);
@@ -184,7 +145,14 @@ namespace Hotel
                 tableLayoutPanelCalendar.Controls.Add(buttonBooking);
                 tableLayoutPanelCalendar.SetCellPosition(buttonBooking, new TableLayoutPanelCellPosition(column, row));
 
+                if (column + columnSpan > 14)
+                {
+                    columnSpan = 14 - column;
+                }
+
                 tableLayoutPanelCalendar.SetColumnSpan(buttonBooking, columnSpan);
+
+                testOutput += "Row = " + row + " Column = " + column + "\n";
             }
 
             tableLayoutPanelCalendar.Visible = true;
@@ -192,7 +160,7 @@ namespace Hotel
 
         private Button CreateBookingButton(Color color)
         {
-            return new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 0 }, Margin = new Padding(0), BackColor = color, Dock = DockStyle.Fill };
+            return new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 1, BorderColor = Color.Black }, Margin = new Padding(0), BackColor = color, Dock = DockStyle.Fill };
         }
 
         private int BookingStartToCalendarDate(DateTime bookingDate, DateTime[] dates)
@@ -202,7 +170,7 @@ namespace Hotel
             for (int i = 0; i < dates.Length; i++)
             {
                 if (bookingDate.Equals(dates[i]))
-                    index = i;
+                    index = i * 2 + 1;
             }
 
             return index;
@@ -218,7 +186,7 @@ namespace Hotel
                     columnSpan++;
             }
 
-            return columnSpan;
+            return columnSpan * 2;
         }
 
         private int RoomIDToRow(int roomID)
@@ -255,29 +223,38 @@ namespace Hotel
             return row;
         }
 
-        private void linkLabelCancelBookings_Click(object sender, EventArgs e)
+        private void buttonNavBookings_Click(object sender, EventArgs e)
         {
-
+            BookingsForm frm = new BookingsForm();
+            frm.Show();
         }
 
-        private void buttonRegisterPayment_Click(object sender, EventArgs e)
+        private void buttonNavCustomers_Click(object sender, EventArgs e)
         {
-
+            CustomersForm frm = new CustomersForm();
+            frm.Show();
         }
 
-        private void buttonCancelBooking_Click(object sender, EventArgs e)
+        private void buttonNavPayments_Click(object sender, EventArgs e)
         {
-            // Annullera bokning
+            // PaymentsForm
         }
 
-        private void buttonCustomerSearch_Click(object sender, EventArgs e)
+        private void linkLabelCancelBookings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            // PaymentsForm
         }
 
-        private void buttonBookingSearch_Click(object sender, EventArgs e)
+        private void buttonNextDate_Click(object sender, EventArgs e)
         {
+            dateTimePickerSearch.Value = dateTimePickerSearch.Value.Date.AddDays(1);
+            PopulateTableLayoutPanel();
+        }
 
+        private void buttonPreviousDate_Click(object sender, EventArgs e)
+        {
+            dateTimePickerSearch.Value = dateTimePickerSearch.Value.Date.AddDays(-1);
+            PopulateTableLayoutPanel();
         }
     }
 }

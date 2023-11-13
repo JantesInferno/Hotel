@@ -30,17 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelManageCustomer = new System.Windows.Forms.Label();
-            this.labelManageBooking = new System.Windows.Forms.Label();
             this.labelCurrentDateTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelManageInvoice = new System.Windows.Forms.Label();
-            this.buttonCustomerSearch = new System.Windows.Forms.Button();
-            this.buttonCustomerCreate = new System.Windows.Forms.Button();
-            this.panelCustomer = new System.Windows.Forms.Panel();
-            this.panelBooking = new System.Windows.Forms.Panel();
-            this.buttonBookingCreate = new System.Windows.Forms.Button();
-            this.buttonBookingSearch = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.labelCalendarDate7 = new System.Windows.Forms.Label();
             this.labelCalendarDate6 = new System.Windows.Forms.Label();
@@ -59,23 +50,39 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanelCalendar = new System.Windows.Forms.TableLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.buttonSearchDate = new System.Windows.Forms.Button();
             this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.toolTipTest = new System.Windows.Forms.ToolTip(this.components);
-            this.panelInvoice = new System.Windows.Forms.Panel();
-            this.buttonRegisterPayment = new System.Windows.Forms.Button();
-            this.buttonCancelBooking = new System.Windows.Forms.Button();
             this.labelTodaysDueDates = new System.Windows.Forms.Label();
             this.linkLabelCancelBookings = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonNavPayments = new System.Windows.Forms.Button();
+            this.buttonNavCustomers = new System.Windows.Forms.Button();
+            this.buttonNavBookings = new System.Windows.Forms.Button();
+            this.buttonDate1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonDate2 = new System.Windows.Forms.Button();
+            this.buttonDate3 = new System.Windows.Forms.Button();
+            this.buttonDate6 = new System.Windows.Forms.Button();
+            this.buttonDate5 = new System.Windows.Forms.Button();
+            this.buttonDate4 = new System.Windows.Forms.Button();
+            this.buttonDate7 = new System.Windows.Forms.Button();
+            this.buttonNextDate = new System.Windows.Forms.Button();
+            this.buttonPreviousDate = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panelCustomer.SuspendLayout();
-            this.panelBooking.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelInvoice.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -89,34 +96,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HOTEL1";
             // 
-            // labelManageCustomer
-            // 
-            this.labelManageCustomer.AutoSize = true;
-            this.labelManageCustomer.ForeColor = System.Drawing.Color.White;
-            this.labelManageCustomer.Location = new System.Drawing.Point(736, 74);
-            this.labelManageCustomer.Name = "labelManageCustomer";
-            this.labelManageCustomer.Size = new System.Drawing.Size(98, 17);
-            this.labelManageCustomer.TabIndex = 12;
-            this.labelManageCustomer.Text = "Hantera kunder";
-            this.labelManageCustomer.MouseEnter += new System.EventHandler(this.labelManageCustomer_MouseEnter);
-            // 
-            // labelManageBooking
-            // 
-            this.labelManageBooking.AutoSize = true;
-            this.labelManageBooking.ForeColor = System.Drawing.Color.White;
-            this.labelManageBooking.Location = new System.Drawing.Point(840, 74);
-            this.labelManageBooking.Name = "labelManageBooking";
-            this.labelManageBooking.Size = new System.Drawing.Size(117, 17);
-            this.labelManageBooking.TabIndex = 13;
-            this.labelManageBooking.Text = "Hantera bokningar";
-            this.labelManageBooking.MouseEnter += new System.EventHandler(this.labelManageBooking_MouseEnter);
-            // 
             // labelCurrentDateTime
             // 
             this.labelCurrentDateTime.AutoSize = true;
             this.labelCurrentDateTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentDateTime.ForeColor = System.Drawing.Color.White;
-            this.labelCurrentDateTime.Location = new System.Drawing.Point(3, 71);
+            this.labelCurrentDateTime.Location = new System.Drawing.Point(6, 8);
             this.labelCurrentDateTime.Name = "labelCurrentDateTime";
             this.labelCurrentDateTime.Size = new System.Drawing.Size(57, 21);
             this.labelCurrentDateTime.TabIndex = 12;
@@ -124,122 +109,19 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel1.Controls.Add(this.labelManageInvoice);
-            this.panel1.Controls.Add(this.labelCurrentDateTime);
-            this.panel1.Controls.Add(this.labelManageBooking);
-            this.panel1.Controls.Add(this.labelManageCustomer);
+            this.panel1.BackColor = System.Drawing.Color.Brown;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 100);
+            this.panel1.Size = new System.Drawing.Size(960, 42);
             this.panel1.TabIndex = 11;
-            // 
-            // labelManageInvoice
-            // 
-            this.labelManageInvoice.AutoSize = true;
-            this.labelManageInvoice.ForeColor = System.Drawing.Color.White;
-            this.labelManageInvoice.Location = new System.Drawing.Point(606, 75);
-            this.labelManageInvoice.Name = "labelManageInvoice";
-            this.labelManageInvoice.Size = new System.Drawing.Size(124, 17);
-            this.labelManageInvoice.TabIndex = 39;
-            this.labelManageInvoice.Text = "Hantera betalningar";
-            this.labelManageInvoice.MouseEnter += new System.EventHandler(this.labelManageInvoice_MouseEnter);
-            // 
-            // buttonCustomerSearch
-            // 
-            this.buttonCustomerSearch.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonCustomerSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCustomerSearch.FlatAppearance.BorderSize = 0;
-            this.buttonCustomerSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomerSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomerSearch.Location = new System.Drawing.Point(0, 24);
-            this.buttonCustomerSearch.Name = "buttonCustomerSearch";
-            this.buttonCustomerSearch.Size = new System.Drawing.Size(95, 23);
-            this.buttonCustomerSearch.TabIndex = 14;
-            this.buttonCustomerSearch.Text = "Sök kund";
-            this.buttonCustomerSearch.UseVisualStyleBackColor = false;
-            this.buttonCustomerSearch.Click += new System.EventHandler(this.buttonCustomerSearch_Click);
-            // 
-            // buttonCustomerCreate
-            // 
-            this.buttonCustomerCreate.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonCustomerCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCustomerCreate.FlatAppearance.BorderSize = 0;
-            this.buttonCustomerCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonCustomerCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomerCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomerCreate.Location = new System.Drawing.Point(0, 0);
-            this.buttonCustomerCreate.Name = "buttonCustomerCreate";
-            this.buttonCustomerCreate.Size = new System.Drawing.Size(95, 23);
-            this.buttonCustomerCreate.TabIndex = 13;
-            this.buttonCustomerCreate.Text = "Ny kund";
-            this.buttonCustomerCreate.UseVisualStyleBackColor = false;
-            this.buttonCustomerCreate.Click += new System.EventHandler(this.buttonCustomerCreate_Click);
-            // 
-            // panelCustomer
-            // 
-            this.panelCustomer.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panelCustomer.Controls.Add(this.buttonCustomerCreate);
-            this.panelCustomer.Controls.Add(this.buttonCustomerSearch);
-            this.panelCustomer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCustomer.Location = new System.Drawing.Point(754, 112);
-            this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(95, 47);
-            this.panelCustomer.TabIndex = 16;
-            this.panelCustomer.Visible = false;
-            // 
-            // panelBooking
-            // 
-            this.panelBooking.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panelBooking.Controls.Add(this.buttonBookingCreate);
-            this.panelBooking.Controls.Add(this.buttonBookingSearch);
-            this.panelBooking.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBooking.Location = new System.Drawing.Point(858, 112);
-            this.panelBooking.Name = "panelBooking";
-            this.panelBooking.Size = new System.Drawing.Size(117, 47);
-            this.panelBooking.TabIndex = 17;
-            this.panelBooking.Visible = false;
-            // 
-            // buttonBookingCreate
-            // 
-            this.buttonBookingCreate.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonBookingCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBookingCreate.FlatAppearance.BorderSize = 0;
-            this.buttonBookingCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonBookingCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBookingCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingCreate.Location = new System.Drawing.Point(0, 0);
-            this.buttonBookingCreate.Name = "buttonBookingCreate";
-            this.buttonBookingCreate.Size = new System.Drawing.Size(117, 23);
-            this.buttonBookingCreate.TabIndex = 13;
-            this.buttonBookingCreate.Text = "Ny bokning";
-            this.buttonBookingCreate.UseVisualStyleBackColor = false;
-            this.buttonBookingCreate.Click += new System.EventHandler(this.buttonBookingCreate_Click);
-            // 
-            // buttonBookingSearch
-            // 
-            this.buttonBookingSearch.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonBookingSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBookingSearch.FlatAppearance.BorderSize = 0;
-            this.buttonBookingSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonBookingSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBookingSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingSearch.Location = new System.Drawing.Point(0, 24);
-            this.buttonBookingSearch.Name = "buttonBookingSearch";
-            this.buttonBookingSearch.Size = new System.Drawing.Size(117, 23);
-            this.buttonBookingSearch.TabIndex = 14;
-            this.buttonBookingSearch.Text = "Sök bokning";
-            this.buttonBookingSearch.UseVisualStyleBackColor = false;
-            this.buttonBookingSearch.Click += new System.EventHandler(this.buttonBookingSearch_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(20, 262);
+            this.label16.Location = new System.Drawing.Point(22, 265);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(55, 17);
             this.label16.TabIndex = 27;
@@ -248,9 +130,10 @@
             // labelCalendarDate7
             // 
             this.labelCalendarDate7.AutoSize = true;
+            this.labelCalendarDate7.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate7.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate7.Location = new System.Drawing.Point(733, 3);
+            this.labelCalendarDate7.Location = new System.Drawing.Point(877, 236);
             this.labelCalendarDate7.Name = "labelCalendarDate7";
             this.labelCalendarDate7.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate7.TabIndex = 26;
@@ -259,9 +142,10 @@
             // labelCalendarDate6
             // 
             this.labelCalendarDate6.AutoSize = true;
+            this.labelCalendarDate6.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate6.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate6.Location = new System.Drawing.Point(612, 3);
+            this.labelCalendarDate6.Location = new System.Drawing.Point(755, 236);
             this.labelCalendarDate6.Name = "labelCalendarDate6";
             this.labelCalendarDate6.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate6.TabIndex = 25;
@@ -270,9 +154,10 @@
             // labelCalendarDate5
             // 
             this.labelCalendarDate5.AutoSize = true;
+            this.labelCalendarDate5.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate5.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate5.Location = new System.Drawing.Point(490, 3);
+            this.labelCalendarDate5.Location = new System.Drawing.Point(633, 236);
             this.labelCalendarDate5.Name = "labelCalendarDate5";
             this.labelCalendarDate5.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate5.TabIndex = 24;
@@ -281,9 +166,10 @@
             // labelCalendarDate4
             // 
             this.labelCalendarDate4.AutoSize = true;
+            this.labelCalendarDate4.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate4.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate4.Location = new System.Drawing.Point(368, 3);
+            this.labelCalendarDate4.Location = new System.Drawing.Point(511, 237);
             this.labelCalendarDate4.Name = "labelCalendarDate4";
             this.labelCalendarDate4.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate4.TabIndex = 23;
@@ -292,9 +178,10 @@
             // labelCalendarDate3
             // 
             this.labelCalendarDate3.AutoSize = true;
+            this.labelCalendarDate3.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate3.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate3.Location = new System.Drawing.Point(246, 3);
+            this.labelCalendarDate3.Location = new System.Drawing.Point(389, 236);
             this.labelCalendarDate3.Name = "labelCalendarDate3";
             this.labelCalendarDate3.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate3.TabIndex = 22;
@@ -303,9 +190,10 @@
             // labelCalendarDate2
             // 
             this.labelCalendarDate2.AutoSize = true;
+            this.labelCalendarDate2.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate2.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate2.Location = new System.Drawing.Point(124, 3);
+            this.labelCalendarDate2.Location = new System.Drawing.Point(267, 236);
             this.labelCalendarDate2.Name = "labelCalendarDate2";
             this.labelCalendarDate2.Size = new System.Drawing.Size(42, 17);
             this.labelCalendarDate2.TabIndex = 21;
@@ -314,9 +202,10 @@
             // labelCalendarDate1
             // 
             this.labelCalendarDate1.AutoSize = true;
+            this.labelCalendarDate1.BackColor = System.Drawing.Color.Brown;
             this.labelCalendarDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate1.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate1.Location = new System.Drawing.Point(3, 3);
+            this.labelCalendarDate1.Location = new System.Drawing.Point(145, 236);
             this.labelCalendarDate1.Name = "labelCalendarDate1";
             this.labelCalendarDate1.Size = new System.Drawing.Size(40, 17);
             this.labelCalendarDate1.TabIndex = 20;
@@ -324,7 +213,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel2.BackColor = System.Drawing.Color.Brown;
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -333,7 +222,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(12, 283);
+            this.panel2.Location = new System.Drawing.Point(15, 286);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(77, 559);
             this.panel2.TabIndex = 19;
@@ -391,7 +280,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(22, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "14";
+            this.label4.Text = "13";
             // 
             // label3
             // 
@@ -402,7 +291,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "13";
+            this.label3.Text = "12";
             // 
             // label2
             // 
@@ -430,15 +319,22 @@
             // 
             this.tableLayoutPanelCalendar.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanelCalendar.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanelCalendar.ColumnCount = 7;
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(108, 283);
+            this.tableLayoutPanelCalendar.ColumnCount = 14;
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -449,105 +345,58 @@
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelCalendar.Size = new System.Drawing.Size(861, 559);
+            this.tableLayoutPanelCalendar.Size = new System.Drawing.Size(858, 559);
             this.tableLayoutPanelCalendar.TabIndex = 18;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(167, 5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 15);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "12:00";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 171);
+            this.label10.Location = new System.Drawing.Point(20, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(208, 30);
             this.label10.TabIndex = 29;
             this.label10.Text = "Översikt bokningar ";
             // 
-            // buttonSearchDate
-            // 
-            this.buttonSearchDate.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.buttonSearchDate.FlatAppearance.BorderSize = 0;
-            this.buttonSearchDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonSearchDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearchDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchDate.ForeColor = System.Drawing.Color.White;
-            this.buttonSearchDate.Location = new System.Drawing.Point(317, 218);
-            this.buttonSearchDate.Name = "buttonSearchDate";
-            this.buttonSearchDate.Size = new System.Drawing.Size(48, 22);
-            this.buttonSearchDate.TabIndex = 38;
-            this.buttonSearchDate.Text = "Sök";
-            this.buttonSearchDate.UseVisualStyleBackColor = false;
-            this.buttonSearchDate.Click += new System.EventHandler(this.buttonSearchDate_Click);
-            // 
             // dateTimePickerSearch
             // 
+            this.dateTimePickerSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePickerSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSearch.Location = new System.Drawing.Point(118, 218);
+            this.dateTimePickerSearch.Location = new System.Drawing.Point(490, 195);
             this.dateTimePickerSearch.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerSearch.Name = "dateTimePickerSearch";
             this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerSearch.TabIndex = 37;
             this.dateTimePickerSearch.Value = new System.DateTime(2023, 11, 12, 0, 0, 0, 0);
+            this.dateTimePickerSearch.ValueChanged += new System.EventHandler(this.dateTimePickerSearch_ValueChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(18, 218);
+            this.label12.Location = new System.Drawing.Point(390, 195);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 20);
             this.label12.TabIndex = 36;
             this.label12.Text = "Välj datum";
-            // 
-            // panelInvoice
-            // 
-            this.panelInvoice.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panelInvoice.Controls.Add(this.buttonRegisterPayment);
-            this.panelInvoice.Controls.Add(this.buttonCancelBooking);
-            this.panelInvoice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelInvoice.Location = new System.Drawing.Point(624, 112);
-            this.panelInvoice.Name = "panelInvoice";
-            this.panelInvoice.Size = new System.Drawing.Size(121, 47);
-            this.panelInvoice.TabIndex = 39;
-            this.panelInvoice.Visible = false;
-            // 
-            // buttonRegisterPayment
-            // 
-            this.buttonRegisterPayment.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonRegisterPayment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegisterPayment.FlatAppearance.BorderSize = 0;
-            this.buttonRegisterPayment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonRegisterPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterPayment.ForeColor = System.Drawing.Color.White;
-            this.buttonRegisterPayment.Location = new System.Drawing.Point(0, 0);
-            this.buttonRegisterPayment.Name = "buttonRegisterPayment";
-            this.buttonRegisterPayment.Size = new System.Drawing.Size(121, 23);
-            this.buttonRegisterPayment.TabIndex = 13;
-            this.buttonRegisterPayment.Text = "Registrera betalning";
-            this.buttonRegisterPayment.UseVisualStyleBackColor = false;
-            this.buttonRegisterPayment.Click += new System.EventHandler(this.buttonRegisterPayment_Click);
-            // 
-            // buttonCancelBooking
-            // 
-            this.buttonCancelBooking.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonCancelBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancelBooking.FlatAppearance.BorderSize = 0;
-            this.buttonCancelBooking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.buttonCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelBooking.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelBooking.Location = new System.Drawing.Point(0, 24);
-            this.buttonCancelBooking.Name = "buttonCancelBooking";
-            this.buttonCancelBooking.Size = new System.Drawing.Size(121, 23);
-            this.buttonCancelBooking.TabIndex = 14;
-            this.buttonCancelBooking.Text = "Annullera bokning";
-            this.buttonCancelBooking.UseVisualStyleBackColor = false;
-            this.buttonCancelBooking.Click += new System.EventHandler(this.buttonCancelBooking_Click);
             // 
             // labelTodaysDueDates
             // 
             this.labelTodaysDueDates.AutoSize = true;
             this.labelTodaysDueDates.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTodaysDueDates.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelTodaysDueDates.Location = new System.Drawing.Point(15, 121);
+            this.labelTodaysDueDates.Location = new System.Drawing.Point(330, 94);
             this.labelTodaysDueDates.Name = "labelTodaysDueDates";
             this.labelTodaysDueDates.Size = new System.Drawing.Size(296, 15);
             this.labelTodaysDueDates.TabIndex = 40;
@@ -559,7 +408,7 @@
             this.linkLabelCancelBookings.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.linkLabelCancelBookings.AutoSize = true;
             this.linkLabelCancelBookings.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelCancelBookings.Location = new System.Drawing.Point(317, 122);
+            this.linkLabelCancelBookings.Location = new System.Drawing.Point(632, 95);
             this.linkLabelCancelBookings.Name = "linkLabelCancelBookings";
             this.linkLabelCancelBookings.Size = new System.Drawing.Size(101, 13);
             this.linkLabelCancelBookings.TabIndex = 41;
@@ -567,22 +416,291 @@
             this.linkLabelCancelBookings.Text = "Annullera bokningar";
             this.linkLabelCancelBookings.Visible = false;
             this.linkLabelCancelBookings.VisitedLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabelCancelBookings.Click += new System.EventHandler(this.linkLabelCancelBookings_Click);
+            this.linkLabelCancelBookings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCancelBookings_LinkClicked);
             // 
-            // panel3
+            // panel4
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel3.Controls.Add(this.labelCalendarDate1);
-            this.panel3.Controls.Add(this.labelCalendarDate2);
-            this.panel3.Controls.Add(this.labelCalendarDate3);
-            this.panel3.Controls.Add(this.labelCalendarDate4);
-            this.panel3.Controls.Add(this.labelCalendarDate5);
-            this.panel3.Controls.Add(this.labelCalendarDate6);
-            this.panel3.Controls.Add(this.labelCalendarDate7);
-            this.panel3.Location = new System.Drawing.Point(108, 259);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(861, 24);
-            this.panel3.TabIndex = 42;
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Controls.Add(this.buttonNavPayments);
+            this.panel4.Controls.Add(this.labelCurrentDateTime);
+            this.panel4.Controls.Add(this.buttonNavCustomers);
+            this.panel4.Controls.Add(this.buttonNavBookings);
+            this.panel4.Location = new System.Drawing.Point(15, 55);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(960, 36);
+            this.panel4.TabIndex = 43;
+            // 
+            // buttonNavPayments
+            // 
+            this.buttonNavPayments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNavPayments.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonNavPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
+            this.buttonNavPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNavPayments.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNavPayments.ForeColor = System.Drawing.Color.White;
+            this.buttonNavPayments.Location = new System.Drawing.Point(879, -1);
+            this.buttonNavPayments.Name = "buttonNavPayments";
+            this.buttonNavPayments.Size = new System.Drawing.Size(81, 38);
+            this.buttonNavPayments.TabIndex = 46;
+            this.buttonNavPayments.Text = "Betalningar";
+            this.buttonNavPayments.UseVisualStyleBackColor = true;
+            this.buttonNavPayments.Click += new System.EventHandler(this.buttonNavPayments_Click);
+            // 
+            // buttonNavCustomers
+            // 
+            this.buttonNavCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNavCustomers.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonNavCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
+            this.buttonNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNavCustomers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNavCustomers.ForeColor = System.Drawing.Color.White;
+            this.buttonNavCustomers.Location = new System.Drawing.Point(799, -1);
+            this.buttonNavCustomers.Name = "buttonNavCustomers";
+            this.buttonNavCustomers.Size = new System.Drawing.Size(81, 38);
+            this.buttonNavCustomers.TabIndex = 44;
+            this.buttonNavCustomers.Text = "Kunder";
+            this.buttonNavCustomers.UseVisualStyleBackColor = true;
+            this.buttonNavCustomers.Click += new System.EventHandler(this.buttonNavCustomers_Click);
+            // 
+            // buttonNavBookings
+            // 
+            this.buttonNavBookings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNavBookings.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonNavBookings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
+            this.buttonNavBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNavBookings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNavBookings.ForeColor = System.Drawing.Color.White;
+            this.buttonNavBookings.Location = new System.Drawing.Point(719, -1);
+            this.buttonNavBookings.Name = "buttonNavBookings";
+            this.buttonNavBookings.Size = new System.Drawing.Size(81, 38);
+            this.buttonNavBookings.TabIndex = 45;
+            this.buttonNavBookings.Text = "Bokningar";
+            this.buttonNavBookings.UseVisualStyleBackColor = true;
+            // 
+            // buttonDate1
+            // 
+            this.buttonDate1.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate1.Enabled = false;
+            this.buttonDate1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate1.ForeColor = System.Drawing.Color.White;
+            this.buttonDate1.Location = new System.Drawing.Point(117, 229);
+            this.buttonDate1.Name = "buttonDate1";
+            this.buttonDate1.Size = new System.Drawing.Size(122, 35);
+            this.buttonDate1.TabIndex = 47;
+            this.buttonDate1.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Location = new System.Drawing.Point(117, 265);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(858, 24);
+            this.panel5.TabIndex = 48;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(777, 5);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(34, 15);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "12:00";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(655, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(34, 15);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "12:00";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(533, 5);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(34, 15);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "12:00";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(411, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(34, 15);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "12:00";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(289, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 15);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "12:00";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(45, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 15);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "12:00";
+            // 
+            // buttonDate2
+            // 
+            this.buttonDate2.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate2.Enabled = false;
+            this.buttonDate2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate2.ForeColor = System.Drawing.Color.White;
+            this.buttonDate2.Location = new System.Drawing.Point(240, 229);
+            this.buttonDate2.Name = "buttonDate2";
+            this.buttonDate2.Size = new System.Drawing.Size(121, 35);
+            this.buttonDate2.TabIndex = 49;
+            this.buttonDate2.UseVisualStyleBackColor = false;
+            // 
+            // buttonDate3
+            // 
+            this.buttonDate3.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate3.Enabled = false;
+            this.buttonDate3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate3.ForeColor = System.Drawing.Color.White;
+            this.buttonDate3.Location = new System.Drawing.Point(362, 229);
+            this.buttonDate3.Name = "buttonDate3";
+            this.buttonDate3.Size = new System.Drawing.Size(121, 35);
+            this.buttonDate3.TabIndex = 50;
+            this.buttonDate3.UseVisualStyleBackColor = false;
+            // 
+            // buttonDate6
+            // 
+            this.buttonDate6.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate6.Enabled = false;
+            this.buttonDate6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate6.ForeColor = System.Drawing.Color.White;
+            this.buttonDate6.Location = new System.Drawing.Point(728, 229);
+            this.buttonDate6.Name = "buttonDate6";
+            this.buttonDate6.Size = new System.Drawing.Size(122, 35);
+            this.buttonDate6.TabIndex = 53;
+            this.buttonDate6.UseVisualStyleBackColor = false;
+            // 
+            // buttonDate5
+            // 
+            this.buttonDate5.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate5.Enabled = false;
+            this.buttonDate5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate5.ForeColor = System.Drawing.Color.White;
+            this.buttonDate5.Location = new System.Drawing.Point(606, 229);
+            this.buttonDate5.Name = "buttonDate5";
+            this.buttonDate5.Size = new System.Drawing.Size(121, 35);
+            this.buttonDate5.TabIndex = 52;
+            this.buttonDate5.UseVisualStyleBackColor = false;
+            // 
+            // buttonDate4
+            // 
+            this.buttonDate4.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate4.Enabled = false;
+            this.buttonDate4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate4.ForeColor = System.Drawing.Color.White;
+            this.buttonDate4.Location = new System.Drawing.Point(484, 229);
+            this.buttonDate4.Name = "buttonDate4";
+            this.buttonDate4.Size = new System.Drawing.Size(121, 35);
+            this.buttonDate4.TabIndex = 51;
+            this.buttonDate4.UseVisualStyleBackColor = false;
+            // 
+            // buttonDate7
+            // 
+            this.buttonDate7.BackColor = System.Drawing.Color.Brown;
+            this.buttonDate7.Enabled = false;
+            this.buttonDate7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDate7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDate7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDate7.ForeColor = System.Drawing.Color.White;
+            this.buttonDate7.Location = new System.Drawing.Point(851, 229);
+            this.buttonDate7.Name = "buttonDate7";
+            this.buttonDate7.Size = new System.Drawing.Size(124, 35);
+            this.buttonDate7.TabIndex = 54;
+            this.buttonDate7.UseVisualStyleBackColor = false;
+            // 
+            // buttonNextDate
+            // 
+            this.buttonNextDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNextDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNextDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNextDate.Location = new System.Drawing.Point(947, 195);
+            this.buttonNextDate.Name = "buttonNextDate";
+            this.buttonNextDate.Size = new System.Drawing.Size(28, 23);
+            this.buttonNextDate.TabIndex = 55;
+            this.buttonNextDate.Text = ">";
+            this.buttonNextDate.UseVisualStyleBackColor = true;
+            this.buttonNextDate.Click += new System.EventHandler(this.buttonNextDate_Click);
+            // 
+            // buttonPreviousDate
+            // 
+            this.buttonPreviousDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPreviousDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPreviousDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPreviousDate.Location = new System.Drawing.Point(117, 195);
+            this.buttonPreviousDate.Name = "buttonPreviousDate";
+            this.buttonPreviousDate.Size = new System.Drawing.Size(28, 23);
+            this.buttonPreviousDate.TabIndex = 56;
+            this.buttonPreviousDate.Text = "<";
+            this.buttonPreviousDate.UseVisualStyleBackColor = true;
+            this.buttonPreviousDate.Click += new System.EventHandler(this.buttonPreviousDate_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(905, 200);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(36, 13);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "Nästa";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(151, 200);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 13);
+            this.label21.TabIndex = 58;
+            this.label21.Text = "Föregående";
             // 
             // MainForm
             // 
@@ -590,16 +708,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 854);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.buttonPreviousDate);
+            this.Controls.Add(this.buttonNextDate);
+            this.Controls.Add(this.labelCalendarDate7);
+            this.Controls.Add(this.labelCalendarDate6);
+            this.Controls.Add(this.labelCalendarDate5);
+            this.Controls.Add(this.labelCalendarDate4);
+            this.Controls.Add(this.labelCalendarDate3);
+            this.Controls.Add(this.labelCalendarDate2);
+            this.Controls.Add(this.labelCalendarDate1);
+            this.Controls.Add(this.buttonDate7);
+            this.Controls.Add(this.buttonDate6);
+            this.Controls.Add(this.buttonDate5);
+            this.Controls.Add(this.buttonDate4);
+            this.Controls.Add(this.buttonDate3);
+            this.Controls.Add(this.buttonDate2);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.buttonDate1);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.linkLabelCancelBookings);
             this.Controls.Add(this.labelTodaysDueDates);
-            this.Controls.Add(this.panelInvoice);
-            this.Controls.Add(this.buttonSearchDate);
             this.Controls.Add(this.dateTimePickerSearch);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.panelCustomer);
-            this.Controls.Add(this.panelBooking);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tableLayoutPanelCalendar);
@@ -607,16 +740,14 @@
             this.Name = "MainForm";
             this.Text = "Receptionen";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
-            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelCustomer.ResumeLayout(false);
-            this.panelBooking.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panelInvoice.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,16 +755,8 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelManageCustomer;
-        private System.Windows.Forms.Label labelManageBooking;
         private System.Windows.Forms.Label labelCurrentDateTime;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonCustomerSearch;
-        private System.Windows.Forms.Button buttonCustomerCreate;
-        private System.Windows.Forms.Panel panelCustomer;
-        private System.Windows.Forms.Panel panelBooking;
-        private System.Windows.Forms.Button buttonBookingCreate;
-        private System.Windows.Forms.Button buttonBookingSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelCalendarDate7;
         private System.Windows.Forms.Label labelCalendarDate6;
@@ -653,16 +776,33 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCalendar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button buttonSearchDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolTip toolTipTest;
-        private System.Windows.Forms.Label labelManageInvoice;
-        private System.Windows.Forms.Panel panelInvoice;
-        private System.Windows.Forms.Button buttonRegisterPayment;
-        private System.Windows.Forms.Button buttonCancelBooking;
         private System.Windows.Forms.Label labelTodaysDueDates;
         private System.Windows.Forms.LinkLabel linkLabelCancelBookings;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button buttonNavPayments;
+        private System.Windows.Forms.Button buttonNavCustomers;
+        private System.Windows.Forms.Button buttonNavBookings;
+        private System.Windows.Forms.Button buttonDate1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button buttonDate2;
+        private System.Windows.Forms.Button buttonDate3;
+        private System.Windows.Forms.Button buttonDate6;
+        private System.Windows.Forms.Button buttonDate5;
+        private System.Windows.Forms.Button buttonDate4;
+        private System.Windows.Forms.Button buttonDate7;
+        private System.Windows.Forms.Button buttonNextDate;
+        private System.Windows.Forms.Button buttonPreviousDate;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
     }
 }

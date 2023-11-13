@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Hotel
 {
-    public partial class BookingRegistrationForm : Form
+    public partial class BookingsForm : Form
     {
         private AutoCompleteStringCollection _data;
 
@@ -14,7 +14,7 @@ namespace Hotel
 
         private List<Room> _comboBoxRooms;
 
-        public BookingRegistrationForm()
+        public BookingsForm()
         {
             InitializeComponent();
 
