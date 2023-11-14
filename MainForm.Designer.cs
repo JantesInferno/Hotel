@@ -86,6 +86,7 @@
             this.labelRoom21 = new System.Windows.Forms.Label();
             this.labelRoom22 = new System.Windows.Forms.Label();
             this.labelRoom23 = new System.Windows.Forms.Label();
+            this.labelTest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -235,7 +236,7 @@
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
@@ -814,12 +815,22 @@
             this.labelRoom23.TabIndex = 74;
             this.labelRoom23.Text = "23";
             // 
+            // labelTest
+            // 
+            this.labelTest.AutoSize = true;
+            this.labelTest.Location = new System.Drawing.Point(25, 143);
+            this.labelTest.Name = "labelTest";
+            this.labelTest.Size = new System.Drawing.Size(35, 13);
+            this.labelTest.TabIndex = 75;
+            this.labelTest.Text = "label2";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 854);
+            this.Controls.Add(this.labelTest);
             this.Controls.Add(this.labelRoom23);
             this.Controls.Add(this.labelRoom22);
             this.Controls.Add(this.labelRoom21);
@@ -936,5 +947,6 @@
         private System.Windows.Forms.Label labelRoom21;
         private System.Windows.Forms.Label labelRoom22;
         private System.Windows.Forms.Label labelRoom23;
+        private System.Windows.Forms.Label labelTest;
     }
 }

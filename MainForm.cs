@@ -35,6 +35,8 @@ namespace Hotel
             dueDates = BookingRepo.CheckDueDates();
             dueDatesCount = dueDates.Count;
             labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {dueDatesCount} st";
+
+            PopulateTableLayoutPanel();
         }
 
         // EVENTS
@@ -58,7 +60,7 @@ namespace Hotel
                 linkLabelCancelBookings.Visible = false;
             }
 
-            PopulateTableLayoutPanel();
+            //PopulateTableLayoutPanel();
         }
 
         private void dateTimePickerSearch_ValueChanged(object sender, EventArgs e)
@@ -105,7 +107,6 @@ namespace Hotel
             int column = 0;
             int columnSpan = 0;
 
-            string testOutput = "";
             foreach (var booking in bookings)
             {
 
@@ -138,19 +139,20 @@ namespace Hotel
 
                 row = RoomIDToRow(booking.RoomID);
                 column = BookingStartToCalendarDate(booking.StartDate, _dates);
-                columnSpan = BookingToCalendarColumnSpan(booking, _dates);
+                //columnSpan = BookingToCalendarColumnSpan(booking, _dates);
+                columnSpan = Convert.ToInt32((booking.EndDate - booking.StartDate).TotalDays * 2);
+                if (booking.StartDate.Date < dateTimePickerSearch.Value.Date)
+                    columnSpan = (int)((booking.EndDate - dateTimePickerSearch.Value).TotalDays) * 2 + 1;
 
                 tableLayoutPanelCalendar.Controls.Add(buttonBooking);
                 tableLayoutPanelCalendar.SetCellPosition(buttonBooking, new TableLayoutPanelCellPosition(column, row));
 
-                if (column + columnSpan > 14)
+                if (column + columnSpan >= 14)
                 {
                     columnSpan = 14 - column;
                 }
 
                 tableLayoutPanelCalendar.SetColumnSpan(buttonBooking, columnSpan);
-
-                testOutput += "Row = " + row + " Column = " + column + "\n";
             }
 
             tableLayoutPanelCalendar.Visible = true;
@@ -176,19 +178,6 @@ namespace Hotel
             }
 
             return index;
-        }
-
-        private int BookingToCalendarColumnSpan(Booking booking, DateTime[] dates)
-        {
-            int columnSpan = 0;
-
-            for (int i = 0; i < dates.Length; i++)
-            {
-                if (booking.StartDate <= dates[i] && booking.EndDate >= dates[i])
-                    columnSpan++;
-            }
-
-            return columnSpan * 2;
         }
 
         private int RoomIDToRow(int roomID)

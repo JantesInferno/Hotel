@@ -27,7 +27,7 @@ namespace Hotel.Repository
 
         public static bool CheckRoomAvailability(Room room, DateTime start, DateTime end)
         {
-            bool b = _db.Bookings.Include("Rooms").Any(x => x.RoomID == room.RoomID && (x.StartDate <= end || start <= x.EndDate));
+            bool b = _db.Bookings.Include("Rooms").Where(x => x.RoomID == room.RoomID).Any(x => !(x.StartDate >= end || start >= x.EndDate));
             if (b == false)
                 return true;
 
