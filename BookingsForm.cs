@@ -14,6 +14,8 @@ namespace Hotel
 
         private List<Room> _comboBoxRooms;
 
+        private int _selectedBooking;
+
         public BookingsForm()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Hotel
             _data.AddRange(CustomerRepo.GetAllCustomersAutoComplete().ToArray());
 
             textBoxCustomerSearch.AutoCompleteCustomSource = _data;
+            textBoxSearch.AutoCompleteCustomSource = _data;
         }
 
         private void comboBoxRooms_Format(object sender, ListControlConvertEventArgs e)
@@ -113,6 +116,69 @@ namespace Hotel
                 BookingRepo.CreateBooking(booking, _currentRoomSelected);
 
                 MessageBox.Show("Bokning skapad!");
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            listBoxBookings.DisplayMember = "BookingID";
+            listBoxBookings.ValueMember = "BookingID";
+            listBoxBookings.DataSource = BookingRepo.GetBookingsByCustomerSearch(textBoxSearch.Text.Trim());
+        }
+
+        private void listBoxBookings_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string id = ((Booking)e.ListItem).BookingID.ToString();
+            string start = ((Booking)e.ListItem).StartDate.ToShortDateString();
+            string end = ((Booking)e.ListItem).EndDate.ToShortDateString();
+
+            e.Value = "Bokningsnummer: " + id + " - Datum: " + start + " till " + end;
+        }
+
+        private void listBoxBookings_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxBookings.SelectedIndex >= 0)
+            {
+                _selectedBooking = listBoxBookings.SelectedIndex;
+
+                Booking booking = BookingRepo.GetBookingByID((int)listBoxBookings.SelectedValue);
+
+                dateTimePicker1.MinDate = DateTime.Now.AddYears(-10);
+                dateTimePicker2.MinDate = DateTime.Now.AddYears(-10);
+
+                textBoxCustomerSearch.Text = booking.Customer.Name;
+                comboBoxRooms.SelectedValue = (int)booking.RoomID;
+                dateTimePicker1.Value = booking.StartDate;
+                dateTimePicker2.Value = booking.EndDate;
+                comboBoxExtraBeds.SelectedIndex = (int)booking.ExtraBeds;
+
+                labelNewMessage.Text = "Redigera bokning";
+                buttonCreateBooking.Text = "Uppdatera bokning";
+            }
+        }
+
+        private void listBoxBookings_Click(object sender, EventArgs e)
+        {
+            if (_selectedBooking == listBoxBookings.SelectedIndex)
+            {
+                listBoxBookings.ClearSelected();
+
+                _selectedBooking = -1;
+
+                dateTimePicker1.Value = DateTime.Now.AddDays(14);
+                dateTimePicker2.Value = DateTime.Now.AddDays(14);
+
+                dateTimePicker1.MinDate = DateTime.Now.AddDays(14);
+                dateTimePicker2.MinDate = DateTime.Now.AddDays(14);
+
+                comboBoxRooms.SelectedIndex = 0;
+                textBoxCustomerSearch.Clear();
+                dateTimePicker1.Value = DateTime.Now.Date;
+                dateTimePicker2.Value = DateTime.Now.Date;
+                comboBoxExtraBeds.SelectedIndex = 0;
+
+                labelNewMessage.Text = "Ny bokning";
+                buttonCreateBooking.Text = "Skapa bokning";
             }
         }
     }

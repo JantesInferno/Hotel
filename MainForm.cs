@@ -110,13 +110,13 @@ namespace Hotel
                 Button buttonBooking;
 
                 if (booking.EndDate.Date.Equals(DateTime.Now.Date))
-                    buttonBooking = CreateBookingButton(Color.Yellow);
+                    buttonBooking = CreateBookingButton(Color.Yellow, Color.Black);
                 else if (booking.EndDate.Date < DateTime.Now.Date)
-                    buttonBooking = CreateBookingButton(Color.Red);
+                    buttonBooking = CreateBookingButton(Color.Red, Color.White);
                 else if (booking.StartDate.Date > DateTime.Now.Date)
-                    buttonBooking = CreateBookingButton(Color.Blue);
+                    buttonBooking = CreateBookingButton(Color.Blue, Color.White);
                 else
-                    buttonBooking = CreateBookingButton(Color.Green);
+                    buttonBooking = CreateBookingButton(Color.Green, Color.White);
 
                 string extraBeds = booking.ExtraBeds > 0 ? $"Extrasängar: {booking.ExtraBeds.ToString()}st á 200:-\n" : "";
 
@@ -132,9 +132,6 @@ namespace Hotel
 
                 buttonBooking.Tag = booking;
                 buttonBooking.Text = booking.Customer.Name;
-                buttonBooking.ForeColor = Color.White;
-                buttonBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
                 buttonBooking.Click += new EventHandler(buttonBooking_Click);
 
                 row = RoomIDToRow(booking.RoomID);
@@ -157,9 +154,13 @@ namespace Hotel
             tableLayoutPanelCalendar.Visible = true;
         }
 
-        private Button CreateBookingButton(Color color)
+        private Button CreateBookingButton(Color backColor, Color forecolor)
         {
-            return new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 1, BorderColor = Color.Black }, Margin = new Padding(0), BackColor = color, Dock = DockStyle.Fill };
+            Button button = new Button() { FlatStyle = FlatStyle.Flat, FlatAppearance = { BorderSize = 1, BorderColor = Color.Black }, Margin = new Padding(0), BackColor = backColor, ForeColor = forecolor, Dock = DockStyle.Fill };
+
+            button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            return button;
         }
 
         private int BookingStartToCalendarDate(DateTime bookingDate, DateTime[] dates)
