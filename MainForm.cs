@@ -13,9 +13,7 @@ namespace Hotel
     {
         static Timer _timer;
 
-        static List<Booking> dueDates;
-
-        static int dueDatesCount;
+        private List<Booking> _dueDates = new List<Booking>();
 
         private DateTime[] _dates;
 
@@ -32,9 +30,8 @@ namespace Hotel
             _timer.Start();
 
             // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag
-            dueDates = BookingRepo.CheckDueDates();
-            dueDatesCount = dueDates.Count;
-            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {dueDatesCount} st";
+            _dueDates = BookingRepo.CheckDueDates();
+            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
 
             PopulateTableLayoutPanel();
         }
@@ -48,16 +45,14 @@ namespace Hotel
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            if (dueDatesCount > 0)
+            if (_dueDates.Count > 0)
             {
-                labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {dueDatesCount} st";
+                labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
                 labelTodaysDueDates.Visible = true;
-                linkLabelCancelBookings.Visible = true;
             }
             else
             {
                 labelTodaysDueDates.Visible = false;
-                linkLabelCancelBookings.Visible = false;
             }
 
             //PopulateTableLayoutPanel();
@@ -228,7 +223,7 @@ namespace Hotel
 
         private void buttonNavPayments_Click(object sender, EventArgs e)
         {
-            PaymentsForm frm = new PaymentsForm();
+            PaymentsForm frm = new PaymentsForm(_dueDates);
             frm.Show();
         }
 

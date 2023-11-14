@@ -47,7 +47,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.toolTipTest = new System.Windows.Forms.ToolTip(this.components);
             this.labelTodaysDueDates = new System.Windows.Forms.Label();
-            this.linkLabelCancelBookings = new System.Windows.Forms.LinkLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonNavPayments = new System.Windows.Forms.Button();
             this.buttonNavCustomers = new System.Windows.Forms.Button();
@@ -86,7 +85,6 @@
             this.labelRoom21 = new System.Windows.Forms.Label();
             this.labelRoom22 = new System.Windows.Forms.Label();
             this.labelRoom23 = new System.Windows.Forms.Label();
-            this.labelTest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -299,28 +297,13 @@
             // 
             this.labelTodaysDueDates.AutoSize = true;
             this.labelTodaysDueDates.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTodaysDueDates.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelTodaysDueDates.Location = new System.Drawing.Point(333, 94);
+            this.labelTodaysDueDates.ForeColor = System.Drawing.Color.Yellow;
+            this.labelTodaysDueDates.Location = new System.Drawing.Point(502, 11);
             this.labelTodaysDueDates.Name = "labelTodaysDueDates";
-            this.labelTodaysDueDates.Size = new System.Drawing.Size(296, 15);
+            this.labelTodaysDueDates.Size = new System.Drawing.Size(212, 15);
             this.labelTodaysDueDates.TabIndex = 40;
-            this.labelTodaysDueDates.Text = "Bokingar vars faktura förfaller idag: {dueDatesCount} st";
+            this.labelTodaysDueDates.Text = "Bokingar vars faktura förfaller idag: x st";
             this.labelTodaysDueDates.Visible = false;
-            // 
-            // linkLabelCancelBookings
-            // 
-            this.linkLabelCancelBookings.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
-            this.linkLabelCancelBookings.AutoSize = true;
-            this.linkLabelCancelBookings.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelCancelBookings.Location = new System.Drawing.Point(635, 95);
-            this.linkLabelCancelBookings.Name = "linkLabelCancelBookings";
-            this.linkLabelCancelBookings.Size = new System.Drawing.Size(101, 13);
-            this.linkLabelCancelBookings.TabIndex = 41;
-            this.linkLabelCancelBookings.TabStop = true;
-            this.linkLabelCancelBookings.Text = "Annullera bokningar";
-            this.linkLabelCancelBookings.Visible = false;
-            this.linkLabelCancelBookings.VisitedLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabelCancelBookings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCancelBookings_LinkClicked);
             // 
             // panel4
             // 
@@ -329,6 +312,7 @@
             this.panel4.Controls.Add(this.labelCurrentDateTime);
             this.panel4.Controls.Add(this.buttonNavCustomers);
             this.panel4.Controls.Add(this.buttonNavBookings);
+            this.panel4.Controls.Add(this.labelTodaysDueDates);
             this.panel4.Location = new System.Drawing.Point(15, 55);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(960, 36);
@@ -815,22 +799,12 @@
             this.labelRoom23.TabIndex = 74;
             this.labelRoom23.Text = "23";
             // 
-            // labelTest
-            // 
-            this.labelTest.AutoSize = true;
-            this.labelTest.Location = new System.Drawing.Point(25, 143);
-            this.labelTest.Name = "labelTest";
-            this.labelTest.Size = new System.Drawing.Size(35, 13);
-            this.labelTest.TabIndex = 75;
-            this.labelTest.Text = "label2";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 854);
-            this.Controls.Add(this.labelTest);
             this.Controls.Add(this.labelRoom23);
             this.Controls.Add(this.labelRoom22);
             this.Controls.Add(this.labelRoom21);
@@ -867,8 +841,6 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.buttonDate1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.linkLabelCancelBookings);
-            this.Controls.Add(this.labelTodaysDueDates);
             this.Controls.Add(this.dateTimePickerSearch);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
@@ -907,7 +879,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolTip toolTipTest;
         private System.Windows.Forms.Label labelTodaysDueDates;
-        private System.Windows.Forms.LinkLabel linkLabelCancelBookings;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonNavPayments;
         private System.Windows.Forms.Button buttonNavCustomers;
@@ -947,6 +918,5 @@
         private System.Windows.Forms.Label labelRoom21;
         private System.Windows.Forms.Label labelRoom22;
         private System.Windows.Forms.Label labelRoom23;
-        private System.Windows.Forms.Label labelTest;
     }
 }

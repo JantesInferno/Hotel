@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace Hotel
 {
     public partial class PaymentsForm : Form
     {
-        public PaymentsForm(bool pressedLink = false)
+        public PaymentsForm(List<Booking> dueDates)
         {
             InitializeComponent();
 
+            if (dueDates.Count > 0)
+            {
+
+            }
         }
     }
 }

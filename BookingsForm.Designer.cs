@@ -50,6 +50,8 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.labelSearchMessage = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             this.comboBoxRooms.BackColor = System.Drawing.Color.White;
             this.comboBoxRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRooms.FormattingEnabled = true;
-            this.comboBoxRooms.Location = new System.Drawing.Point(105, 75);
+            this.comboBoxRooms.Location = new System.Drawing.Point(74, 75);
             this.comboBoxRooms.Name = "comboBoxRooms";
             this.comboBoxRooms.Size = new System.Drawing.Size(200, 21);
             this.comboBoxRooms.TabIndex = 1;
@@ -70,7 +72,7 @@
             // 
             this.textBoxCustomerSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBoxCustomerSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxCustomerSearch.Location = new System.Drawing.Point(105, 117);
+            this.textBoxCustomerSearch.Location = new System.Drawing.Point(74, 117);
             this.textBoxCustomerSearch.Name = "textBoxCustomerSearch";
             this.textBoxCustomerSearch.Size = new System.Drawing.Size(200, 20);
             this.textBoxCustomerSearch.TabIndex = 2;
@@ -96,10 +98,10 @@
             // labelNewMessage
             // 
             this.labelNewMessage.AutoSize = true;
-            this.labelNewMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNewMessage.Location = new System.Drawing.Point(3, 7);
+            this.labelNewMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNewMessage.Location = new System.Drawing.Point(3, 9);
             this.labelNewMessage.Name = "labelNewMessage";
-            this.labelNewMessage.Size = new System.Drawing.Size(109, 25);
+            this.labelNewMessage.Size = new System.Drawing.Size(118, 25);
             this.labelNewMessage.TabIndex = 7;
             this.labelNewMessage.Text = "Ny bokning";
             // 
@@ -114,7 +116,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 158);
+            this.dateTimePicker1.Location = new System.Drawing.Point(74, 158);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -123,7 +125,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(105, 199);
+            this.dateTimePicker2.Location = new System.Drawing.Point(74, 199);
             this.dateTimePicker2.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
@@ -146,7 +148,7 @@
             this.buttonCreateBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateBooking.ForeColor = System.Drawing.Color.White;
-            this.buttonCreateBooking.Location = new System.Drawing.Point(105, 283);
+            this.buttonCreateBooking.Location = new System.Drawing.Point(74, 282);
             this.buttonCreateBooking.Name = "buttonCreateBooking";
             this.buttonCreateBooking.Size = new System.Drawing.Size(200, 23);
             this.buttonCreateBooking.TabIndex = 6;
@@ -168,7 +170,7 @@
             this.comboBoxExtraBeds.BackColor = System.Drawing.Color.White;
             this.comboBoxExtraBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExtraBeds.FormattingEnabled = true;
-            this.comboBoxExtraBeds.Location = new System.Drawing.Point(105, 240);
+            this.comboBoxExtraBeds.Location = new System.Drawing.Point(74, 240);
             this.comboBoxExtraBeds.Name = "comboBoxExtraBeds";
             this.comboBoxExtraBeds.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtraBeds.TabIndex = 5;
@@ -177,7 +179,7 @@
             // 
             this.labelRoomException.AutoSize = true;
             this.labelRoomException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelRoomException.Location = new System.Drawing.Point(102, 99);
+            this.labelRoomException.Location = new System.Drawing.Point(71, 99);
             this.labelRoomException.Name = "labelRoomException";
             this.labelRoomException.Size = new System.Drawing.Size(62, 13);
             this.labelRoomException.TabIndex = 31;
@@ -188,7 +190,7 @@
             // 
             this.labelCustomerException.AutoSize = true;
             this.labelCustomerException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelCustomerException.Location = new System.Drawing.Point(102, 140);
+            this.labelCustomerException.Location = new System.Drawing.Point(71, 140);
             this.labelCustomerException.Name = "labelCustomerException";
             this.labelCustomerException.Size = new System.Drawing.Size(62, 13);
             this.labelCustomerException.TabIndex = 32;
@@ -199,7 +201,7 @@
             // 
             this.labelDateException.AutoSize = true;
             this.labelDateException.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelDateException.Location = new System.Drawing.Point(102, 222);
+            this.labelDateException.Location = new System.Drawing.Point(71, 222);
             this.labelDateException.Name = "labelDateException";
             this.labelDateException.Size = new System.Drawing.Size(62, 13);
             this.labelDateException.TabIndex = 33;
@@ -210,6 +212,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonDelete);
+            this.panel1.Controls.Add(this.buttonUpdate);
             this.panel1.Controls.Add(this.labelNewMessage);
             this.panel1.Controls.Add(this.labelDateException);
             this.panel1.Controls.Add(this.comboBoxRooms);
@@ -225,8 +229,8 @@
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(7, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(7, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 328);
             this.panel1.TabIndex = 34;
@@ -240,7 +244,7 @@
             this.panel2.Controls.Add(this.buttonSearch);
             this.panel2.Controls.Add(this.labelSearchMessage);
             this.panel2.Controls.Add(this.textBoxSearch);
-            this.panel2.Location = new System.Drawing.Point(350, 8);
+            this.panel2.Location = new System.Drawing.Point(350, 6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 328);
             this.panel2.TabIndex = 36;
@@ -285,10 +289,10 @@
             // labelSearchMessage
             // 
             this.labelSearchMessage.AutoSize = true;
-            this.labelSearchMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearchMessage.Location = new System.Drawing.Point(3, 9);
             this.labelSearchMessage.Name = "labelSearchMessage";
-            this.labelSearchMessage.Size = new System.Drawing.Size(160, 25);
+            this.labelSearchMessage.Size = new System.Drawing.Size(174, 25);
             this.labelSearchMessage.TabIndex = 19;
             this.labelSearchMessage.Text = "Sök efter bokning";
             // 
@@ -302,12 +306,46 @@
             this.textBoxSearch.Size = new System.Drawing.Size(243, 23);
             this.textBoxSearch.TabIndex = 16;
             // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonUpdate.FlatAppearance.BorderSize = 0;
+            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdate.Location = new System.Drawing.Point(74, 282);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(98, 23);
+            this.buttonUpdate.TabIndex = 34;
+            this.buttonUpdate.Text = "Uppdatera";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Visible = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(178, 282);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(98, 23);
+            this.buttonDelete.TabIndex = 35;
+            this.buttonDelete.Text = "Ta bort";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // BookingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
-            this.ClientSize = new System.Drawing.Size(821, 343);
+            this.ClientSize = new System.Drawing.Size(821, 340);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "BookingsForm";
@@ -344,5 +382,7 @@
         private System.Windows.Forms.Label labelSearchMessage;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }

@@ -12,9 +12,11 @@ namespace Hotel
 
         private Room _currentRoomSelected;
 
+        private Booking _currentBooking;
+
         private List<Room> _comboBoxRooms;
 
-        private int _selectedBooking;
+        private int _selectedIndex;
 
         public BookingsForm(DateTime? startDate = null, int? roomID = null)
         {
@@ -74,6 +76,8 @@ namespace Hotel
             {
                 comboBoxExtraBeds.Items.Add(2);
             }
+
+            comboBoxExtraBeds.SelectedIndex = 0;
         }
 
         private void buttonCreateBooking_Click(object sender, EventArgs e)
@@ -144,37 +148,38 @@ namespace Hotel
         {
             if (listBoxBookings.SelectedIndex >= 0)
             {
-                _selectedBooking = listBoxBookings.SelectedIndex;
+                _selectedIndex = listBoxBookings.SelectedIndex;
 
-                Booking booking = BookingRepo.GetBookingByID((int)listBoxBookings.SelectedValue);
+                _currentBooking = BookingRepo.GetBookingByID((int)listBoxBookings.SelectedValue);
 
                 dateTimePicker1.MinDate = DateTime.Now.AddYears(-10);
                 dateTimePicker2.MinDate = DateTime.Now.AddYears(-10);
 
-                textBoxCustomerSearch.Text = booking.Customer.Name;
-                comboBoxRooms.SelectedValue = (int)booking.RoomID;
-                dateTimePicker1.Value = booking.StartDate;
-                dateTimePicker2.Value = booking.EndDate;
-                comboBoxExtraBeds.SelectedIndex = (int)booking.ExtraBeds;
+                textBoxCustomerSearch.Text = _currentBooking.Customer.Name;
+                comboBoxRooms.SelectedValue = (int)_currentBooking.RoomID;
+                dateTimePicker1.Value = _currentBooking.StartDate;
+                dateTimePicker2.Value = _currentBooking.EndDate;
+                comboBoxExtraBeds.SelectedIndex = (int)_currentBooking.ExtraBeds;
 
-                labelNewMessage.Text = "Redigera bokning";
-                buttonCreateBooking.Text = "Uppdatera bokning";
+                buttonUpdate.Visible = true;
+                buttonDelete.Visible = true;
+                buttonCreateBooking.Visible = false;
             }
         }
 
         private void listBoxBookings_Click(object sender, EventArgs e)
         {
-            if (_selectedBooking == listBoxBookings.SelectedIndex)
+            if (_selectedIndex == listBoxBookings.SelectedIndex)
             {
                 listBoxBookings.ClearSelected();
 
-                _selectedBooking = -1;
+                _selectedIndex = -1;
 
-                dateTimePicker1.Value = DateTime.Now.AddDays(14);
-                dateTimePicker2.Value = DateTime.Now.AddDays(14);
+                dateTimePicker1.Value = DateTime.Today;
+                dateTimePicker2.Value = DateTime.Today;
 
-                dateTimePicker1.MinDate = DateTime.Now.AddDays(14);
-                dateTimePicker2.MinDate = DateTime.Now.AddDays(14);
+                dateTimePicker1.MinDate = DateTime.Today;
+                dateTimePicker2.MinDate = DateTime.Today;
 
                 comboBoxRooms.SelectedIndex = 0;
                 textBoxCustomerSearch.Clear();
@@ -182,8 +187,23 @@ namespace Hotel
                 dateTimePicker2.Value = DateTime.Now.Date;
                 comboBoxExtraBeds.SelectedIndex = 0;
 
-                labelNewMessage.Text = "Ny bokning";
-                buttonCreateBooking.Text = "Skapa bokning";
+                buttonCreateBooking.Visible = true;
+                buttonUpdate.Visible = false;
+                buttonDelete.Visible = false;
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            BookingRepo.UpdateBooking(_currentBooking);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort bokningen?", "Varning", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                BookingRepo.DeleteBooking(_currentBooking);
             }
         }
     }

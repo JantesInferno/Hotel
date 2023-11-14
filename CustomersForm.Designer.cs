@@ -48,6 +48,7 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.labelSearchMessage = new System.Windows.Forms.Label();
             this.textBoxCustomerSearch = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.buttonCreateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateCustomer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateCustomer.ForeColor = System.Drawing.Color.White;
-            this.buttonCreateCustomer.Location = new System.Drawing.Point(74, 242);
+            this.buttonCreateCustomer.Location = new System.Drawing.Point(74, 282);
             this.buttonCreateCustomer.Name = "buttonCreateCustomer";
             this.buttonCreateCustomer.Size = new System.Drawing.Size(200, 23);
             this.buttonCreateCustomer.TabIndex = 5;
@@ -98,10 +99,10 @@
             // labelMessage
             // 
             this.labelMessage.AutoSize = true;
-            this.labelMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMessage.Location = new System.Drawing.Point(3, 9);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(82, 25);
+            this.labelMessage.Size = new System.Drawing.Size(89, 25);
             this.labelMessage.TabIndex = 19;
             this.labelMessage.Text = "Ny kund";
             // 
@@ -208,22 +209,23 @@
             this.panel1.Controls.Add(this.textBoxEmail);
             this.panel1.Controls.Add(this.buttonCreateCustomer);
             this.panel1.Controls.Add(this.textBoxPhone);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(7, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 297);
+            this.panel1.Size = new System.Drawing.Size(338, 328);
             this.panel1.TabIndex = 34;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.listBoxCustomers);
             this.panel2.Controls.Add(this.buttonSearch);
             this.panel2.Controls.Add(this.labelSearchMessage);
             this.panel2.Controls.Add(this.textBoxCustomerSearch);
-            this.panel2.Location = new System.Drawing.Point(356, 12);
+            this.panel2.Location = new System.Drawing.Point(350, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(465, 297);
+            this.panel2.Size = new System.Drawing.Size(465, 328);
             this.panel2.TabIndex = 35;
             // 
             // listBoxCustomers
@@ -231,7 +233,7 @@
             this.listBoxCustomers.FormattingEnabled = true;
             this.listBoxCustomers.Location = new System.Drawing.Point(74, 119);
             this.listBoxCustomers.Name = "listBoxCustomers";
-            this.listBoxCustomers.Size = new System.Drawing.Size(286, 160);
+            this.listBoxCustomers.Size = new System.Drawing.Size(286, 186);
             this.listBoxCustomers.TabIndex = 28;
             this.listBoxCustomers.Click += new System.EventHandler(this.listBoxCustomers_Click);
             this.listBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.listBoxCustomers_SelectedIndexChanged);
@@ -255,10 +257,10 @@
             // labelSearchMessage
             // 
             this.labelSearchMessage.AutoSize = true;
-            this.labelSearchMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearchMessage.Location = new System.Drawing.Point(3, 9);
             this.labelSearchMessage.Name = "labelSearchMessage";
-            this.labelSearchMessage.Size = new System.Drawing.Size(133, 25);
+            this.labelSearchMessage.Size = new System.Drawing.Size(145, 25);
             this.labelSearchMessage.TabIndex = 19;
             this.labelSearchMessage.Text = "Sök efter kund";
             // 
@@ -272,12 +274,22 @@
             this.textBoxCustomerSearch.Size = new System.Drawing.Size(243, 23);
             this.textBoxCustomerSearch.TabIndex = 16;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(71, 61);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Kundnamn";
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
-            this.ClientSize = new System.Drawing.Size(832, 318);
+            this.ClientSize = new System.Drawing.Size(821, 340);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CustomersForm";
@@ -312,5 +324,6 @@
         private System.Windows.Forms.TextBox textBoxCustomerSearch;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBoxCustomers;
+        private System.Windows.Forms.Label label7;
     }
 }
