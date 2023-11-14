@@ -127,9 +127,9 @@
     <edmx:ConceptualModels>
       <Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DataHandler" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Invoices" EntityType="HotelModel.Invoice" />
           <EntitySet Name="Bookings" EntityType="HotelModel.Booking" />
           <EntitySet Name="Customers" EntityType="HotelModel.Customer" />
-          <EntitySet Name="Invoices" EntityType="HotelModel.Invoice" />
           <EntitySet Name="Rooms" EntityType="HotelModel.Room" />
           <EntitySet Name="RoomTypes" EntityType="HotelModel.RoomType" />
           <AssociationSet Name="FK_Bookings_Customers" Association="HotelModel.FK_Bookings_Customers">
@@ -148,7 +148,16 @@
             <End Role="RoomType" EntitySet="RoomTypes" />
             <End Role="Room" EntitySet="Rooms" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Bookings" Relationship="HotelModel.FK_Bookings_Invoices" FromRole="Invoice" ToRole="Booking" />
+        </EntityType>
         <EntityType Name="Booking">
           <Key>
             <PropertyRef Name="BookingID" />
@@ -174,15 +183,6 @@
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Bookings" Relationship="HotelModel.FK_Bookings_Customers" FromRole="Customer" ToRole="Booking" />
-        </EntityType>
-        <EntityType Name="Invoice">
-          <Key>
-            <PropertyRef Name="InvoiceID" />
-          </Key>
-          <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DueDate" Type="DateTime" Precision="3" />
-          <Property Name="TotalCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="Bookings" Relationship="HotelModel.FK_Bookings_Invoices" FromRole="Invoice" ToRole="Booking" />
         </EntityType>
         <EntityType Name="Room">
           <Key>
@@ -257,6 +257,15 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="DataHandler">
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="HotelModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Bookings">
             <EntityTypeMapping TypeName="HotelModel.Booking">
               <MappingFragment StoreEntitySet="Bookings">
@@ -281,15 +290,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Invoices">
-            <EntityTypeMapping TypeName="HotelModel.Invoice">
-              <MappingFragment StoreEntitySet="Invoices">
-                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
-                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="HotelModel.Room">
               <MappingFragment StoreEntitySet="Rooms">
@@ -308,7 +308,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -30,7 +30,7 @@ namespace Hotel
         private void buttonCreateCustomer_Click(object sender, EventArgs e)
         {
             TextBox[] textBox = { textBoxName, textBoxEmail, textBoxPhone, textBoxAddress};
-            Label[] label = { labelName, labelEmail, labelPhone, labelAddress};
+            Label[] label = { labelNameException, labelEmailException, labelPhoneException, labelAddressException};
 
             int i = 0;
             string requiredField = "Obligatoriskt fält";
@@ -68,9 +68,9 @@ namespace Hotel
             if (!label.Any(x => x.Visible))
             {
                 Customer customer = new Customer();
-                customer.Name = textBoxEmail.Text;
-                customer.Email = textBoxPhone.Text;
-                customer.Phone = textBoxEmail.Text;
+                customer.Name = textBoxName.Text;
+                customer.Email = textBoxEmail.Text;
+                customer.Phone = textBoxPhone.Text;
                 customer.Address = textBoxAddress.Text;
 
                 if (listBoxCustomers.SelectedIndex >= 0)
@@ -83,9 +83,7 @@ namespace Hotel
                     {
                         CustomerRepo.CreateCustomer(customer);
 
-                        MessageBox.Show("Kund: " + customer.Name + " finns redan registrerad");
-
-                        this.Close();
+                        MessageBox.Show("Kund: " + customer.Name + " registrerad");
                     }
                     catch (Exception)
                     {

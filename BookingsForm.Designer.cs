@@ -63,7 +63,7 @@
             this.comboBoxRooms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxRooms.Name = "comboBoxRooms";
             this.comboBoxRooms.Size = new System.Drawing.Size(298, 28);
-            this.comboBoxRooms.TabIndex = 2;
+            this.comboBoxRooms.TabIndex = 1;
             this.comboBoxRooms.SelectedIndexChanged += new System.EventHandler(this.comboBoxRooms_SelectedIndexChanged);
             this.comboBoxRooms.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.comboBoxRooms_Format);
             // 
@@ -75,7 +75,7 @@
             this.textBoxCustomerSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxCustomerSearch.Name = "textBoxCustomerSearch";
             this.textBoxCustomerSearch.Size = new System.Drawing.Size(298, 26);
-            this.textBoxCustomerSearch.TabIndex = 3;
+            this.textBoxCustomerSearch.TabIndex = 2;
             // 
             // label2
             // 
@@ -125,7 +125,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.Value = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             // 
             // dateTimePicker2
@@ -135,7 +135,7 @@
             this.dateTimePicker2.MinDate = new System.DateTime(2023, 11, 11, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(298, 26);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.TabIndex = 4;
             // 
             // label5
             // 
@@ -159,7 +159,7 @@
             this.buttonCreateBooking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCreateBooking.Name = "buttonCreateBooking";
             this.buttonCreateBooking.Size = new System.Drawing.Size(300, 35);
-            this.buttonCreateBooking.TabIndex = 14;
+            this.buttonCreateBooking.TabIndex = 6;
             this.buttonCreateBooking.Text = "Skapa bokning";
             this.buttonCreateBooking.UseVisualStyleBackColor = false;
             this.buttonCreateBooking.Click += new System.EventHandler(this.buttonCreateBooking_Click);
@@ -183,7 +183,7 @@
             this.comboBoxExtraBeds.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxExtraBeds.Name = "comboBoxExtraBeds";
             this.comboBoxExtraBeds.Size = new System.Drawing.Size(180, 28);
-            this.comboBoxExtraBeds.TabIndex = 13;
+            this.comboBoxExtraBeds.TabIndex = 5;
             // 
             // labelRoomException
             // 

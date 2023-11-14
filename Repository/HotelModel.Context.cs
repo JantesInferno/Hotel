@@ -25,9 +25,9 @@ namespace Hotel.Repository
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<RoomType> RoomTypes { get; set; }
     }

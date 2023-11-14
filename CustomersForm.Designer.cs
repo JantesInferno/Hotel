@@ -43,7 +43,6 @@
             this.labelPhoneException = new System.Windows.Forms.Label();
             this.labelAddressException = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelTest = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listBoxCustomers = new System.Windows.Forms.ListBox();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             this.buttonCreateCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCreateCustomer.Name = "buttonCreateCustomer";
             this.buttonCreateCustomer.Size = new System.Drawing.Size(300, 35);
-            this.buttonCreateCustomer.TabIndex = 26;
+            this.buttonCreateCustomer.TabIndex = 5;
             this.buttonCreateCustomer.Text = "Skapa kund";
             this.buttonCreateCustomer.UseVisualStyleBackColor = false;
             this.buttonCreateCustomer.Click += new System.EventHandler(this.buttonCreateCustomer_Click);
@@ -128,7 +127,7 @@
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(298, 26);
-            this.textBoxName.TabIndex = 16;
+            this.textBoxName.TabIndex = 1;
             // 
             // textBoxPhone
             // 
@@ -137,7 +136,7 @@
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(298, 26);
-            this.textBoxPhone.TabIndex = 27;
+            this.textBoxPhone.TabIndex = 3;
             // 
             // textBoxEmail
             // 
@@ -146,7 +145,7 @@
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(298, 26);
-            this.textBoxEmail.TabIndex = 28;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxAddress
             // 
@@ -155,7 +154,7 @@
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(298, 26);
-            this.textBoxAddress.TabIndex = 29;
+            this.textBoxAddress.TabIndex = 4;
             // 
             // labelNameException
             // 
@@ -208,7 +207,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.labelTest);
             this.panel1.Controls.Add(this.labelMessage);
             this.panel1.Controls.Add(this.labelAddressException);
             this.panel1.Controls.Add(this.textBoxName);
@@ -228,16 +226,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(506, 456);
             this.panel1.TabIndex = 34;
-            // 
-            // labelTest
-            // 
-            this.labelTest.AutoSize = true;
-            this.labelTest.Location = new System.Drawing.Point(332, 45);
-            this.labelTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTest.Name = "labelTest";
-            this.labelTest.Size = new System.Drawing.Size(51, 20);
-            this.labelTest.TabIndex = 34;
-            this.labelTest.Text = "label1";
             // 
             // panel2
             // 
@@ -344,6 +332,5 @@
         private System.Windows.Forms.TextBox textBoxCustomerSearch;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBoxCustomers;
-        private System.Windows.Forms.Label labelTest;
     }
 }

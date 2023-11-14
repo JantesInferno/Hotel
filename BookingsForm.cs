@@ -30,8 +30,8 @@ namespace Hotel
             comboBoxExtraBeds.SelectedIndex = 0;
             _currentRoomSelected = RoomRepo.GetRoomByID((int)comboBoxRooms.SelectedValue);
 
-            dateTimePicker1.MinDate = DateTime.Today.Date.AddDays(14);
-            dateTimePicker2.MinDate = DateTime.Today.Date.AddDays(14);
+            dateTimePicker1.MinDate = DateTime.Today;
+            dateTimePicker2.MinDate = DateTime.Today;
 
             _data = new AutoCompleteStringCollection();
 
@@ -98,10 +98,8 @@ namespace Hotel
 
             if (!RoomRepo.CheckRoomAvailability(_currentRoomSelected, start, end))
             {
-                labelRoomException.Text = "Rummet är upptaget mellan den tidsperioden.";
+                labelRoomException.Text = "Rummet är upptaget den tidsperioden.";
                 labelRoomException.Visible = true;
-                _comboBoxRooms.Remove(_currentRoomSelected);
-                _currentRoomSelected = null;
             }
             else
             {
