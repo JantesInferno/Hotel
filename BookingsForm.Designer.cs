@@ -45,11 +45,11 @@
             this.labelDateException = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.listBoxBookings = new System.Windows.Forms.ListBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.labelSearchMessage = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -223,6 +223,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelNewMessage);
             this.panel1.Controls.Add(this.labelDateException);
             this.panel1.Controls.Add(this.comboBoxRooms);
@@ -256,6 +257,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(696, 503);
             this.panel2.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(107, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Kundnamn";
             // 
             // listBoxBookings
             // 
@@ -309,21 +319,12 @@
             this.textBoxSearch.Size = new System.Drawing.Size(362, 31);
             this.textBoxSearch.TabIndex = 16;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(107, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Kundnamn";
-            // 
             // BookingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1323, 529);
+            this.ClientSize = new System.Drawing.Size(1232, 527);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
