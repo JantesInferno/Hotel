@@ -78,14 +78,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelRoom10 = new System.Windows.Forms.Label();
+            this.labelRoom11 = new System.Windows.Forms.Label();
+            this.labelRoom12 = new System.Windows.Forms.Label();
+            this.labelRoom13 = new System.Windows.Forms.Label();
+            this.labelRoom20 = new System.Windows.Forms.Label();
+            this.labelRoom21 = new System.Windows.Forms.Label();
+            this.labelRoom22 = new System.Windows.Forms.Label();
+            this.labelRoom23 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -235,7 +235,7 @@
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
@@ -249,6 +249,7 @@
             this.tableLayoutPanelCalendar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelCalendar.Size = new System.Drawing.Size(858, 559);
             this.tableLayoutPanelCalendar.TabIndex = 18;
+            this.tableLayoutPanelCalendar.Click += new System.EventHandler(this.tableLayoutPanelCalendar_Click);
             // 
             // label20
             // 
@@ -725,93 +726,93 @@
             this.button8.TabIndex = 65;
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // labelRoom10
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Brown;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(52, 314);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "10";
+            this.labelRoom10.AutoSize = true;
+            this.labelRoom10.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom10.ForeColor = System.Drawing.Color.White;
+            this.labelRoom10.Location = new System.Drawing.Point(52, 314);
+            this.labelRoom10.Name = "labelRoom10";
+            this.labelRoom10.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom10.TabIndex = 67;
+            this.labelRoom10.Text = "10";
             // 
-            // label3
+            // labelRoom11
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Brown;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(52, 384);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 13);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "11";
+            this.labelRoom11.AutoSize = true;
+            this.labelRoom11.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom11.ForeColor = System.Drawing.Color.White;
+            this.labelRoom11.Location = new System.Drawing.Point(52, 384);
+            this.labelRoom11.Name = "labelRoom11";
+            this.labelRoom11.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom11.TabIndex = 68;
+            this.labelRoom11.Text = "11";
             // 
-            // label4
+            // labelRoom12
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Brown;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(52, 453);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 13);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "12";
+            this.labelRoom12.AutoSize = true;
+            this.labelRoom12.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom12.ForeColor = System.Drawing.Color.White;
+            this.labelRoom12.Location = new System.Drawing.Point(52, 453);
+            this.labelRoom12.Name = "labelRoom12";
+            this.labelRoom12.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom12.TabIndex = 69;
+            this.labelRoom12.Text = "12";
             // 
-            // label5
+            // labelRoom13
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Brown;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(52, 522);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "13";
+            this.labelRoom13.AutoSize = true;
+            this.labelRoom13.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom13.ForeColor = System.Drawing.Color.White;
+            this.labelRoom13.Location = new System.Drawing.Point(52, 522);
+            this.labelRoom13.Name = "labelRoom13";
+            this.labelRoom13.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom13.TabIndex = 70;
+            this.labelRoom13.Text = "13";
             // 
-            // label6
+            // labelRoom20
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Brown;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(52, 591);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
-            this.label6.TabIndex = 71;
-            this.label6.Text = "20";
+            this.labelRoom20.AutoSize = true;
+            this.labelRoom20.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom20.ForeColor = System.Drawing.Color.White;
+            this.labelRoom20.Location = new System.Drawing.Point(52, 591);
+            this.labelRoom20.Name = "labelRoom20";
+            this.labelRoom20.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom20.TabIndex = 71;
+            this.labelRoom20.Text = "20";
             // 
-            // label7
+            // labelRoom21
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Brown;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(52, 660);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 13);
-            this.label7.TabIndex = 72;
-            this.label7.Text = "21";
+            this.labelRoom21.AutoSize = true;
+            this.labelRoom21.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom21.ForeColor = System.Drawing.Color.White;
+            this.labelRoom21.Location = new System.Drawing.Point(52, 660);
+            this.labelRoom21.Name = "labelRoom21";
+            this.labelRoom21.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom21.TabIndex = 72;
+            this.labelRoom21.Text = "21";
             // 
-            // label8
+            // labelRoom22
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Brown;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(52, 729);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 13);
-            this.label8.TabIndex = 73;
-            this.label8.Text = "22";
+            this.labelRoom22.AutoSize = true;
+            this.labelRoom22.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom22.ForeColor = System.Drawing.Color.White;
+            this.labelRoom22.Location = new System.Drawing.Point(52, 729);
+            this.labelRoom22.Name = "labelRoom22";
+            this.labelRoom22.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom22.TabIndex = 73;
+            this.labelRoom22.Text = "22";
             // 
-            // label9
+            // labelRoom23
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Brown;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(52, 801);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(19, 13);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "23";
+            this.labelRoom23.AutoSize = true;
+            this.labelRoom23.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom23.ForeColor = System.Drawing.Color.White;
+            this.labelRoom23.Location = new System.Drawing.Point(52, 801);
+            this.labelRoom23.Name = "labelRoom23";
+            this.labelRoom23.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom23.TabIndex = 74;
+            this.labelRoom23.Text = "23";
             // 
             // MainForm
             // 
@@ -819,14 +820,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 854);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelRoom23);
+            this.Controls.Add(this.labelRoom22);
+            this.Controls.Add(this.labelRoom21);
+            this.Controls.Add(this.labelRoom20);
+            this.Controls.Add(this.labelRoom13);
+            this.Controls.Add(this.labelRoom12);
+            this.Controls.Add(this.labelRoom11);
+            this.Controls.Add(this.labelRoom10);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
@@ -927,13 +928,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelRoom10;
+        private System.Windows.Forms.Label labelRoom11;
+        private System.Windows.Forms.Label labelRoom12;
+        private System.Windows.Forms.Label labelRoom13;
+        private System.Windows.Forms.Label labelRoom20;
+        private System.Windows.Forms.Label labelRoom21;
+        private System.Windows.Forms.Label labelRoom22;
+        private System.Windows.Forms.Label labelRoom23;
     }
 }

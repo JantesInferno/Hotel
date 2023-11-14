@@ -16,7 +16,7 @@ namespace Hotel
 
         private int _selectedBooking;
 
-        public BookingsForm()
+        public BookingsForm(DateTime? startDate = null, int? roomID = null)
         {
             InitializeComponent();
 
@@ -39,6 +39,13 @@ namespace Hotel
 
             textBoxCustomerSearch.AutoCompleteCustomSource = _data;
             textBoxSearch.AutoCompleteCustomSource = _data;
+
+            if (startDate != null && roomID != null)
+            {
+                dateTimePicker1.Value = startDate.Value;
+                dateTimePicker2.Value = startDate.Value;
+                comboBoxRooms.SelectedValue = roomID.Value;
+            }
         }
 
         private void comboBoxRooms_Format(object sender, ListControlConvertEventArgs e)
