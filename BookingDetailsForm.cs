@@ -42,11 +42,15 @@ namespace Hotel
             comboBoxExtraBeds.SelectedIndex = 0;
             _currentRoomSelected = RoomRepo.GetRoomByID((int)comboBoxRooms.SelectedValue);
 
-            dateTimePickerCheckIn.MinDate = DateTime.Today;
-            dateTimePickerCheckOut.MinDate = DateTime.Today;
+            dateTimePickerCheckIn.MinDate = DateTime.Today.AddYears(-10);
+            dateTimePickerCheckOut.MinDate = DateTime.Today.AddYears(-10);
 
             dateTimePickerCheckIn.Value = _currentBooking.StartDate;
             dateTimePickerCheckOut.Value = _currentBooking.EndDate;
+
+            dateTimePickerCheckIn.MinDate = DateTime.Today;
+            dateTimePickerCheckOut.MinDate = DateTime.Today.AddDays(1);
+
             comboBoxRooms.SelectedValue = _currentBooking.RoomID;
             textBoxBookingCustomer.Text = _currentBooking.Customer.Name;
             comboBoxExtraBeds.SelectedValue = _currentBooking.ExtraBeds;
@@ -176,6 +180,7 @@ namespace Hotel
             }
             else
                 labelDateException.Visible = false;
+
             if (!_data.Contains(textBoxBookingCustomer.Text.Trim()))
             {
                 labelCustomerException.Text = "Ogiltigt kundnamn.";
