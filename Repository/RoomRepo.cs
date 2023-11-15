@@ -22,12 +22,12 @@ namespace Hotel.Repository
 
         public static Room GetRoomByID(int id)
         {
-            return _db.Rooms.Include("RoomType").SingleOrDefault(x => x.RoomID == id);
+            return _db.Rooms.SingleOrDefault(x => x.RoomID == id);
         }
 
         public static bool CheckRoomAvailability(Room room, DateTime start, DateTime end)
         {
-            bool b = _db.Bookings.Include("Rooms").Where(x => x.RoomID == room.RoomID).Any(x => !(x.StartDate >= end || start >= x.EndDate));
+            bool b = _db.Bookings.Where(x => x.RoomID == room.RoomID).Any(x => !(x.StartDate >= end || start >= x.EndDate));
             if (b == false)
                 return true;
 

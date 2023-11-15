@@ -13,7 +13,7 @@ namespace Hotel
     {
         static Timer _timer;
 
-        private List<Booking> _dueDates = new List<Booking>();
+        public static List<Booking> _dueDates = new List<Booking>();
 
         private DateTime[] _dates;
 
@@ -32,8 +32,6 @@ namespace Hotel
             // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag
             _dueDates = BookingRepo.CheckDueDates();
             labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
-
-            PopulateTableLayoutPanel();
         }
 
         // EVENTS
@@ -55,7 +53,10 @@ namespace Hotel
                 labelTodaysDueDates.Visible = false;
             }
 
-            //PopulateTableLayoutPanel();
+            PopulateTableLayoutPanel();
+
+            _dueDates = BookingRepo.CheckDueDates();
+            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
         }
 
         private void dateTimePickerSearch_ValueChanged(object sender, EventArgs e)
@@ -107,26 +108,40 @@ namespace Hotel
 
                 Button buttonBooking;
 
-                if (booking.EndDate.Date.Equals(DateTime.Now.Date))
+                if (booking.Invoice.DueDate.Equals(DateTime.Now.Date))
+                    buttonBooking = CreateBookingButton(Color.Black, Color.White);
+                else if (booking.EndDate.Date.Equals(DateTime.Now.Date))
                     buttonBooking = CreateBookingButton(Color.Yellow, Color.Black);
                 else if (booking.EndDate.Date < DateTime.Now.Date)
-                    buttonBooking = CreateBookingButton(Color.Red, Color.White);
+                    buttonBooking = CreateBookingButton(Color.DimGray, Color.White);
                 else if (booking.StartDate.Date > DateTime.Now.Date)
-                    buttonBooking = CreateBookingButton(Color.Blue, Color.White);
+                    buttonBooking = CreateBookingButton(Color.DeepSkyBlue, Color.White);
                 else
-                    buttonBooking = CreateBookingButton(Color.Green, Color.White);
+                    buttonBooking = CreateBookingButton(Color.SeaGreen, Color.White);
 
                 string extraBeds = booking.ExtraBeds > 0 ? $"Extrasängar: {booking.ExtraBeds.ToString()}st á 200:-\n" : "";
 
-                toolTipTest.SetToolTip(buttonBooking, 
-                    $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
-                    $"{extraBeds}" +
-                    $"Kundnamn: {booking.Customer.Name}\n" +
-                    $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
-                    $"Check-out: {booking.EndDate.ToShortDateString()}\n" +
-                    $"Att betala: {(int)booking.Invoice.TotalCost}:-\n" +
-                    $"Faktura refnr: {booking.InvoiceID}\n" +
-                    $"Förfallodatum: {booking.Invoice.DueDate}");
+                if (booking.Invoice.DueDate != null)
+                {
+                    toolTipTest.SetToolTip(buttonBooking,
+                                        $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
+                                        $"{extraBeds}" +
+                                        $"Kundnamn: {booking.Customer.Name}\n" +
+                                        $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
+                                        $"Check-out: {booking.EndDate.ToShortDateString()}\n" +
+                                        $"Att betala: {(int)booking.Invoice.TotalCost}:-\n" +
+                                        $"Faktura refnr: {booking.InvoiceID}\n" +
+                                        $"Förfallodatum: {booking.Invoice.DueDate}");
+                }
+                else
+                {
+                    toolTipTest.SetToolTip(buttonBooking,
+                                        $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
+                                        $"{extraBeds}" +
+                                        $"Kundnamn: {booking.Customer.Name}\n" +
+                                        $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
+                                        $"Check-out: {booking.EndDate.ToShortDateString()}");
+                }
 
                 buttonBooking.Tag = booking;
                 buttonBooking.Text = booking.Customer.Name;
@@ -225,12 +240,6 @@ namespace Hotel
         {
             PaymentsForm frm = new PaymentsForm(_dueDates);
             frm.Show();
-        }
-
-        private void linkLabelCancelBookings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //PaymentsForm frm = new PaymentsForm();
-            //frm.Show(true);
         }
 
         private void buttonNextDate_Click(object sender, EventArgs e)

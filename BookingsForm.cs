@@ -18,6 +18,9 @@ namespace Hotel
 
         private int _selectedIndex;
 
+        private DateTime _start;
+        private DateTime _end;
+
         public BookingsForm(DateTime? startDate = null, int? roomID = null)
         {
             InitializeComponent();
@@ -41,7 +44,7 @@ namespace Hotel
 
             textBoxCustomerSearch.AutoCompleteCustomSource = _data;
             textBoxSearch.AutoCompleteCustomSource = _data;
-
+            
             if (startDate != null && roomID != null)
             {
                 dateTimePicker1.Value = startDate.Value;
@@ -82,50 +85,19 @@ namespace Hotel
 
         private void buttonCreateBooking_Click(object sender, EventArgs e)
         {
-            if (!_data.Contains(textBoxCustomerSearch.Text.Trim()))
+            if (ValidateInput())
             {
-                labelCustomerException.Text = "Ogiltigt kundnamn.";
-                labelCustomerException.Visible = true;
-            }
-            else if (textBoxCustomerSearch.Text.Trim().Length <= 0)
-            {
-                labelCustomerException.Text = "Obligatoriskt fält.";
-                labelCustomerException.Visible = true;
-            }
-            else
-                labelCustomerException.Visible = false;
-
-            DateTime start = dateTimePicker1.Value.Date;
-            DateTime end = dateTimePicker2.Value.Date;
-
-            if (start > end)
-            {
-                labelDateException.Text = "Slutdatum kan inte vara före startdatum.";
-                labelDateException.Visible = true;
-                return;
-            }
-            else
-                labelDateException.Visible = false;
-
-            if (!RoomRepo.CheckRoomAvailability(_currentRoomSelected, start, end))
-            {
-                labelRoomException.Text = "Rummet är upptaget den tidsperioden.";
-                labelRoomException.Visible = true;
-            }
-            else
-            {
-                labelRoomException.Visible = false;
                 Booking booking = new Booking();
                 booking.RoomID = _currentRoomSelected.RoomID;
                 booking.CustomerID = CustomerRepo.GetCustomersBySearch(textBoxCustomerSearch.Text.Trim()).FirstOrDefault().CustomerID;
-                booking.StartDate = start;
-                booking.EndDate = end;
+                booking.StartDate = _start;
+                booking.EndDate = _end;
                 booking.ExtraBeds = Convert.ToInt32(comboBoxExtraBeds.Text);
 
                 BookingRepo.CreateBooking(booking, _currentRoomSelected);
 
-                MessageBox.Show("Bokning skapad!");
-            }
+                MessageBox.Show("Bokning skapad");
+            }     
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -193,18 +165,72 @@ namespace Hotel
             }
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        public void buttonUpdate_Click(object sender, EventArgs e)
         {
-            BookingRepo.UpdateBooking(_currentBooking);
+            if (ValidateInput())
+            {
+                _currentBooking.RoomID = _currentRoomSelected.RoomID;
+                _currentBooking.StartDate = dateTimePicker1.Value.Date;
+                _currentBooking.EndDate = dateTimePicker2.Value.Date;
+                _currentBooking.ExtraBeds = Convert.ToInt32(comboBoxExtraBeds.Text);
+                BookingRepo.UpdateBooking(_currentBooking);
+                MessageBox.Show("Bokning för kund " + _currentBooking.Customer.Name + " uppdaterad");
+            }
+
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        public void buttonDelete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort bokningen?", "Varning", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 BookingRepo.DeleteBooking(_currentBooking);
+
+                MessageBox.Show("Bokning borttagen");
             }
+        }
+
+        private bool ValidateInput()
+        {
+            _start = dateTimePicker1.Value.Date;
+            _end = dateTimePicker2.Value.Date;
+
+            if (_start > _end)
+            {
+                labelDateException.Text = "Slutdatum kan inte vara före startdatum.";
+                labelDateException.Visible = true;
+            }
+            else
+                labelDateException.Visible = false;
+            if (!_data.Contains(textBoxCustomerSearch.Text.Trim()))
+            {
+                labelCustomerException.Text = "Ogiltigt kundnamn.";
+                labelCustomerException.Visible = true;
+            }
+            else if (textBoxCustomerSearch.Text.Trim().Length <= 0)
+            {
+                labelCustomerException.Text = "Obligatoriskt fält.";
+                labelCustomerException.Visible = true;
+            }
+            else
+            {
+                labelCustomerException.Visible = false;
+            }
+
+            if (!RoomRepo.CheckRoomAvailability(_currentRoomSelected, _start, _end))
+            {
+                labelRoomException.Text = "Rummet är upptaget den tidsperioden.";
+                labelRoomException.Visible = true;
+            }
+            else
+                labelRoomException.Visible = false;
+
+            if (labelCustomerException.Visible || labelDateException.Visible || labelRoomException.Visible) 
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

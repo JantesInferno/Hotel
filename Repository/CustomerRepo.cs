@@ -65,11 +65,15 @@ namespace Hotel.Repository
             _db.SaveChanges();
         }
 
-        public static void DeleteCustomer(Customer customer)
+        public static bool DeleteCustomer(Customer customer)
         {
-            // if no bookings
+            if (customer.Bookings != null)
+                return false;
+
             _db.Customers.Remove(customer);
             _db.SaveChanges();
+
+            return true;
         }
     }
 }

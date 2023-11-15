@@ -55,12 +55,12 @@ namespace Hotel.Repository
 
         public static List<Booking> GetAllBookings() 
         {
-            return _db.Bookings.Include("Customer").Include("Room").Include("Invoice").ToList();
+            return _db.Bookings.ToList();
         }
 
         public static List<Booking> GetBookingsByCustomerID(int customerID)
         {
-            return _db.Bookings.Include("Customer").Include("Rooms").Include("Invoice").Where(x => x.CustomerID == customerID).ToList();
+            return _db.Bookings.Where(x => x.CustomerID == customerID).ToList();
         }
 
         public static List<Booking> GetBookingsByDate(DateTime[] dates) 
@@ -69,7 +69,7 @@ namespace Hotel.Repository
             
             foreach (DateTime date in dates)
             {
-                List<Booking> bookings = _db.Bookings.Include("Customer").Include("Room").Include("Invoice").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
+                List<Booking> bookings = _db.Bookings.Include("Invoice").Include("Room").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
                 foreach (Booking booking in bookings)
                 {
                     if (booking != null && !list.Contains(booking))
@@ -82,12 +82,12 @@ namespace Hotel.Repository
 
         public static List<Booking> GetBookingsByCustomerSearch(string searchTerm)
         {
-            return _db.Bookings.Include("Customer").Include("Room").Include("Invoice").Where(x => x.Customer.Name.Contains(searchTerm)).ToList();
+            return _db.Bookings.Where(x => x.Customer.Name.Contains(searchTerm)).ToList();
         }
 
         public static Booking GetBookingByID(int id)
         {
-            return _db.Bookings.Include("Customer").Include("Room").Include("Invoice").SingleOrDefault(x => x.BookingID == id);
+            return _db.Bookings.SingleOrDefault(x => x.BookingID == id);
         }
 
         public static void UpdateBooking(Booking newBooking)
@@ -99,6 +99,7 @@ namespace Hotel.Repository
 
         public static void DeleteBooking(Booking booking)
         {
+            _db.Invoices.Remove(booking.Invoice);
             _db.Bookings.Remove(booking);
             _db.SaveChanges();
         }

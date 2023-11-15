@@ -15,7 +15,11 @@ namespace Hotel
 {
     public partial class CustomersForm : Form
     {
-        private int _selectedCustomer;
+        private int _selectedIndex;
+
+        private Customer _currentCustomer;
+
+
         public CustomersForm()
         {
             InitializeComponent();
@@ -29,8 +33,105 @@ namespace Hotel
 
         private void buttonCreateCustomer_Click(object sender, EventArgs e)
         {
-            TextBox[] textBox = { textBoxName, textBoxEmail, textBoxPhone, textBoxAddress};
-            Label[] label = { labelNameException, labelEmailException, labelPhoneException, labelAddressException};
+            if (ValidatedInput())
+            {
+                Customer customer = new Customer();
+                customer.Name = textBoxName.Text;
+                customer.Email = textBoxEmail.Text;
+                customer.Phone = textBoxPhone.Text;
+                customer.Address = textBoxAddress.Text;
+
+                try
+                {
+                    CustomerRepo.CreateCustomer(customer);
+
+                    MessageBox.Show("Kund " + customer.Name + " registrerad");
+                }
+                catch (Exception)
+                {
+                    labelEmailException.Text = "En kund är redan kopplad till den här email-adressen";
+                    labelEmailException.Visible = true;
+                }
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            listBoxCustomers.DisplayMember = "Name";
+            listBoxCustomers.ValueMember = "CustomerID";
+            listBoxCustomers.DataSource = CustomerRepo.GetCustomersBySearch(textBoxCustomerSearch.Text.Trim());
+        }
+
+        private void listBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxCustomers.SelectedIndex >= 0)
+            {
+                _selectedIndex = listBoxCustomers.SelectedIndex;
+
+                _currentCustomer = CustomerRepo.GetCustomerById((int)listBoxCustomers.SelectedValue);
+
+                textBoxName.Text = _currentCustomer.Name;
+                textBoxEmail.Text = _currentCustomer.Email;
+                textBoxPhone.Text = _currentCustomer.Phone;
+                textBoxAddress.Text = _currentCustomer.Address;
+
+                buttonCreateCustomer.Visible = false;
+                buttonUpdate.Visible = true;
+                buttonDelete.Visible = true;
+            }
+        }
+
+        private void listBoxCustomers_Click(object sender, EventArgs e)
+        {
+            if (_selectedIndex == listBoxCustomers.SelectedIndex)
+            {
+                listBoxCustomers.ClearSelected();
+
+                _selectedIndex = -1;
+
+                textBoxName.Clear();
+                textBoxEmail.Clear();
+                textBoxPhone.Clear();
+                textBoxAddress.Clear();
+
+                buttonCreateCustomer.Visible = true;
+                buttonUpdate.Visible = false;
+                buttonDelete.Visible = false;
+            }
+        }
+
+        public void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            if (ValidatedInput())
+            {
+                _currentCustomer.Name = textBoxName.Text;
+                _currentCustomer.Email = textBoxEmail.Text;
+                _currentCustomer.Phone = textBoxPhone.Text;
+                _currentCustomer.Address = textBoxAddress.Text;
+                CustomerRepo.UpdateCustomer(_currentCustomer);
+
+                MessageBox.Show("Kund " + _currentCustomer.Name + " uppdaterad");
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kunden?", "Varning", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (CustomerRepo.DeleteCustomer(_currentCustomer))
+                    MessageBox.Show("Kund " + _currentCustomer.Name + " borttagen");
+                else
+                    MessageBox.Show("Kund " + _currentCustomer.Name + " har en aktiv bokning");
+
+                _currentCustomer = null;
+            }
+        }
+
+        private bool ValidatedInput()
+        {
+            TextBox[] textBox = { textBoxName, textBoxEmail, textBoxPhone, textBoxAddress };
+            Label[] label = { labelNameException, labelEmailException, labelPhoneException, labelAddressException };
 
             int i = 0;
             string requiredField = "Obligatoriskt fält";
@@ -64,77 +165,10 @@ namespace Hotel
                 i++;
             }
 
+            if (label.Any(x => x.Visible))
+                return false;
 
-            if (!label.Any(x => x.Visible))
-            {
-                Customer customer = new Customer();
-                customer.Name = textBoxName.Text;
-                customer.Email = textBoxEmail.Text;
-                customer.Phone = textBoxPhone.Text;
-                customer.Address = textBoxAddress.Text;
-
-                if (listBoxCustomers.SelectedIndex >= 0)
-                {
-                    CustomerRepo.UpdateCustomer(customer);
-                }
-                else
-                {
-                    try
-                    {
-                        CustomerRepo.CreateCustomer(customer);
-
-                        MessageBox.Show("Kund: " + customer.Name + " registrerad");
-                    }
-                    catch (Exception)
-                    {
-                        labelNameException.Text = "Användarnamn upptaget";
-                        labelNameException.Visible = true;
-                    }
-                }
-            }
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            listBoxCustomers.DisplayMember = "Name";
-            listBoxCustomers.ValueMember = "CustomerID";
-            listBoxCustomers.DataSource = CustomerRepo.GetCustomersBySearch(textBoxCustomerSearch.Text.Trim());
-        }
-
-        private void listBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBoxCustomers.SelectedIndex >= 0)
-            {
-                _selectedCustomer = listBoxCustomers.SelectedIndex;
-
-                Customer customer = CustomerRepo.GetCustomerById((int)listBoxCustomers.SelectedValue);
-
-                textBoxName.Text = customer.Name;
-                textBoxEmail.Text = customer.Email;
-                textBoxPhone.Text = customer.Phone;
-                textBoxAddress.Text = customer.Address;
-
-                labelMessage.Text = "Redigera kund";
-                buttonCreateCustomer.Text = "Uppdatera kund";
-            }
-        }
-
-        private void listBoxCustomers_Click(object sender, EventArgs e)
-        {
-            if (_selectedCustomer == listBoxCustomers.SelectedIndex)
-            {
-                listBoxCustomers.ClearSelected();
-
-                _selectedCustomer = -1;
-
-                textBoxName.Clear();
-                textBoxEmail.Clear();
-                textBoxPhone.Clear();
-                textBoxAddress.Clear();
-
-                labelMessage.Text = "Ny kund";
-                buttonCreateCustomer.Text = "Skapa kund";
-            }
+            return true;
         }
     }
 }
