@@ -22,7 +22,7 @@ namespace Hotel.Repository
             Invoice invoice = new Invoice();
             invoice.TotalCost = (decimal)(booking.EndDate.Date - booking.StartDate.Date).TotalDays * rate + (booking.ExtraBeds * 200);
             if ((booking.EndDate.Date - DateTime.Today.Date).TotalDays >= 10)
-                invoice.DueDate = booking.EndDate.AddDays(10);
+                invoice.DueDate = booking.EndDate.AddDays(-10);
             else
                 invoice.DueDate = booking.StartDate.Date;
 

@@ -48,7 +48,6 @@
             this.toolTipPanel = new System.Windows.Forms.ToolTip(this.components);
             this.labelTodaysDueDates = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonNavPayments = new System.Windows.Forms.Button();
             this.buttonNavCustomers = new System.Windows.Forms.Button();
             this.buttonNavBookings = new System.Windows.Forms.Button();
             this.buttonDate1 = new System.Windows.Forms.Button();
@@ -137,11 +136,11 @@
             // 
             this.labelCalendarDate7.AutoSize = true;
             this.labelCalendarDate7.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate7.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate7.Location = new System.Drawing.Point(877, 237);
+            this.labelCalendarDate7.Location = new System.Drawing.Point(869, 234);
             this.labelCalendarDate7.Name = "labelCalendarDate7";
-            this.labelCalendarDate7.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate7.Size = new System.Drawing.Size(47, 20);
             this.labelCalendarDate7.TabIndex = 26;
             this.labelCalendarDate7.Text = "date7";
             // 
@@ -149,11 +148,11 @@
             // 
             this.labelCalendarDate6.AutoSize = true;
             this.labelCalendarDate6.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate6.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate6.Location = new System.Drawing.Point(755, 237);
+            this.labelCalendarDate6.Location = new System.Drawing.Point(747, 234);
             this.labelCalendarDate6.Name = "labelCalendarDate6";
-            this.labelCalendarDate6.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate6.Size = new System.Drawing.Size(47, 20);
             this.labelCalendarDate6.TabIndex = 25;
             this.labelCalendarDate6.Text = "date6";
             // 
@@ -161,11 +160,11 @@
             // 
             this.labelCalendarDate5.AutoSize = true;
             this.labelCalendarDate5.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate5.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate5.Location = new System.Drawing.Point(633, 237);
+            this.labelCalendarDate5.Location = new System.Drawing.Point(625, 234);
             this.labelCalendarDate5.Name = "labelCalendarDate5";
-            this.labelCalendarDate5.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate5.Size = new System.Drawing.Size(47, 20);
             this.labelCalendarDate5.TabIndex = 24;
             this.labelCalendarDate5.Text = "date5";
             // 
@@ -173,11 +172,11 @@
             // 
             this.labelCalendarDate4.AutoSize = true;
             this.labelCalendarDate4.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate4.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate4.Location = new System.Drawing.Point(511, 237);
+            this.labelCalendarDate4.Location = new System.Drawing.Point(503, 234);
             this.labelCalendarDate4.Name = "labelCalendarDate4";
-            this.labelCalendarDate4.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate4.Size = new System.Drawing.Size(48, 20);
             this.labelCalendarDate4.TabIndex = 23;
             this.labelCalendarDate4.Text = "date4";
             // 
@@ -185,11 +184,11 @@
             // 
             this.labelCalendarDate3.AutoSize = true;
             this.labelCalendarDate3.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate3.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate3.Location = new System.Drawing.Point(389, 237);
+            this.labelCalendarDate3.Location = new System.Drawing.Point(381, 234);
             this.labelCalendarDate3.Name = "labelCalendarDate3";
-            this.labelCalendarDate3.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate3.Size = new System.Drawing.Size(47, 20);
             this.labelCalendarDate3.TabIndex = 22;
             this.labelCalendarDate3.Text = "date3";
             // 
@@ -197,11 +196,11 @@
             // 
             this.labelCalendarDate2.AutoSize = true;
             this.labelCalendarDate2.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate2.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate2.Location = new System.Drawing.Point(267, 237);
+            this.labelCalendarDate2.Location = new System.Drawing.Point(259, 234);
             this.labelCalendarDate2.Name = "labelCalendarDate2";
-            this.labelCalendarDate2.Size = new System.Drawing.Size(42, 17);
+            this.labelCalendarDate2.Size = new System.Drawing.Size(47, 20);
             this.labelCalendarDate2.TabIndex = 21;
             this.labelCalendarDate2.Text = "date2";
             // 
@@ -209,11 +208,11 @@
             // 
             this.labelCalendarDate1.AutoSize = true;
             this.labelCalendarDate1.BackColor = System.Drawing.Color.Brown;
-            this.labelCalendarDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCalendarDate1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendarDate1.ForeColor = System.Drawing.Color.White;
-            this.labelCalendarDate1.Location = new System.Drawing.Point(145, 237);
+            this.labelCalendarDate1.Location = new System.Drawing.Point(137, 234);
             this.labelCalendarDate1.Name = "labelCalendarDate1";
-            this.labelCalendarDate1.Size = new System.Drawing.Size(40, 17);
+            this.labelCalendarDate1.Size = new System.Drawing.Size(45, 20);
             this.labelCalendarDate1.TabIndex = 20;
             this.labelCalendarDate1.Text = "date1";
             // 
@@ -235,7 +234,7 @@
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
@@ -299,7 +298,7 @@
             this.labelTodaysDueDates.AutoSize = true;
             this.labelTodaysDueDates.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTodaysDueDates.ForeColor = System.Drawing.Color.Yellow;
-            this.labelTodaysDueDates.Location = new System.Drawing.Point(484, 11);
+            this.labelTodaysDueDates.Location = new System.Drawing.Point(572, 11);
             this.labelTodaysDueDates.Name = "labelTodaysDueDates";
             this.labelTodaysDueDates.Size = new System.Drawing.Size(219, 15);
             this.labelTodaysDueDates.TabIndex = 40;
@@ -309,7 +308,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Controls.Add(this.buttonNavPayments);
             this.panel4.Controls.Add(this.labelCurrentDateTime);
             this.panel4.Controls.Add(this.buttonNavCustomers);
             this.panel4.Controls.Add(this.buttonNavBookings);
@@ -319,22 +317,6 @@
             this.panel4.Size = new System.Drawing.Size(960, 36);
             this.panel4.TabIndex = 43;
             // 
-            // buttonNavPayments
-            // 
-            this.buttonNavPayments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNavPayments.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonNavPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
-            this.buttonNavPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNavPayments.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNavPayments.ForeColor = System.Drawing.Color.White;
-            this.buttonNavPayments.Location = new System.Drawing.Point(880, -1);
-            this.buttonNavPayments.Name = "buttonNavPayments";
-            this.buttonNavPayments.Size = new System.Drawing.Size(81, 38);
-            this.buttonNavPayments.TabIndex = 46;
-            this.buttonNavPayments.Text = "Betalningar";
-            this.buttonNavPayments.UseVisualStyleBackColor = true;
-            this.buttonNavPayments.Click += new System.EventHandler(this.buttonNavPayments_Click);
-            // 
             // buttonNavCustomers
             // 
             this.buttonNavCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -343,7 +325,7 @@
             this.buttonNavCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNavCustomers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNavCustomers.ForeColor = System.Drawing.Color.White;
-            this.buttonNavCustomers.Location = new System.Drawing.Point(800, -1);
+            this.buttonNavCustomers.Location = new System.Drawing.Point(880, -1);
             this.buttonNavCustomers.Name = "buttonNavCustomers";
             this.buttonNavCustomers.Size = new System.Drawing.Size(81, 38);
             this.buttonNavCustomers.TabIndex = 44;
@@ -359,7 +341,7 @@
             this.buttonNavBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNavBookings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNavBookings.ForeColor = System.Drawing.Color.White;
-            this.buttonNavBookings.Location = new System.Drawing.Point(720, -1);
+            this.buttonNavBookings.Location = new System.Drawing.Point(800, -1);
             this.buttonNavBookings.Name = "buttonNavBookings";
             this.buttonNavBookings.Size = new System.Drawing.Size(81, 38);
             this.buttonNavBookings.TabIndex = 45;
@@ -716,10 +698,11 @@
             // 
             this.labelRoom10.AutoSize = true;
             this.labelRoom10.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom10.ForeColor = System.Drawing.Color.White;
-            this.labelRoom10.Location = new System.Drawing.Point(52, 314);
+            this.labelRoom10.Location = new System.Drawing.Point(50, 311);
             this.labelRoom10.Name = "labelRoom10";
-            this.labelRoom10.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom10.Size = new System.Drawing.Size(23, 20);
             this.labelRoom10.TabIndex = 67;
             this.labelRoom10.Text = "10";
             // 
@@ -727,10 +710,11 @@
             // 
             this.labelRoom11.AutoSize = true;
             this.labelRoom11.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom11.ForeColor = System.Drawing.Color.White;
-            this.labelRoom11.Location = new System.Drawing.Point(52, 384);
+            this.labelRoom11.Location = new System.Drawing.Point(50, 381);
             this.labelRoom11.Name = "labelRoom11";
-            this.labelRoom11.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom11.Size = new System.Drawing.Size(21, 20);
             this.labelRoom11.TabIndex = 68;
             this.labelRoom11.Text = "11";
             // 
@@ -738,10 +722,11 @@
             // 
             this.labelRoom12.AutoSize = true;
             this.labelRoom12.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom12.ForeColor = System.Drawing.Color.White;
-            this.labelRoom12.Location = new System.Drawing.Point(52, 453);
+            this.labelRoom12.Location = new System.Drawing.Point(50, 450);
             this.labelRoom12.Name = "labelRoom12";
-            this.labelRoom12.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom12.Size = new System.Drawing.Size(23, 20);
             this.labelRoom12.TabIndex = 69;
             this.labelRoom12.Text = "12";
             // 
@@ -749,10 +734,11 @@
             // 
             this.labelRoom13.AutoSize = true;
             this.labelRoom13.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom13.ForeColor = System.Drawing.Color.White;
-            this.labelRoom13.Location = new System.Drawing.Point(52, 522);
+            this.labelRoom13.Location = new System.Drawing.Point(50, 519);
             this.labelRoom13.Name = "labelRoom13";
-            this.labelRoom13.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom13.Size = new System.Drawing.Size(23, 20);
             this.labelRoom13.TabIndex = 70;
             this.labelRoom13.Text = "13";
             // 
@@ -760,10 +746,11 @@
             // 
             this.labelRoom20.AutoSize = true;
             this.labelRoom20.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom20.ForeColor = System.Drawing.Color.White;
-            this.labelRoom20.Location = new System.Drawing.Point(52, 591);
+            this.labelRoom20.Location = new System.Drawing.Point(50, 588);
             this.labelRoom20.Name = "labelRoom20";
-            this.labelRoom20.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom20.Size = new System.Drawing.Size(25, 20);
             this.labelRoom20.TabIndex = 71;
             this.labelRoom20.Text = "20";
             // 
@@ -771,10 +758,11 @@
             // 
             this.labelRoom21.AutoSize = true;
             this.labelRoom21.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom21.ForeColor = System.Drawing.Color.White;
-            this.labelRoom21.Location = new System.Drawing.Point(52, 660);
+            this.labelRoom21.Location = new System.Drawing.Point(50, 657);
             this.labelRoom21.Name = "labelRoom21";
-            this.labelRoom21.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom21.Size = new System.Drawing.Size(23, 20);
             this.labelRoom21.TabIndex = 72;
             this.labelRoom21.Text = "21";
             // 
@@ -782,10 +770,11 @@
             // 
             this.labelRoom22.AutoSize = true;
             this.labelRoom22.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom22.ForeColor = System.Drawing.Color.White;
-            this.labelRoom22.Location = new System.Drawing.Point(52, 729);
+            this.labelRoom22.Location = new System.Drawing.Point(50, 726);
             this.labelRoom22.Name = "labelRoom22";
-            this.labelRoom22.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom22.Size = new System.Drawing.Size(25, 20);
             this.labelRoom22.TabIndex = 73;
             this.labelRoom22.Text = "22";
             // 
@@ -793,10 +782,11 @@
             // 
             this.labelRoom23.AutoSize = true;
             this.labelRoom23.BackColor = System.Drawing.Color.Brown;
+            this.labelRoom23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoom23.ForeColor = System.Drawing.Color.White;
-            this.labelRoom23.Location = new System.Drawing.Point(52, 801);
+            this.labelRoom23.Location = new System.Drawing.Point(50, 798);
             this.labelRoom23.Name = "labelRoom23";
-            this.labelRoom23.Size = new System.Drawing.Size(19, 13);
+            this.labelRoom23.Size = new System.Drawing.Size(25, 20);
             this.labelRoom23.TabIndex = 74;
             this.labelRoom23.Text = "23";
             // 
@@ -881,7 +871,6 @@
         private System.Windows.Forms.ToolTip toolTipPanel;
         private System.Windows.Forms.Label labelTodaysDueDates;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button buttonNavPayments;
         private System.Windows.Forms.Button buttonNavCustomers;
         private System.Windows.Forms.Button buttonNavBookings;
         private System.Windows.Forms.Button buttonDate1;

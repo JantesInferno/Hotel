@@ -156,8 +156,8 @@ namespace Hotel
 
                 row = RoomIDToRow(booking.RoomID);
                 column = BookingStartToCalendarDate(booking.StartDate, _dates);
-                //columnSpan = BookingToCalendarColumnSpan(booking, _dates);
                 columnSpan = Convert.ToInt32((booking.EndDate - booking.StartDate).TotalDays * 2);
+
                 if (booking.StartDate.Date < dateTimePickerSearch.Value.Date)
                     columnSpan = (int)((booking.EndDate - dateTimePickerSearch.Value).TotalDays) * 2 + 1;
 
@@ -240,12 +240,6 @@ namespace Hotel
         private void buttonNavCustomers_Click(object sender, EventArgs e)
         {
             CustomersForm frm = new CustomersForm();
-            frm.Show();
-        }
-
-        private void buttonNavPayments_Click(object sender, EventArgs e)
-        {
-            PaymentsForm frm = new PaymentsForm(_dueDates);
             frm.Show();
         }
 
