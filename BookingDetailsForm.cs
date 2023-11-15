@@ -32,6 +32,19 @@ namespace Hotel
             InitializeComponent();
             _currentBooking = booking;
 
+            _comboBoxRooms = RoomRepo.GetAllRooms();
+
+            comboBoxRooms.DisplayMember = "Name";
+            comboBoxRooms.ValueMember = "RoomID";
+            comboBoxRooms.DataSource = _comboBoxRooms;
+
+            comboBoxExtraBeds.Items.Add(0);
+            comboBoxExtraBeds.SelectedIndex = 0;
+            _currentRoomSelected = RoomRepo.GetRoomByID((int)comboBoxRooms.SelectedValue);
+
+            dateTimePickerCheckIn.MinDate = DateTime.Today;
+            dateTimePickerCheckOut.MinDate = DateTime.Today;
+
             dateTimePickerCheckIn.Value = _currentBooking.StartDate;
             dateTimePickerCheckOut.Value = _currentBooking.EndDate;
             comboBoxRooms.SelectedValue = _currentBooking.RoomID;
@@ -63,19 +76,6 @@ namespace Hotel
 
                 this.Enabled = false;
             }
-
-            _comboBoxRooms = RoomRepo.GetAllRooms();
-
-            comboBoxRooms.DisplayMember = "Name";
-            comboBoxRooms.ValueMember = "RoomID";
-            comboBoxRooms.DataSource = _comboBoxRooms;
-
-            comboBoxExtraBeds.Items.Add(0);
-            comboBoxExtraBeds.SelectedIndex = 0;
-            _currentRoomSelected = RoomRepo.GetRoomByID((int)comboBoxRooms.SelectedValue);
-
-            dateTimePickerCheckIn.MinDate = DateTime.Today;
-            dateTimePickerCheckOut.MinDate = DateTime.Today;
 
             _data = new AutoCompleteStringCollection();
 
@@ -114,7 +114,7 @@ namespace Hotel
             comboBoxExtraBeds.SelectedIndex = 0;
         }
 
-        private void buttonUpdateBooking_Click(object sender, EventArgs e)
+        private void buttonBookingUpdate_Click(object sender, EventArgs e)
         {
             if (ValidateInputBooking())
             {
@@ -131,7 +131,7 @@ namespace Hotel
             }
         }
 
-        private void buttonDeleteBooking_Click(object sender, EventArgs e)
+        private void buttonBookingDelete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort bokningen?", "Varning", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -140,6 +140,28 @@ namespace Hotel
 
                 MessageBox.Show("Bokning borttagen");
             }
+        }
+
+        private void buttonPaymentFulfilled_Click(object sender, EventArgs e)
+        {
+            MainForm._dueDates.Remove(_currentBooking);
+
+            _currentBooking.Invoice.DueDate = null;
+
+            InvoiceRepo.UpdateInvoice(_currentBooking.Invoice);
+
+            MessageBox.Show("Faktura markerad som betald");
+        }
+
+        private void buttonPaymentDeclined_Click(object sender, EventArgs e)
+        {
+            MainForm._dueDates.Remove(_currentBooking);
+
+            BookingRepo.DeleteBooking(_currentBooking);
+
+            MessageBox.Show("Bokning annullerad");
+
+            this.Close();
         }
 
         private bool ValidateInputBooking()
@@ -183,27 +205,6 @@ namespace Hotel
             }
 
             return true;
-        }
-
-        private void buttonPaymentFulfilled_Click(object sender, EventArgs e)
-        {
-            MainForm._dueDates.Remove(_currentBooking);
-
-            _currentBooking.Invoice.DueDate = null;
-
-            InvoiceRepo.UpdateInvoice(_currentBooking.Invoice);
-
-            MessageBox.Show("Faktura markerad som betald");
-        }
-
-        private void buttonPaymentDeclined_Click(object sender, EventArgs e)
-        {
-            MainForm._dueDates.Remove(_currentBooking);
-
-            BookingRepo.DeleteBooking(_currentBooking);
-
-            MessageBox.Show("Bokning annullerad");
-
         }
     }
 }

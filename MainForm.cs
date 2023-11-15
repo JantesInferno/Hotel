@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
@@ -30,8 +31,8 @@ namespace Hotel
             _timer.Start();
 
             // Varje gång receptionisten startar programmet kollar det om en faktura har förfallodatum idag
-            _dueDates = BookingRepo.CheckDueDates();
-            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
+            //_dueDates = BookingRepo.CheckDueDates().OrderBy(x => x.Invoice.DueDate).ToList();
+            //labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
         }
 
         // EVENTS
@@ -40,9 +41,20 @@ namespace Hotel
         {
             labelCurrentDateTime.Text = DateTime.Now.ToShortTimeString() + "  :  " + DateTime.Now.ToShortDateString();
         }
-
+        
         private void MainForm_Activated(object sender, EventArgs e)
         {
+            PopulateTableLayoutPanel();
+
+            _dueDates = BookingRepo.CheckDueDates().OrderBy(x => x.Invoice.DueDate).ToList();
+            string output = "";
+            foreach (Booking booking in _dueDates)
+            {
+                output += $"{booking.Customer.Name} [{booking.StartDate.ToShortDateString()} - {booking.EndDate.ToShortDateString()}]";
+            }
+            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
+            toolTipDueDates.SetToolTip(labelTodaysDueDates, output);
+
             if (_dueDates.Count > 0)
             {
                 labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
@@ -52,11 +64,6 @@ namespace Hotel
             {
                 labelTodaysDueDates.Visible = false;
             }
-
-            PopulateTableLayoutPanel();
-
-            _dueDates = BookingRepo.CheckDueDates();
-            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
         }
 
         private void dateTimePickerSearch_ValueChanged(object sender, EventArgs e)
@@ -121,9 +128,18 @@ namespace Hotel
 
                 string extraBeds = booking.ExtraBeds > 0 ? $"Extrasängar: {booking.ExtraBeds.ToString()}st á 200:-\n" : "";
 
-                if (booking.Invoice.DueDate != null)
+                if (booking.Invoice.DueDate == null)
                 {
-                    toolTipTest.SetToolTip(buttonBooking,
+                    toolTipPanel.SetToolTip(buttonBooking,
+                                        $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
+                                        $"{extraBeds}" +
+                                        $"Kundnamn: {booking.Customer.Name}\n" +
+                                        $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
+                                        $"Check-out: {booking.EndDate.ToShortDateString()}");
+                }
+                else
+                {
+                    toolTipPanel.SetToolTip(buttonBooking,
                                         $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
                                         $"{extraBeds}" +
                                         $"Kundnamn: {booking.Customer.Name}\n" +
@@ -132,15 +148,6 @@ namespace Hotel
                                         $"Att betala: {(int)booking.Invoice.TotalCost}:-\n" +
                                         $"Faktura refnr: {booking.InvoiceID}\n" +
                                         $"Förfallodatum: {booking.Invoice.DueDate}");
-                }
-                else
-                {
-                    toolTipTest.SetToolTip(buttonBooking,
-                                        $"Rum: {booking.RoomID} - {booking.Room.RoomType.RoomTypeName} {booking.Room.RoomType.Size}kvm - {(int)booking.Room.RoomType.DailyRate}:-/natt \n" +
-                                        $"{extraBeds}" +
-                                        $"Kundnamn: {booking.Customer.Name}\n" +
-                                        $"Check-in: {booking.StartDate.ToShortDateString()}\n" +
-                                        $"Check-out: {booking.EndDate.ToShortDateString()}");
                 }
 
                 buttonBooking.Tag = booking;

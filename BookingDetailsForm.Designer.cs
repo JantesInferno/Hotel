@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonBookingDelete = new System.Windows.Forms.Button();
+            this.buttonBookingUpdate = new System.Windows.Forms.Button();
             this.labelNewMessage = new System.Windows.Forms.Label();
             this.labelDateException = new System.Windows.Forms.Label();
             this.comboBoxRooms = new System.Windows.Forms.ComboBox();
@@ -63,8 +65,6 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.textBoxCustomerEmail = new System.Windows.Forms.TextBox();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
-            this.buttonBookingDelete = new System.Windows.Forms.Button();
-            this.buttonBookingUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,6 +95,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 328);
             this.panel1.TabIndex = 35;
+            // 
+            // buttonBookingDelete
+            // 
+            this.buttonBookingDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonBookingDelete.FlatAppearance.BorderSize = 0;
+            this.buttonBookingDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.buttonBookingDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBookingDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBookingDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonBookingDelete.Location = new System.Drawing.Point(178, 282);
+            this.buttonBookingDelete.Name = "buttonBookingDelete";
+            this.buttonBookingDelete.Size = new System.Drawing.Size(98, 23);
+            this.buttonBookingDelete.TabIndex = 37;
+            this.buttonBookingDelete.Text = "Ta bort";
+            this.buttonBookingDelete.UseVisualStyleBackColor = false;
+            this.buttonBookingDelete.Click += new System.EventHandler(this.buttonBookingDelete_Click);
+            // 
+            // buttonBookingUpdate
+            // 
+            this.buttonBookingUpdate.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonBookingUpdate.FlatAppearance.BorderSize = 0;
+            this.buttonBookingUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.buttonBookingUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBookingUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBookingUpdate.ForeColor = System.Drawing.Color.White;
+            this.buttonBookingUpdate.Location = new System.Drawing.Point(74, 282);
+            this.buttonBookingUpdate.Name = "buttonBookingUpdate";
+            this.buttonBookingUpdate.Size = new System.Drawing.Size(98, 23);
+            this.buttonBookingUpdate.TabIndex = 36;
+            this.buttonBookingUpdate.Text = "Uppdatera";
+            this.buttonBookingUpdate.UseVisualStyleBackColor = false;
+            this.buttonBookingUpdate.Click += new System.EventHandler(this.buttonBookingUpdate_Click);
             // 
             // labelNewMessage
             // 
@@ -449,36 +481,6 @@
             this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
             this.textBoxCustomerPhone.Size = new System.Drawing.Size(200, 20);
             this.textBoxCustomerPhone.TabIndex = 3;
-            // 
-            // buttonBookingDelete
-            // 
-            this.buttonBookingDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.buttonBookingDelete.FlatAppearance.BorderSize = 0;
-            this.buttonBookingDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.buttonBookingDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBookingDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBookingDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingDelete.Location = new System.Drawing.Point(178, 282);
-            this.buttonBookingDelete.Name = "buttonBookingDelete";
-            this.buttonBookingDelete.Size = new System.Drawing.Size(98, 23);
-            this.buttonBookingDelete.TabIndex = 37;
-            this.buttonBookingDelete.Text = "Ta bort";
-            this.buttonBookingDelete.UseVisualStyleBackColor = false;
-            // 
-            // buttonBookingUpdate
-            // 
-            this.buttonBookingUpdate.BackColor = System.Drawing.Color.SeaGreen;
-            this.buttonBookingUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonBookingUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.buttonBookingUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBookingUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBookingUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonBookingUpdate.Location = new System.Drawing.Point(74, 282);
-            this.buttonBookingUpdate.Name = "buttonBookingUpdate";
-            this.buttonBookingUpdate.Size = new System.Drawing.Size(98, 23);
-            this.buttonBookingUpdate.TabIndex = 36;
-            this.buttonBookingUpdate.Text = "Uppdatera";
-            this.buttonBookingUpdate.UseVisualStyleBackColor = false;
             // 
             // BookingDetailsForm
             // 

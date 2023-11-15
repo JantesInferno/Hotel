@@ -45,7 +45,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.toolTipTest = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipPanel = new System.Windows.Forms.ToolTip(this.components);
             this.labelTodaysDueDates = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonNavPayments = new System.Windows.Forms.Button();
@@ -85,6 +85,7 @@
             this.labelRoom21 = new System.Windows.Forms.Label();
             this.labelRoom22 = new System.Windows.Forms.Label();
             this.labelRoom23 = new System.Windows.Forms.Label();
+            this.toolTipDueDates = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -234,7 +235,7 @@
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanelCalendar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanelCalendar.Location = new System.Drawing.Point(117, 286);
             this.tableLayoutPanelCalendar.Name = "tableLayoutPanelCalendar";
             this.tableLayoutPanelCalendar.RowCount = 8;
@@ -298,11 +299,11 @@
             this.labelTodaysDueDates.AutoSize = true;
             this.labelTodaysDueDates.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTodaysDueDates.ForeColor = System.Drawing.Color.Yellow;
-            this.labelTodaysDueDates.Location = new System.Drawing.Point(502, 11);
+            this.labelTodaysDueDates.Location = new System.Drawing.Point(484, 11);
             this.labelTodaysDueDates.Name = "labelTodaysDueDates";
-            this.labelTodaysDueDates.Size = new System.Drawing.Size(212, 15);
+            this.labelTodaysDueDates.Size = new System.Drawing.Size(219, 15);
             this.labelTodaysDueDates.TabIndex = 40;
-            this.labelTodaysDueDates.Text = "Bokingar vars faktura förfaller idag: x st";
+            this.labelTodaysDueDates.Text = "Bokningar vars faktura förfaller idag: x st";
             this.labelTodaysDueDates.Visible = false;
             // 
             // panel4
@@ -877,7 +878,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ToolTip toolTipTest;
+        private System.Windows.Forms.ToolTip toolTipPanel;
         private System.Windows.Forms.Label labelTodaysDueDates;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonNavPayments;
@@ -918,5 +919,6 @@
         private System.Windows.Forms.Label labelRoom21;
         private System.Windows.Forms.Label labelRoom22;
         private System.Windows.Forms.Label labelRoom23;
+        private System.Windows.Forms.ToolTip toolTipDueDates;
     }
 }

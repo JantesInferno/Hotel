@@ -36,7 +36,7 @@ namespace Hotel.Repository
 
         public static List<Booking> CheckDueDates()
         {
-            List<Booking> bookings = BookingRepo.GetBookingsByDate(new DateTime[1] { DateTime.Now.Date });
+            List<Booking> bookings = GetAllBookings();
             List<Booking> dues = new List<Booking>();   
             
             foreach (Booking booking in bookings)
@@ -69,7 +69,7 @@ namespace Hotel.Repository
             
             foreach (DateTime date in dates)
             {
-                List<Booking> bookings = _db.Bookings.Include("Invoice").Include("Room").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
+                List<Booking> bookings = _db.Bookings.Include("Invoice").Include("Room").Include("Customer").Where(x => x.StartDate <= date && x.EndDate >= date).ToList();
                 foreach (Booking booking in bookings)
                 {
                     if (booking != null && !list.Contains(booking))
