@@ -48,17 +48,18 @@ namespace Hotel
 
             _dueDates = BookingRepo.CheckDueDates().OrderBy(x => x.Invoice.DueDate).ToList();
             string output = "";
-            foreach (Booking booking in _dueDates)
-            {
-                output += $"{booking.Customer.Name} [{booking.StartDate.ToShortDateString()} - {booking.EndDate.ToShortDateString()}]";
-            }
-            labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
-            toolTipDueDates.SetToolTip(labelTodaysDueDates, output);
 
             if (_dueDates.Count > 0)
             {
                 labelTodaysDueDates.Text = $"Bokingar vars faktura förfaller idag: {_dueDates.Count} st";
                 labelTodaysDueDates.Visible = true;
+
+                foreach (Booking booking in _dueDates)
+                {
+                    output += $"{booking.Customer.Name} [{booking.StartDate.ToShortDateString()} - {booking.EndDate.ToShortDateString()}]";
+                }
+
+                toolTipDueDates.SetToolTip(labelTodaysDueDates, output);
             }
             else
             {
