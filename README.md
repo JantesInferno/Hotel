@@ -17,3 +17,5 @@ Visual representation of a calendar for easy navigation and booking.
 WinForms .NET: Framework for creating the desktop application.
 
 C#: Primary programming language for application logic.
+
+SQL Server: Database management system used for storing and retrieving hotel guest and room booking information.
