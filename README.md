@@ -1,4 +1,3 @@
-<img width="30px" src="https://www.freecodecamp.org/news/content/images/size/w1000/2021/09/Repositories-1.png" alt="image_name png" />
 
 # Hotel Booking App - WinForms .NET
 ## Project Overview
