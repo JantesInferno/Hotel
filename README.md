@@ -1,5 +1,7 @@
-<img src='./Github_Images/hotel_1.png' width=70%>
 # Hotel Booking App - WinForms .NET
+
+<img src='./Github_Images/hotel_1.png' width=70%>
+
 ## Project Overview
 This desktop application, built using WinForms in .NET, allows users to perform CRUD operations for hotel guests and room bookings. The app also features a graphical calendar overview, providing a user-friendly interface for booking rooms by clicking on specific dates.
 
